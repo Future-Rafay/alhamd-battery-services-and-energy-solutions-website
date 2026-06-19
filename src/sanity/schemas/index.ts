@@ -8,6 +8,8 @@ import { certificate } from './certificate'
 import { testimonial } from './testimonial'
 import { faq } from './faq'
 import { siteSettings } from './siteSettings'
+import contactSubmission from './contactSubmission'
+import serviceRequest from './serviceRequest'
 
 export const schemaTypes = [
   product,
@@ -20,4 +22,6 @@ export const schemaTypes = [
   testimonial,
   faq,
   siteSettings,
+  contactSubmission,
+  serviceRequest,
 ]

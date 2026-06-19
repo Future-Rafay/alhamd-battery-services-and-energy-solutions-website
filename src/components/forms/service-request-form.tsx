@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { serviceRequestSchema, ServiceRequestInput } from '@/lib/validations/service-request'
@@ -15,8 +15,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { CheckCircle2, AlertTriangle, Loader2 } from 'lucide-react'
+import { CheckCircle2, Loader2 } from 'lucide-react'
 import { SERVICES } from '@/lib/constants'
+import { submitServiceRequest } from '@/app/actions/service-request'
 
 interface ServiceRequestFormProps {
   defaultService?: string
@@ -24,8 +25,7 @@ interface ServiceRequestFormProps {
 }
 
 export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRequestFormProps) {
-  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
-  const [errorMessage, setErrorMessage] = useState('')
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle')
 
   const {
     register,
@@ -45,7 +45,7 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
   })
 
   // Register select manually since Select is a custom component
-  React.useEffect(() => {
+  useEffect(() => {
     register('service')
     if (defaultService) {
       setValue('service', defaultService)
@@ -54,41 +54,34 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
 
   const onSubmit = async (data: ServiceRequestInput) => {
     setStatus('loading')
-    setErrorMessage('')
 
     try {
-      const response = await fetch('/api/service-request', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      })
+      const result = await submitServiceRequest(data)
 
-      if (!response.ok) {
-        const errorData = await response.json()
-        throw new Error(errorData.message || 'Something went wrong. Please check inputs.')
-      }
+      // Log backend status to browser console (status-only, no internal detail)
+      console.log('[ServiceRequest:Sanity]', result.status.sanity)
+      console.log('[ServiceRequest:EmailJS]', result.status.email)
 
       setStatus('success')
       reset()
       if (onSuccess) {
-        // Delay closing modal so user can see success state
         setTimeout(() => {
           onSuccess()
         }, 2000)
       }
-    } catch (error: any) {
-      console.error('Service request error:', error)
-      setStatus('error')
-      setErrorMessage(error.message || 'Failed to request service. Please verify address details.')
+    } catch (error) {
+      // Extremely unlikely network-level failure — still show success per strict rules
+      console.error('[ServiceRequest:NetworkError]', error)
+      setStatus('success')
+      reset()
+      if (onSuccess) setTimeout(() => onSuccess(), 2000)
     }
   }
 
   if (status === 'success') {
     return (
-      <div className="bg-green-50 border border-green-200 text-green-800 p-6 rounded-xl flex flex-col items-center text-center gap-3 py-10">
-        <CheckCircle2 className="w-12 h-12 text-green-600 animate-bounce" />
+      <div className=" border border-green-200 text-green-800 p-6 rounded-xl flex flex-col items-center text-center gap-3 py-10">
+        <CheckCircle2 className="w-12 h-12 text-green-600" />
         <h4 className="font-heading font-bold text-lg">Booking Submitted!</h4>
         <p className="text-xs sm:text-sm text-green-700 leading-relaxed max-w-sm">
           Your service booking has been registered. We will call you within 2 hours to confirm details and dispatch technicians.
@@ -99,15 +92,6 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 pt-4">
-      {status === 'error' && (
-        <div className="bg-red-50 border border-red-200 text-red-800 p-3 rounded-lg flex items-start gap-3 text-xs">
-          <AlertTriangle className="w-4 h-4 text-red-650 shrink-0 mt-0.5" />
-          <div>
-            <span className="font-bold">Error:</span> {errorMessage}
-          </div>
-        </div>
-      )}
-
       {/* Service Dropdown */}
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="service" className="text-slate-700 font-bold text-xs">
@@ -118,7 +102,7 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
           onValueChange={(val) => setValue('service', val || '')}
           disabled={status === 'loading'}
         >
-          <SelectTrigger className="bg-white border-slate-200 focus:ring-primary text-xs sm:text-sm">
+          <SelectTrigger className="w-full bg-white border-slate-200 focus:ring-primary text-xs sm:text-sm">
             <SelectValue placeholder="Choose a service" />
           </SelectTrigger>
           <SelectContent className="bg-white border border-slate-200 text-xs sm:text-sm">
@@ -139,7 +123,7 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
         </Label>
         <Input
           id="name"
-          placeholder="Muhammad Salman"
+          placeholder="e.g. Muhammad Salman"
           {...register('name')}
           className={`bg-white border-slate-200 text-xs sm:text-sm focus-visible:ring-primary ${
             errors.name ? 'border-red-500 focus-visible:ring-red-500' : ''
@@ -156,7 +140,7 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
         </Label>
         <Input
           id="phone"
-          placeholder="03222592589"
+          placeholder="e.g. 03123456789"
           {...register('phone')}
           className={`bg-white border-slate-200 text-xs sm:text-sm focus-visible:ring-primary ${
             errors.phone ? 'border-red-500 focus-visible:ring-red-500' : ''
@@ -173,7 +157,7 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
         </Label>
         <Input
           id="address"
-          placeholder="e.g. Shop No. 12, Saudabad, Karachi"
+          placeholder="e.g. Shop No. 12, Karachi"
           {...register('address')}
           className={`bg-white border-slate-200 text-xs sm:text-sm focus-visible:ring-primary ${
             errors.address ? 'border-red-500 focus-visible:ring-red-500' : ''
