@@ -1,7 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Sun, Droplet, BatteryCharging, Wrench, Shield } from 'lucide-react'
+import { useState } from 'react'
+import { Sun, Droplet, BatteryCharging, Wrench } from 'lucide-react'
 import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
@@ -72,7 +72,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       <IconComponent className="w-7 h-7" />
                     </div>
                     <div className="flex flex-col gap-2">
-                      <h3 className="font-heading font-bold text-xl text-primary">
+                      <h3 className="font-heading font-bold text-xl !text-primary">
                         {service.name}
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
@@ -95,7 +95,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
 
         {/* Service Booking Dialog */}
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <DialogContent className="max-w-[480px] w-[95vw] rounded-xl p-6 bg-white border border-slate-250">
+          <DialogContent className="max-w-[480px] sm:max-w-[600px] w-[95vw] rounded-xl p-6 bg-white border border-slate-250">
             <DialogHeader className="text-left border-b border-slate-100 pb-3">
               <DialogTitle className="font-heading font-bold text-xl text-primary flex items-center gap-2">
                 <Wrench className="w-5 h-5 text-accent-orange" /> Request Booking

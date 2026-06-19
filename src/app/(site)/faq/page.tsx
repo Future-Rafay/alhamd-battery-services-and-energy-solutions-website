@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/accordion'
 import { FAQS } from '@/lib/constants'
 import { getFAQPageSchema } from '@/lib/structured-data'
-import { buttonVariants } from '@/components/ui/button'
+import { Button, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 export const metadata = {
@@ -33,7 +33,7 @@ export default async function FAQPage() {
 
   // Fallbacks
   const faqsList = faqs.length > 0 ? faqs : FAQS
-  const whatsapp = settings?.whatsappNumber || '+92 312 1141703'
+  const whatsapp = settings?.whatsappNumber
   const formattedWhatsapp = whatsapp.replace(/[^\d+]/g, '')
 
   const faqSchema = getFAQPageSchema(faqsList)
@@ -48,7 +48,7 @@ export default async function FAQPage() {
         />
       )}
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center max-w-xl mx-auto mb-16 flex flex-col items-center gap-3">
           <span className="text-accent-orange font-bold text-xs uppercase tracking-wider border-b-2 border-accent-orange pb-1">
@@ -84,19 +84,22 @@ export default async function FAQPage() {
         <div className="bg-primary text-white rounded-xl p-8 mt-12 text-center flex flex-col items-center gap-4 shadow-lg shadow-primary/10">
           <h3 className="font-heading font-bold text-lg sm:text-xl">Still Have Questions?</h3>
           <p className="text-xs sm:text-sm text-white/80 max-w-md leading-relaxed">
-            Our support agents are active on WhatsApp between 10:00 AM and 10:00 PM (except Fridays) to answer direct queries instantly.
+            Our support agents are active on WhatsApp between 10:00 AM and 10:00 PM to answer direct queries instantly.
           </p>
-          <a
-            href={`https://wa.me/${formattedWhatsapp}?text=Hi! I have a question not listed in your FAQ.`}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Button
             className={cn(
               buttonVariants({ variant: 'default', size: 'lg' }),
-              'bg-[#25D366] hover:bg-[#20ba5a] text-white font-extrabold px-8 mt-2 shadow-md'
+              'hover:bg-white/70 hover:text-primary border-2 border-white text-white font-extrabold px-8 mt-2 shadow-md'
             )}
           >
-            Chat on WhatsApp
-          </a>
+            <a
+              href={`https://wa.me/${formattedWhatsapp}?text=Hi! I have a question not listed in your FAQ.`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Chat on WhatsApp
+            </a>
+          </Button>
         </div>
       </div>
     </div>

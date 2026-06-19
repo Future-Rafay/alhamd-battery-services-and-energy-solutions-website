@@ -96,7 +96,7 @@ export default function CertificatesPage() {
 
               {/* Single-line caption — no paragraph clutter */}
               <div className="px-4 py-3 border-t border-slate-100">
-                <h3 className="font-heading font-bold text-sm text-primary leading-snug line-clamp-2">
+                <h3 className="font-heading font-bold text-sm !text-primary leading-snug line-clamp-2">
                   {cert.title}
                 </h3>
               </div>

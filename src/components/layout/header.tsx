@@ -1,199 +1,255 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Phone, Menu, X, ArrowRight, MessageCircle } from 'lucide-react'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { Phone, Menu, X, ArrowRight, Mail, ChevronRight } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { Sheet, SheetContent, SheetTrigger, SheetTitle, SheetHeader } from '@/components/ui/sheet'
 import { SiteSettings } from '@/types'
+import Image from 'next/image'
+import { FaWhatsapp } from 'react-icons/fa'
 
 interface HeaderProps {
   settings?: SiteSettings
 }
+
+const NAV_LINKS = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/services' },
+  { name: 'Products', href: '/products' },
+  { name: 'Certificates', href: '/certificates' },
+  { name: 'FAQ', href: '/faq' },
+  { name: 'Contact', href: '/contact' },
+]
 
 export function Header({ settings }: HeaderProps) {
   const pathname = usePathname()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  // Default values if settings are not loaded
-  const businessName = settings?.businessName
   const phone = settings?.phone
   const whatsapp = settings?.whatsappNumber
   const email = settings?.email
-
   const formattedPhone = phone?.replace(/[^\d+]/g, '')
   const formattedWhatsapp = whatsapp?.replace(/[^\d+]/g, '')
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-    window.addEventListener('scroll', handleScroll)
+    const handleScroll = () => setIsScrolled(window.scrollY > 8)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Services', href: '/services' },
-    { name: 'Products', href: '/products' },
-    { name: 'Certificates', href: '/certificates' },
-    { name: 'FAQ', href: '/faq' },
-    { name: 'Contact Us', href: '/contact' },
-  ]
-
-  const isActive = (href: string) => {
-    if (href === '/') {
-      return pathname === '/'
-    }
-    return pathname.startsWith(href)
-  }
+  const isActive = (href: string) =>
+    href === '/' ? pathname === '/' : pathname.startsWith(href)
 
   return (
     <header className="w-full z-40">
-      {/* Top Info Bar */}
-      <div className="bg-primary text-white text-xs sm:text-sm py-2 px-4 border-b border-white/10 hidden md:block">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div className="flex items-center gap-6">
-            <span className="flex items-center gap-1.5 font-medium text-white/90">
-              <Phone className="w-3.5 h-3.5 text-accent-orange" />
-              Call Support: <a href={`tel:${formattedPhone}`} className="hover:text-accent-orange transition-colors">{phone}</a>
-            </span>
-            <span className="flex items-center gap-1.5 font-medium text-white/90">
-              <MessageCircle className="w-3.5 h-3.5 text-green-400" />
-              WhatsApp: <a href={`https://wa.me/${formattedWhatsapp}`} target="_blank" rel="noopener noreferrer" className="hover:text-green-400 transition-colors">{whatsapp}</a>
-            </span>
+
+      {/* ── Top info bar (md+) ── */}
+      <div className="hidden md:block bg-primary text-white text-xs border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 h-9 flex items-center justify-between gap-6">
+
+          {/* Left — contact quick links */}
+          <div className="flex items-center gap-5">
+            {phone && (
+              <a
+                href={`tel:${formattedPhone}`}
+                className="flex items-center gap-1.5 text-white/80 hover:text-accent-orange transition-colors font-medium"
+              >
+                <Phone className="w-4 h-4 text-accent-orange shrink-0" />
+                {phone}
+              </a>
+            )}
+            {whatsapp && (
+              <a
+                href={`https://wa.me/${formattedWhatsapp}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 text-white/80 hover:text-green-400 transition-colors font-medium"
+              >
+                <FaWhatsapp className="w-4 h-4 text-green-400 shrink-0" />
+                {whatsapp}
+              </a>
+            )}
           </div>
-          <div className="flex items-center gap-4 text-white/80">
-            <span>{email}</span>
-            <span>|</span>
-            <span className="text-accent-yellow font-semibold">Established 2025</span>
+
+          {/* Right — email + tagline */}
+          <div className="flex items-center gap-4 text-white/60">
+            {email && (
+              <a
+                href={`mailto:${email}`}
+                className="flex items-center gap-1.5 hover:text-white transition-colors"
+              >
+                <Mail className="w-4 h-4 text-accent-orange shrink-0" />
+                {email}
+              </a>
+            )}
+            <span className="h-4 w-px bg-white/20" />
+            <span className="text-accent-orange font-semibold tracking-wide">Est. 2025</span>
           </div>
         </div>
       </div>
 
-      {/* Main Navigation */}
+      {/* ── Main nav bar ── */}
       <div
-        className={`w-full transition-smooth py-4 px-4 ${isScrolled
-            ? 'fixed top-0 bg-white/95 backdrop-blur-md shadow-md border-b border-slate-205'
-            : 'relative bg-white border-b border-slate-100'
-          }`}
+        className={cn(
+          'w-full transition-all py-2 duration-300',
+          isScrolled
+            ? 'fixed top-0 left-0 right-0 bg-white/96 backdrop-blur-md shadow-md border-b border-slate-200'
+            : 'relative bg-white border-b border-slate-100',
+        )}
       >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          {/* Logo Section */}
-          <Link href="/" className="flex flex-col gap-0.5">
-            <span className="font-heading font-extrabold text-xl sm:text-2xl tracking-tight text-primary leading-none">
-              ALHAMD
-            </span>
-            <span className="font-heading font-semibold text-[9px] sm:text-[10px] tracking-wider text-accent-orange uppercase leading-none">
-              Battery & Solar Energy Solutions
-            </span>
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 h-20 flex items-center justify-between gap-4">
+
+          {/* Logo */}
+          <Link href="/" className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange rounded">
+            <Image
+              src="/logo-transparent.png"
+              alt="Alhamd Battery Services logo"
+              width={500}
+              height={500}
+              className="w-20 sm:w-[72px] h-auto"
+              priority
+            />
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
+          {/* Desktop nav */}
+          <nav aria-label="Main navigation" className="hidden lg:flex items-center gap-1">
+            {NAV_LINKS.map((link) => (
               <Link
-                key={link.name}
+                key={link.href}
                 href={link.href}
-                className={`text-sm font-semibold tracking-wide hover:text-accent-orange transition-colors ${isActive(link.href) ? 'text-primary border-b-2 border-accent-orange pb-1' : 'text-slate-700'
-                  }`}
+                className={cn(
+                  'relative px-3 py-2 text-sm font-semibold tracking-wide rounded-md transition-colors',
+                  isActive(link.href)
+                    ? 'text-primary'
+                    : 'text-slate-600 hover:text-primary hover:bg-slate-50',
+                )}
               >
                 {link.name}
+                {isActive(link.href) && (
+                  <span className="absolute inset-x-3 -bottom-px h-0.5 bg-accent-orange rounded-full" />
+                )}
               </Link>
             ))}
           </nav>
 
-          {/* Action CTAs */}
-          <div className="hidden sm:flex items-center gap-3">
-            <a
-              href={`tel:${formattedPhone}`}
-              className={cn(
-                buttonVariants({ variant: 'outline', size: 'sm' }),
-                'border-primary text-primary hover:bg-primary hover:text-white font-bold h-9 flex items-center justify-center'
-              )}
-            >
-              <Phone className="w-3.5 h-3.5 mr-1.5" /> Call Now
-            </a>
+          {/* Desktop CTAs */}
+          <div className="hidden sm:flex items-center gap-2.5">
+            {phone && (
+              <a
+                href={`tel:${formattedPhone}`}
+                className="inline-flex items-center gap-1.5 px-3.5 h-9 rounded-md border border-primary text-primary text-sm font-bold hover:bg-primary hover:text-white transition-colors"
+              >
+                <Phone className="w-3.5 h-3.5" />
+                <span className="hidden xl:inline">Call Now</span>
+                <span className="xl:hidden">{phone}</span>
+              </a>
+            )}
             <Link
               href="/contact"
-              className={cn(
-                buttonVariants({ variant: 'default', size: 'sm' }),
-                'bg-accent-orange hover:bg-accent-orange/95 text-white font-extrabold h-9 shadow-sm flex items-center justify-center'
-              )}
+              className="inline-flex items-center gap-1.5 px-4 h-9 rounded-md bg-accent-orange text-white text-sm font-bold hover:bg-accent-orange/90 shadow-sm transition-colors"
             >
-              Get Quote <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+              Get Quote <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
 
-          {/* Mobile Menu Icon */}
-          <div className="lg:hidden flex items-center gap-3">
-            <a
-              href={`tel:${formattedPhone}`}
-              className={cn(
-                buttonVariants({ variant: 'ghost', size: 'icon' }),
-                'sm:hidden text-primary flex items-center justify-center'
-              )}
-              aria-label="Call business"
-            >
-              <Phone className="w-5 h-5" />
-            </a>
+          {/* Mobile: phone icon + hamburger */}
+          <div className="lg:hidden flex items-center gap-1">
+            {phone && (
+              <a
+                href={`tel:${formattedPhone}`}
+                aria-label="Call us"
+                className="sm:hidden w-9 h-9 inline-flex items-center justify-center rounded-md text-primary hover:bg-slate-100 transition-colors"
+              >
+                <Phone className="w-5 h-5" />
+              </a>
+            )}
 
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
-              <SheetTrigger render={<Button variant="ghost" size="icon" className="text-primary focus-visible:ring-0" />}>
-                  <Menu className="w-6 h-6" />
+              <SheetTrigger
+                render={
+                  <button
+                    aria-label="Open menu"
+                    className="w-9 h-9 inline-flex items-center justify-center rounded-md text-primary hover:bg-slate-100 transition-colors"
+                  />
+                }
+              >
+                {isMobileMenuOpen
+                  ? <X className="w-5 h-5" />
+                  : <Menu className="w-5 h-5" />
+                }
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[350px] p-6 bg-white border-l border-slate-200">
-                <SheetHeader className="text-left mb-6 border-b border-slate-100 pb-4">
-                  <SheetTitle className="font-heading font-extrabold text-xl text-primary">ALHAMD</SheetTitle>
-                  <span className="text-[10px] uppercase font-semibold text-accent-orange tracking-wider">Battery & Solar</span>
-                </SheetHeader>
-                <div className="flex flex-col justify-between h-[80%]">
-                  <nav className="flex flex-col gap-4">
-                    {navLinks.map((link) => (
-                      <Link
-                        key={link.name}
-                        href={link.href}
-                        onClick={() => setIsMobileMenuOpen(false)}
-                        className={`text-base font-semibold py-2 transition-colors hover:text-accent-orange ${isActive(link.href) ? 'text-primary border-l-4 border-accent-orange pl-3' : 'text-slate-700 pl-4'
-                          }`}
-                      >
-                        {link.name}
-                      </Link>
-                    ))}
-                  </nav>
 
-                  <div className="flex flex-col gap-3 pt-6 border-t border-slate-100">
+              <SheetContent side="right" className="w-72 p-0 bg-white border-l border-slate-200 flex flex-col gap-0">
+                {/* Drawer header */}
+                <SheetHeader className="px-5  border-b border-slate-100">
+                  <SheetTitle >
+                    <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                      <Image
+                        src="/logo-transparent.png"
+                        alt="Alhamd Battery Services"
+                        width={500}
+                        height={500}
+                        className="w-20 h-auto"
+                      />
+                    </Link>
+                  </SheetTitle>
+                 
+                </SheetHeader>
+
+                {/* Nav links */}
+                <nav className="flex flex-col  flex-1 overflow-y-auto">
+                  {NAV_LINKS.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className={cn(
+                        'flex items-center justify-between px-5 py-3 text-sm font-semibold transition-colors',
+                        isActive(link.href)
+                          ? 'text-primary bg-primary/5 border-l-4 border-accent-orange pl-4'
+                          : 'text-slate-700 hover:text-primary hover:bg-slate-50 border-l-4 border-transparent',
+                      )}
+                    >
+                      {link.name}
+                      <ChevronRight className="w-4 h-4 text-slate-400 shrink-0" />
+                    </Link>
+                  ))}
+                </nav>
+
+                {/* Drawer footer CTAs */}
+                <div className="px-5 py-5 border-t border-slate-100 flex flex-col gap-2.5">
+                  {/* {phone && (
                     <a
                       href={`tel:${formattedPhone}`}
-                      className="flex items-center justify-center gap-2 w-full py-2.5 bg-primary text-white rounded-md text-sm font-bold shadow-sm"
+                      className="flex items-center justify-center gap-2 w-full h-10 rounded-md bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/90 transition-colors"
                     >
-                      <Phone className="w-4 h-4" /> Call: {phone}
+                      <Phone className="w-4 h-4" /> {phone}
                     </a>
+                  )}
+                  {whatsapp && (
                     <a
                       href={`https://wa.me/${formattedWhatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full py-2.5 bg-[#25D366] text-white rounded-md text-sm font-bold shadow-sm"
+                      className="flex items-center justify-center gap-2 w-full h-10 rounded-md bg-[#25D366] text-white text-sm font-bold shadow-sm hover:bg-[#22c55e] transition-colors"
                     >
-                      <MessageCircle className="w-4 h-4" /> Chat on WhatsApp
+                      <FaWhatsapp className="w-4 h-4" /> Chat on WhatsApp
                     </a>
-                  </div>
+                  )} */}
                 </div>
               </SheetContent>
             </Sheet>
           </div>
+
         </div>
       </div>
-      {/* spacer to avoid page jump when fixed header kicks in */}
-      {isScrolled && <div className="h-[73px] md:h-[113px] w-full" />}
+
+      {/* Spacer prevents layout jump when header becomes fixed */}
+      {isScrolled && <div className="h-20 w-full" />}
     </header>
   )
 }

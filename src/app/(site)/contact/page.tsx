@@ -1,8 +1,9 @@
 import { sanityFetch } from '@/sanity/lib/live'
 import { SITE_SETTINGS_QUERY } from '@/sanity/lib/queries'
-import { Phone, Mail, MapPin, MessageSquare, Clock } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { ContactForm } from '@/components/forms/contact-form'
 import { getLocalBusinessSchema } from '@/lib/structured-data'
+import { FaWhatsapp } from "react-icons/fa";
 
 export const metadata = {
   title: 'Contact Us | Alhamd Battery Services and Energy Solutions',
@@ -72,12 +73,12 @@ export default async function ContactPage() {
 
             {/* WhatsApp */}
             <div className="bg-white border border-slate-200/60 p-5 rounded-xl flex items-start gap-4 shadow-sm">
-              <div className="w-10 h-10 rounded-lg bg-[#25D366]/5 text-[#25D366] flex items-center justify-center shrink-0">
-                <MessageSquare className="w-5 h-5" />
+              <div className="w-10 h-10 rounded-lg bg-primary/5 text-primary flex items-center justify-center shrink-0">
+                <FaWhatsapp className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
                 <span className="text-[10px] uppercase font-bold text-slate-400">WhatsApp Inquiry</span>
-                <a href={`https://wa.me/${formattedWhatsapp}`} target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-extrabold text-[#25D366] hover:underline mt-0.5">
+                <a href={`https://wa.me/${formattedWhatsapp}`} target="_blank" rel="noopener noreferrer" className="text-sm sm:text-base font-extrabold text-primary hover:text-accent-orange mt-0.5 transition-colors">
                   {whatsapp}
                 </a>
               </div>
@@ -117,7 +118,7 @@ export default async function ContactPage() {
               <div className="flex flex-col w-full text-xs">
                 <span className="text-[10px] uppercase font-bold text-slate-400">Opening Hours</span>
                 <div className="flex justify-between items-center mt-1.5 pb-1.5 border-b border-slate-100">
-                  <span className="font-semibold text-slate-500">Mon – Thu / Sat - Sun</span>
+                  <span className="font-semibold text-slate-500">Sat - Thu </span>
                   <span className="font-bold text-primary">10:00 AM – 10:00 PM</span>
                 </div>
                 <div className="flex justify-between items-center mt-1.5">
@@ -129,7 +130,7 @@ export default async function ContactPage() {
           </div>
 
           {/* Contact Form Area (Right) */}
-          <div className="lg:col-span-7 bg-white border border-slate-200/60 p-6 sm:p-8 rounded-xl shadow-sm">
+          <div className="lg:col-span-7 bg-white border border-slate-200/60 p-6 sm:p-8 rounded-xl shadow-sm h-full">
             <h3 className="font-heading font-extrabold text-lg sm:text-xl text-primary border-b border-slate-100 pb-3 mb-6">
               Send a Message
             </h3>
@@ -139,8 +140,8 @@ export default async function ContactPage() {
 
         {/* Map Embed Container */}
         <div className="bg-white border border-slate-200/60 rounded-xl overflow-hidden shadow-sm p-4">
-          <h3 className="font-heading font-bold text-base text-primary mb-4 flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-accent-orange" /> Find Our Shop in Saudabad
+          <h3 className="font-heading font-bold text-base !text-primary mb-4 flex items-center gap-2">
+            <MapPin className="w-5 h-5 text-accent-orange" /> Find Our Shop in Malir Karachi 
           </h3>
           <div 
             className="w-full rounded-lg overflow-hidden border border-slate-200 [&_iframe]:w-full"

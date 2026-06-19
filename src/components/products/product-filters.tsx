@@ -73,7 +73,7 @@ export function ProductFilters({ categories, brands, subcategories }: ProductFil
     <div className="flex flex-col gap-6">
       {/* Search Filter */}
       <div className="flex flex-col gap-2">
-        <h4 className="font-heading font-bold text-xs uppercase text-primary tracking-wider">
+        <h4 className="font-heading font-bold text-xs uppercase !text-primary tracking-wider">
           Search Catalog
         </h4>
         <div className="relative">

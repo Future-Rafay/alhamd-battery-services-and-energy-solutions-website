@@ -15,13 +15,13 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
   const brandsList = hasCMSBrands ? brands : []
 
   return (
-    <section className="py-16 px-4 bg-slate-900 border-t border-b border-slate-800">
+    <section className="py-16 sm:py-20 px-4 bg-slate-900 border-t border-b border-slate-800" id='brands-section'>
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-xl mx-auto mb-10">
           <span className="text-accent-yellow font-bold text-xs uppercase tracking-wider">
             Trusted Partners
           </span>
-          <h2 className="font-heading font-bold text-2xl sm:text-3xl text-white mt-1">
+          <h2 className="font-heading font-bold text-2xl sm:text-3xl !text-white mt-1">
             Authorized Brands We Distribute
           </h2>
         </div>

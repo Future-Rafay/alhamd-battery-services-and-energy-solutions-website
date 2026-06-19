@@ -84,7 +84,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
                 </div>
                 <CardContent className="p-6 flex flex-col flex-grow justify-between gap-4">
                   <div className="flex flex-col gap-2">
-                    <h3 className="font-heading font-bold text-xl text-primary group-hover:text-accent-orange transition-colors">
+                    <h3 className="font-heading font-bold text-xl !text-primary group-hover:text-accent-orange transition-colors">
                       {category.name}
                     </h3>
                     <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-3">
@@ -114,7 +114,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
                       <Icon className="w-6 h-6" />
                     </div>
                     <div className="flex flex-col gap-1.5">
-                      <h3 className="font-heading font-bold text-xl text-primary group-hover:text-accent-orange transition-colors">
+                      <h3 className="font-heading font-bold text-xl !text-primary group-hover:text-accent-orange transition-colors">
                         {cat.name}
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">

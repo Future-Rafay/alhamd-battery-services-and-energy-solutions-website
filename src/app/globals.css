@@ -79,10 +79,22 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family: var(--font-heading);
   font-weight: 700;
-  color: hsl(223 63% 20%); /* deep brand blue for headings */
+  color: hsl(223 63% 20%);  
+}
+
+h3, h4{
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: hsl(var(--accent-orange));
+}
+
+ h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: hsl(var(--accent-yellow));
 }
 
 /* Micro-animations and Utilities */

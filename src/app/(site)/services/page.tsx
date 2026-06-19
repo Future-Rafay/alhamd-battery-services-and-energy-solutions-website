@@ -1,8 +1,7 @@
 'use client'
 
-import React, { useState } from 'react'
-import { Sun, Droplet, BatteryCharging, Wrench, Calendar, MapPin, CheckCircle } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
+import { useState } from 'react'
+import { Sun, Droplet, BatteryCharging, Wrench, MapPin, CheckCircle } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { ServiceRequestForm } from '@/components/forms/service-request-form'
@@ -38,7 +37,7 @@ export default function ServicesPage() {
           <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
             Expert Support
           </span>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl text-white">
+          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
             Our Services
           </h1>
           <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
@@ -66,7 +65,7 @@ export default function ServicesPage() {
 
                 {/* Text description column */}
                 <div className="md:col-span-6 flex flex-col gap-3">
-                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-primary">
+                  <h3 className="font-heading font-extrabold text-xl sm:text-2xl !text-primary">
                     {service.name}
                   </h3>
                   <p className="text-slate-650 text-xs sm:text-sm leading-relaxed">
@@ -82,7 +81,7 @@ export default function ServicesPage() {
                 <div className="md:col-span-3 flex justify-center md:justify-end w-full">
                   <Button
                     onClick={() => handleRequestService(service.name)}
-                    className="w-full md:w-auto bg-accent-orange hover:bg-accent-orange/95 text-white font-extrabold px-6"
+                    className="w-full md:w-auto bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white font-extrabold px-6"
                   >
                     Request Booking
                   </Button>
@@ -94,32 +93,32 @@ export default function ServicesPage() {
       </section>
 
       {/* Trust factors panel */}
-      <section className="bg-slate-900 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
-          <h2 className="font-heading font-extrabold text-2xl sm:text-3xl text-white">
+      <section className="bg-slate-900 text-white py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center flex flex-col items-center gap-8">
+          <h2 className="font-heading font-extrabold text-2xl sm:text-4xl !text-white">
             Reliable Maintenance Services
           </h2>
           
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-2xl text-left mt-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-4xl text-left mt-4">
             <div className="flex gap-3">
               <CheckCircle className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-bold text-sm text-white">Response Time</h4>
-                <p className="text-xs text-slate-400 mt-0.5">We respond within 2 hours to confirm bookings.</p>
+                <h4 className="font-bold text-sm sm:text-lg !text-white">Response Time</h4>
+                <p className="text-xs sm:text-md text-slate-400 mt-0.5">We respond within 2 hours to confirm bookings.</p>
               </div>
             </div>
             <div className="flex gap-3">
               <CheckCircle className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-bold text-sm text-white">Original Spares</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Only original branded cables, fuses, and spares used.</p>
+                <h4 className="font-bold text-sm sm:text-lg !text-white">Original Spares</h4>
+                <p className="text-xs sm:text-md text-slate-400 mt-0.5">Only original branded cables, fuses, and spares used.</p>
               </div>
             </div>
             <div className="flex gap-3">
               <CheckCircle className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
               <div>
-                <h4 className="font-bold text-sm text-white">Karachi Focus</h4>
-                <p className="text-xs text-slate-400 mt-0.5">Dedicated service team for all town subdistricts.</p>
+                <h4 className="font-bold text-sm sm:text-lg !text-white">Karachi Focus</h4>
+                <p className="text-xs sm:text-md text-slate-400 mt-0.5">Dedicated service team for all town subdistricts.</p>
               </div>
             </div>
           </div>
@@ -128,7 +127,7 @@ export default function ServicesPage() {
 
       {/* Service Request Dialog */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-[480px] w-[95vw] rounded-xl p-6 bg-white border border-slate-200 shadow-xl">
+        <DialogContent className="max-w-[480px] sm:max-w-[600px] w-[95vw] rounded-xl p-6 bg-white border border-slate-200 shadow-xl">
           <DialogHeader className="text-left border-b border-slate-100 pb-3">
             <DialogTitle className="font-heading font-bold text-xl text-primary flex items-center gap-2">
               <Wrench className="w-5 h-5 text-accent-orange" /> Request Booking

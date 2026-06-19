@@ -57,8 +57,8 @@ export default async function HomePage() {
     console.error('Error loading homepage data from Sanity, using fallbacks:', error)
   }
 
-  const phone = settings?.phone || '+92 322 2592589'
-  const whatsapp = settings?.whatsappNumber || '+92 312 1141703'
+  const phone = settings?.phone 
+  const whatsapp = settings?.whatsappNumber
   const structuredData = getLocalBusinessSchema(settings)
 
   return (

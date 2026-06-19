@@ -7,6 +7,7 @@ import { cn } from '@/lib/utils'
 import { Banner } from '@/types'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
+import { FaWhatsapp } from 'react-icons/fa'
 
 interface HeroSectionProps {
   banners: Banner[]
@@ -28,9 +29,11 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
   const headline = activeBanner?.headline || 'Powering Your Home & Business with Trusted Energy Solutions'
   const subtext =
     activeBanner?.subtext ||
-    'Authorized retail distributor of branded batteries (AGS, Daewoo, Osaka, Exide) and solar energy products in Saudabad, Karachi. Real warranties, expert service.'
+    'Authorized retail distributor of branded batteries (AGS, Daewoo, Osaka, Exide) and solar energy products in Malir, Karachi. Real warranties, expert service.'
   const ctaText = activeBanner?.ctaText || 'Explore Products'
   const ctaLink = activeBanner?.ctaLink || '/products'
+
+  const bgheroimage = activeBanner?.image && urlFor(activeBanner.image).width(1920).height(1080).quality(85).url() || '/NOT_AVAILABLE.png'
 
   return (
     <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center bg-slate-950 text-white overflow-hidden py-16 px-4">
@@ -41,11 +44,11 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
       </div>
 
       {/* Dynamic Background Image from CMS */}
-      {activeBanner?.image && (
+      {bgheroimage && (
         <div className="absolute inset-0 z-0">
           <Image
-            src={urlFor(activeBanner.image).width(1920).height(1080).quality(85).url()}
-            alt={activeBanner.image.alt || 'Alhamd Energy Solutions Background'}
+            src={bgheroimage}
+            alt={activeBanner?.image?.alt || 'Alhamd Energy Solutions Background'}
             fill
             className="object-cover opacity-30 object-center"
             priority
@@ -63,7 +66,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
             <span>100% Genuine Branded Products & Warranties</span>
           </div>
 
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight text-white">
+          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight !text-white">
             {headline.split(' ').map((word, i) => (
               <span key={i} className={word === 'Solutions' || word === 'Trusted' ? 'text-accent-orange' : ''}>
                 {word}{' '}
@@ -81,7 +84,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               href={ctaLink}
               className={cn(
                 buttonVariants({ variant: 'default', size: 'lg' }),
-                'bg-accent-orange hover:bg-accent-orange/95 text-white font-extrabold px-8 shadow-md transition-smooth rounded-lg flex items-center justify-center'
+                'bg-accent-orange hover:bg-accent-orange/95 text-white font-bold px-3 py-3 sm:px-6 sm:py-6 text-sm sm:text-lg shadow-md transition-smooth rounded-lg flex items-center justify-center'
               )}
             >
               {ctaText} <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -93,17 +96,17 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants({ variant: 'outline', size: 'lg' }),
-                'border-slate-700 bg-slate-900/60 hover:bg-slate-900 text-white font-bold px-6 border backdrop-blur-sm rounded-lg flex items-center justify-center'
+                'border-slate-700 bg-slate-900/60 hover:bg-white text-white hover:text-primary font-bold px-2 py-3 sm:px-6 sm:py-6 text-sm sm:text-lg border backdrop-blur-sm rounded-lg flex items-center justify-center'
               )}
             >
-              <MessageCircle className="w-5 h-5 mr-2 text-green-400 fill-green-400/20" /> Inquire Price
+              <FaWhatsapp className="w-5 h-5 mr-2" /> Inquire Price
             </a>
 
             <a
               href={`tel:${formattedPhone}`}
               className={cn(
                 buttonVariants({ variant: 'ghost', size: 'lg' }),
-                'text-slate-200 hover:text-white font-semibold hover:bg-white/5 rounded-lg flex items-center justify-center'
+                'text-slate-200 hover:text-white font-semibold hover:bg-white/5 px-2 py-3 sm:px-6 sm:py-6 text-sm sm:text-lg rounded-lg flex items-center justify-center'
               )}
             >
               <Phone className="w-4.5 h-4.5 mr-2 text-accent-yellow" /> Call Store
@@ -134,7 +137,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               Store Pickup
             </div>
 
-            <h3 className="font-heading font-bold text-lg text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-3">
+            <h3 className="font-heading font-bold text-lg !text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-3">
               <Battery className="w-5 h-5 text-accent-orange" /> Available In-Store
             </h3>
 
@@ -142,7 +145,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               <div className="flex items-start gap-3 bg-slate-950/40 p-3 rounded-lg border border-slate-800/50">
                 <Cpu className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-white">Hybrid Solar Inverters</h4>
+                  <h4 className="text-sm font-semibold !text-white">Hybrid Solar Inverters</h4>
                   <p className="text-xs text-slate-400 mt-0.5">Inverex, Crown, MaxPower & Simtek models.</p>
                 </div>
               </div>
@@ -150,7 +153,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               <div className="flex items-start gap-3 bg-slate-950/40 p-3 rounded-lg border border-slate-800/50">
                 <ShieldCheck className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-white">Maintenance Free Batteries</h4>
+                  <h4 className="text-sm font-semibold !text-white">Maintenance Free Batteries</h4>
                   <p className="text-xs text-slate-400 mt-0.5">Daewoo, AGS & Osaka sealed batteries.</p>
                 </div>
               </div>
@@ -158,14 +161,14 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               <div className="flex items-start gap-3 bg-slate-950/40 p-3 rounded-lg border border-slate-800/50">
                 <Battery className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="text-sm font-semibold text-white">Tubular Deep Cycle Batteries</h4>
+                  <h4 className="text-sm font-semibold !text-white">Tubular Deep Cycle Batteries</h4>
                   <p className="text-xs text-slate-400 mt-0.5">For solar setups & UPS back-up systems.</p>
                 </div>
               </div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-              <span>Location: Saudabad, Karachi</span>
+              <span>Location: Malir, Karachi</span>
               <span className="text-accent-yellow font-medium">Daily Pricing Updates</span>
             </div>
           </div>

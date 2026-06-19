@@ -1,6 +1,6 @@
 'use client'
 
-import { ShieldCheck, BadgeCheck, Users, Calendar, Award } from 'lucide-react'
+import { ShieldCheck, BadgeCheck, Calendar, Award } from 'lucide-react'
 import { SiteSettings } from '@/types'
 
 interface TrustSectionProps {
@@ -95,13 +95,13 @@ export function TrustSection({ settings }: TrustSectionProps) {
               <Award className="w-6 h-6 text-accent-yellow" />
             </div>
             <div>
-              <h3 className="font-heading font-bold text-lg sm:text-xl">Certified & Authorized Dealer</h3>
+              <h3 className="font-heading font-bold text-lg sm:text-xl !text-white">Certified & Authorized Dealer</h3>
               <p className="text-xs sm:text-sm text-white/80 mt-0.5">We maintain official distributor certifications for major solar and battery companies.</p>
             </div>
           </div>
           <a
             href="/certificates"
-            className="px-6 py-2.5 bg-accent-orange hover:bg-accent-orange/95 text-white font-extrabold rounded-md text-sm transition-smooth shadow-md shrink-0 uppercase tracking-wider"
+            className="px-6 py-2.5 bg-accent-orange hover:bg-accent-orange/95 text-white font-bold rounded-md text-sm transition-smooth shadow-md shrink-0 uppercase tracking-wider"
           >
             View Certificates
           </a>

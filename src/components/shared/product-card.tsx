@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { ArrowRight, BadgePercent, Shield } from 'lucide-react'
+import { ArrowRight, Shield } from 'lucide-react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Product } from '@/types'
@@ -59,14 +59,14 @@ export function ProductCard({ product }: ProductCardProps) {
 
         {/* Featured Tag */}
         {product.featured && (
-          <Badge className="absolute top-3 right-3 bg-accent-orange text-white hover:bg-accent-orange/90 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 shadow-sm">
+          <Badge className="absolute top-3 right-3 bg-accent-yellow text-black hover:bg-accent-yellow/90 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 shadow-sm">
             Best Seller
           </Badge>
         )}
       </div>
 
       {/* Card Content */}
-      <CardContent className="p-5 flex-grow flex flex-col justify-between gap-3">
+      <CardContent className="p-5 pt-2 flex-grow flex flex-col justify-between gap-3">
         <div className="flex flex-col gap-2">
           {/* Category */}
           {product.category && (
@@ -112,17 +112,17 @@ export function ProductCard({ product }: ProductCardProps) {
       </CardContent>
 
       {/* Card Footer */}
-      <CardFooter className="px-5 pb-5 pt-0 mt-auto flex justify-between items-center border-t border-slate-50 pt-4">
+      <CardFooter className="px-5 pb-5 pt-0 mt-auto flex justify-between items-end border-t border-slate-50 pt-4">
         <div className="flex flex-col">
           <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Price Quote</span>
-          <span className="text-sm font-extrabold text-accent-orange">Contact for Price</span>
+          <span className="text-sm font-extrabold text-primary">Contact for Price</span>
         </div>
         
         <Link
           href={`/products/${product.slug}`}
           className={cn(
             buttonVariants({ variant: 'default', size: 'sm' }),
-            'bg-primary hover:bg-primary/95 text-white font-bold h-8 text-xs transition-smooth group-hover:bg-accent-orange shadow-sm flex items-center justify-center'
+            'bg-primary hover:bg-primary/95 text-white font-bold h-8 text-xs transition-smooth  shadow-sm flex items-center justify-center'
           )}
         >
           View Details <ArrowRight className="w-3.5 h-3.5 ml-1.5" />

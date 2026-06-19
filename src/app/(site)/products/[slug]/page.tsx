@@ -2,7 +2,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Phone, MessageSquare, Shield, ArrowLeft, Heart, Award } from 'lucide-react'
+import { Phone, Shield, ArrowLeft } from 'lucide-react'
 import { sanityFetch } from '@/sanity/lib/live'
 import { PRODUCT_BY_SLUG_QUERY, SITE_SETTINGS_QUERY, RELATED_PRODUCTS_QUERY } from '@/sanity/lib/queries'
 import { client } from '@/sanity/lib/client'
@@ -12,6 +12,7 @@ import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Product } from '@/types'
 import { getProductSchema } from '@/lib/structured-data'
+import { FaWhatsapp } from 'react-icons/fa'
 
 interface SingleProductPageProps {
   params: Promise<{ slug: string }>
@@ -200,10 +201,10 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
                 rel="noopener noreferrer"
                 className={cn(
                   buttonVariants({ variant: 'default', size: 'lg' }),
-                  'w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-extrabold px-8 shadow-md'
+                  'w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 shadow-md'
                 )}
               >
-                <MessageSquare className="w-5 h-5 mr-2 fill-white/20" /> WhatsApp Inquiry
+                <FaWhatsapp className="w-5 h-5 mr-2 " /> WhatsApp Inquiry
               </a>
 
               <a
@@ -223,7 +224,7 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 mb-16">
           {/* Full description */}
           <div className="lg:col-span-7 bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl shadow-sm flex flex-col gap-4">
-            <h3 className="font-heading font-extrabold text-lg sm:text-xl text-primary border-b border-slate-100 pb-3">
+            <h3 className="font-heading font-extrabold text-lg sm:text-xl !text-primary border-b border-slate-100 pb-3">
               Product Overview
             </h3>
             <p className="text-slate-600 text-xs sm:text-sm leading-relaxed whitespace-pre-line">
@@ -233,7 +234,7 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
 
           {/* Specifications Table */}
           <div className="lg:col-span-5 bg-white border border-slate-200/60 p-6 sm:p-8 rounded-2xl shadow-sm flex flex-col gap-4">
-            <h3 className="font-heading font-extrabold text-lg sm:text-xl text-primary border-b border-slate-100 pb-3">
+            <h3 className="font-heading font-extrabold text-lg sm:text-xl !text-primary border-b border-slate-100 pb-3">
               Technical Specifications
             </h3>
             {product.specs && product.specs.length > 0 ? (
@@ -266,7 +267,7 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
         {/* Related Products list */}
         {relatedProducts.length > 0 && (
           <div>
-            <h3 className="font-heading font-extrabold text-xl sm:text-2xl text-primary mb-6 border-l-4 border-accent-orange pl-3">
+            <h3 className="font-heading font-extrabold text-xl sm:text-2xl !text-primary mb-6 border-l-4 border-accent-orange pl-3">
               More Products You May Like
             </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -175,7 +175,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
             </SheetTrigger>
             <SheetContent side="left" className="w-[300px] p-6 bg-white overflow-y-auto border-r border-slate-200">
               <SheetHeader className="text-left border-b border-slate-100 pb-3 mb-6">
-                <SheetTitle className="font-heading font-bold text-lg text-primary flex items-center gap-2">
+                <SheetTitle className="font-heading font-bold text-lg !text-primary flex items-center gap-2">
                   <Filter className="w-5 h-5 text-accent-orange" /> Filters
                 </SheetTitle>
               </SheetHeader>
@@ -192,7 +192,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Desktop Filter Sidebar (Left) */}
           <aside className="hidden lg:block lg:col-span-1 bg-white border border-slate-200/60 p-6 rounded-xl shadow-sm self-start sticky top-24">
-            <h3 className="font-heading font-extrabold text-sm text-primary uppercase tracking-wide border-b border-slate-100 pb-3 mb-6 flex items-center gap-2">
+            <h3 className="font-heading font-extrabold text-sm !text-primary uppercase tracking-wide border-b border-slate-100 pb-3 mb-6 flex items-center gap-2">
               <Filter className="w-4 h-4 text-accent-orange" /> Filters
             </h3>
             <ProductFilters
@@ -209,7 +209,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
                 <div className="w-16 h-16 rounded-full bg-slate-100 text-slate-400 flex items-center justify-center">
                   <SlidersHorizontal className="w-8 h-8" />
                 </div>
-                <h3 className="font-heading font-bold text-lg text-primary">No Products Found</h3>
+                <h3 className="font-heading font-bold text-lg !text-primary">No Products Found</h3>
                 <p className="text-sm text-slate-500 max-w-sm leading-relaxed">
                   We couldn't find any products matching your filters. Try modifying your selections or clear filters to start over.
                 </p>
