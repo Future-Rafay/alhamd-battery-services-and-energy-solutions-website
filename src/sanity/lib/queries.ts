@@ -199,3 +199,41 @@ export const ALL_PRODUCTS_QUERY = defineQuery(
     images
   }`
 )
+
+// Fetch gallery items for media page
+export const GALLERY_ITEMS_QUERY = defineQuery(
+  `*[_type == "galleryItem"] | order(displayOrder asc, _createdAt desc) {
+    _id,
+    title,
+    "slug": slug.current,
+    mediaType,
+    image,
+    "videoUrl": videoFile.asset->url,
+    youtubeUrl,
+    description
+  }`
+)
+
+// Fetch homepage categories alongside a single representative product for each
+export const HOME_CATEGORIES_WITH_PRODUCT_QUERY = defineQuery(
+  `*[_type == "category"] | order(displayOrder asc) {
+    _id,
+    name,
+    "slug": slug.current,
+    description,
+    image,
+    "representativeProduct": *[_type == "product" && category._ref == ^._id] | order(featured desc, name asc)[0] {
+      _id,
+      name,
+      "slug": slug.current,
+      brand->{ name, "slug": slug.current },
+      capacity,
+      voltage,
+      warranty,
+      shortDescription,
+      images,
+      specs
+    }
+  }`
+)
+

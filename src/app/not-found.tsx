@@ -26,7 +26,7 @@ export default function NotFoundPage() {
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row gap-3 w-full border-t border-slate-100 pt-6">
+        <div className="flex flex-col gap-3 w-full border-t border-slate-100 pt-6">
           <Link
             href="/"
             className={cn(
@@ -43,7 +43,7 @@ export default function NotFoundPage() {
               'w-full border-primary text-primary font-bold text-xs sm:text-sm flex items-center justify-center'
             )}
           >
-            Explore Catalog <ArrowRight className="w-4 h-4 ml-1.5" />
+            Explore Products <ArrowRight className="w-4 h-4 ml-1.5" />
           </Link>
         </div>
       </div>

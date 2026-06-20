@@ -36,12 +36,12 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
   const bgheroimage = activeBanner?.image && urlFor(activeBanner.image).width(1920).height(1080).quality(85).url() || '/NOT_AVAILABLE.png'
 
   return (
-    <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center bg-slate-950 text-white overflow-hidden py-16 px-4">
+    <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center  text-white overflow-hidden py-16 px-4">
       {/* Background patterns */}
-      <div className="absolute inset-0 z-0 opacity-25">
+      {/* <div className="absolute inset-0 z-0 opacity-25">
         <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-primary/40 blur-[120px]" />
         <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-accent-orange/20 blur-[100px]" />
-      </div>
+      </div> */}
 
       {/* Dynamic Background Image from CMS */}
       {bgheroimage && (
@@ -49,11 +49,12 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
           <Image
             src={bgheroimage}
             alt={activeBanner?.image?.alt || 'Alhamd Energy Solutions Background'}
-            fill
-            className="object-cover opacity-30 object-center"
+            width={1920}
+            height={1080}
+            className="object-cover opacity-100 object-center"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/70 to-transparent" />
         </div>
       )}
 
@@ -131,7 +132,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
         </div>
 
         {/* Visual Right Column (Hero Card stack / Product Showcase) */}
-        <div className="lg:col-span-5 hidden lg:flex justify-center relative">
+        {/* <div className="lg:col-span-5 hidden lg:flex justify-center relative">
           <div className="w-full max-w-[420px] bg-slate-900/80 border border-slate-800 p-8 rounded-xl backdrop-blur-md shadow-2xl relative">
             <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 bg-accent-orange text-white text-[10px] font-extrabold tracking-widest px-3 py-1 rounded-full uppercase shadow-md">
               Store Pickup
@@ -172,7 +173,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               <span className="text-accent-yellow font-medium">Daily Pricing Updates</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

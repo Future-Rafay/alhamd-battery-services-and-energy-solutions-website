@@ -1,0 +1,169 @@
+{
+  "categories": [
+    {
+      "name": "Lead Acid Battery",
+      "slug": "lead-acid-battery",
+      "description": "Reliable and high-performance conventional lead-acid batteries for cars, generators, and UPS backups.",
+      "displayOrder": 1
+    },
+    {
+      "name": "Lithium Ion Battery",
+      "slug": "lithium-ion-battery",
+      "description": "Next-generation deep cycle lithium iron phosphate (LiFePO4) battery packs for long backup solar systems.",
+      "displayOrder": 2
+    },
+    {
+      "name": "Solar Panel",
+      "slug": "solar-panel",
+      "description": "High-efficiency Tier-1 mono-PERC and N-type solar panels from leading international manufacturers.",
+      "displayOrder": 3
+    },
+    {
+      "name": "Inverter & Charger",
+      "slug": "inverter-charger",
+      "description": "Smart hybrid, off-grid, and grid-tied solar inverters and UPS charger systems.",
+      "displayOrder": 4
+    }
+  ],
+  "subcategories": [
+    {
+      "name": "Tubular Batteries",
+      "slug": "tubular-batteries",
+      "parentCategorySlug": "lead-acid-battery",
+      "description": "Deep-cycle tubular batteries for heavy backup loads on UPS and solar systems."
+    },
+    {
+      "name": "Dry Batteries",
+      "slug": "dry-batteries",
+      "parentCategorySlug": "lead-acid-battery",
+      "description": "Maintenance-free dry batteries for automotive and lightweight backup applications."
+    },
+    {
+      "name": "Mono-PERC Panels",
+      "slug": "mono-perc-panels",
+      "parentCategorySlug": "solar-panel",
+      "description": "High-density monocrystalline solar panels for maximum power generation per square foot."
+    },
+    {
+      "name": "Hybrid Inverters",
+      "slug": "hybrid-inverters",
+      "parentCategorySlug": "inverter-charger",
+      "description": "Smart solar inverters that manage power from solar panels, batteries, and the grid simultaneously."
+    }
+  ],
+  "banners": [
+    {
+      "headline": "Empowering Karachi with Clean Solar Energy",
+      "subtext": "Switch to premium Tier-1 solar panel systems. Reduce your electricity bills by up to 80% with customized residential and commercial solutions.",
+      "ctaText": "Get a Free Quote",
+      "ctaLink": "/contact",
+      "displayOrder": 1,
+      "imagePlaceholderText": "solar_banner"
+    },
+    {
+      "headline": "Premium Tubular Batteries for Uninterrupted Backups",
+      "subtext": "Long-lasting deep-cycle batteries from top brands (AGS, Crown, Phoenix). Designed to withstand extreme temperatures and deliver maximum performance.",
+      "ctaText": "Browse Batteries",
+      "ctaLink": "/products?category=lead-acid-battery",
+      "displayOrder": 2,
+      "imagePlaceholderText": "battery_banner"
+    },
+    {
+      "headline": "Smart Hybrid Inverters & Energy Management",
+      "subtext": "Intelligent solar inverters from Inverex, Ziewnic, and Crown. Auto-switching between grid, battery, and solar for seamless daily operations.",
+      "ctaText": "View Inverters",
+      "ctaLink": "/products?category=inverter-charger",
+      "displayOrder": 3,
+      "imagePlaceholderText": "inverter_banner"
+    },
+    {
+      "headline": "Next-Gen Lithium Iron Phosphate (LiFePO4) Solutions",
+      "subtext": "Maintenance-free Lithium batteries with 10+ years lifespan. Faster charging, greater depth of discharge, and built-in smart BMS protection.",
+      "ctaText": "Explore Lithium",
+      "ctaLink": "/products?category=lithium-ion-battery",
+      "displayOrder": 4,
+      "imagePlaceholderText": "lithium_banner"
+    },
+    {
+      "headline": "Professional Solar Maintenance & Cleaning",
+      "subtext": "Restore your solar panel efficiency by up to 25%. Our specialist crew provides deep dust removal and system performance checks across Karachi.",
+      "ctaText": "Book Service",
+      "ctaLink": "/services",
+      "displayOrder": 5,
+      "imagePlaceholderText": "cleaning_banner"
+    }
+  ],
+  "services": [
+    {
+      "name": "Solar Installation",
+      "slug": "solar-installation",
+      "description": "Professional solar panel system sizing, mounting, and wiring for residential and commercial spaces in Karachi.",
+      "fullDescription": "We provide end-to-end solar solutions, including site assessment, custom system design, high-quality mounting structures, professional panel wiring, inverter setup, and net metering integration. Our engineers ensure maximum efficiency and safety compliance.",
+      "icon": "sun"
+    },
+    {
+      "name": "Solar Cleaning & Maintenance",
+      "slug": "solar-cleaning",
+      "description": "Keep your solar panels performing at peak efficiency with our specialized cleaning and system check service.",
+      "fullDescription": "Dust, debris, and bird droppings can degrade solar efficiency by up to 25%. Our cleaning team uses demineralized water and non-abrasive equipment to safely clean panels. We also perform inverter diagnostic scans and cable connection checks.",
+      "icon": "droplet"
+    },
+    {
+      "name": "Battery Replacement & Maintenance",
+      "slug": "battery-replacement",
+      "description": "Expert diagnostics, testing, and replacement for UPS, solar backup, and automotive battery banks.",
+      "fullDescription": "Is your backup system failing to hold charge? We run complete cell load testing and gravity checks. If a replacement is needed, we help you select the ideal branded battery (AGS, Daewoo, Osaka, Exide) and offer trade-in discounts for your old battery.",
+      "icon": "battery-charging"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "How does the \"Contact for Price\" or \"Get Quote\" system work?",
+      "answer": "Since battery and solar prices fluctuate daily in Pakistan due to exchange rates and market supply, we do not list fixed prices. When you click \"Get Quote\" or \"Contact for Price,\" it will open WhatsApp with a pre-filled message detailing the product you want. We will instantly reply with the latest daily price and availability.",
+      "showOnHome": true,
+      "displayOrder": 1
+    },
+    {
+      "question": "Do you deliver and install batteries and solar equipment outside Karachi?",
+      "answer": "We currently specialize in retail sales, deliveries, and solar installations within Karachi (especially Saudabad, Landhi, Korangi, Malir, and nearby areas). For bulk wholesale distribution, we can arrange shipping to other parts of Sindh and Pakistan. Please contact us for details.",
+      "showOnHome": true,
+      "displayOrder": 2
+    },
+    {
+      "question": "What warranties do you provide on your products?",
+      "answer": "All batteries and solar panels sold are 100% genuine and come with official manufacturer warranties. Battery warranties generally range from 6 months to 2 years, while solar panels come with 10-12 years product warranty and 25 years performance warranty. We assist our customers with all warranty claim processes directly in-store.",
+      "showOnHome": true,
+      "displayOrder": 3
+    },
+    {
+      "question": "What forms of payment do you accept?",
+      "answer": "We accept Cash in-store, Direct Bank Transfers (IBFT), and major mobile wallets (EasyPaisa/JazzCash) for payments. For large solar commercial installations, structured payment terms are available upon contract signing.",
+      "showOnHome": true,
+      "displayOrder": 4
+    }
+  ],
+  "products": [
+    {
+      "name": "AGS SP-210 Deep Cycle Tubular Battery",
+      "slug": "ags-sp-210-deep-cycle-tubular-battery",
+      "brandName": "AGS",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "tubular-batteries",
+      "capacity": "150Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "High-efficiency deep-cycle tubular battery ideal for UPS backups and domestic solar solutions.",
+      "fullDescription": "The AGS SP-210 is a premium deep-cycle tubular battery engineered specifically to handle heavy discharge cycles and frequent load shedding in Pakistan. With advanced tubular positive plates and special grid alloy design, it offers a longer lifespan and better backup compared to regular lead-acid batteries.",
+      "specs": [
+        { "key": "Battery Type", "value": "Tubular Deep Cycle" },
+        { "key": "Nominal Voltage", "value": "12 Volts" },
+        { "key": "Capacity", "value": "150 Ampere Hours (Ah)" },
+        { "key": "Dimensions", "value": "505 x 220 x 290 mm" },
+        { "key": "Dry Weight", "value": "36.5 kg" },
+        { "key": "Filled Weight", "value": "54.0 kg" }
+      ],
+      "featured": true,
+      "images": ["https://solarpanelprices.pk/wp-content/uploads/AGS-SP-220-Battery.jpg"]
+    }
+  ]
+}

@@ -10,6 +10,7 @@ import { faq } from './faq'
 import { siteSettings } from './siteSettings'
 import contactSubmission from './contactSubmission'
 import serviceRequest from './serviceRequest'
+import { galleryItem } from './galleryItem'
 
 export const schemaTypes = [
   product,
@@ -24,4 +25,6 @@ export const schemaTypes = [
   siteSettings,
   contactSubmission,
   serviceRequest,
+  galleryItem,
 ]
+

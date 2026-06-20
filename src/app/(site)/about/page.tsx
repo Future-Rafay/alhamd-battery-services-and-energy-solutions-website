@@ -4,9 +4,24 @@ import { Button, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
+import { getSiteUrl } from '@/lib/utils'
+
 export const metadata = {
   title: 'About Us | Alhamd Battery Services and Energy Solutions',
   description: 'Learn about our history, our commitment to genuine battery and solar brands, and our retail shop located in Saudabad, Karachi.',
+  openGraph: {
+    title: 'About Us | Alhamd Battery Services',
+    description: 'Learn about our history, our commitment to genuine battery and solar brands, and our retail shop located in Saudabad, Karachi.',
+    url: `${getSiteUrl()}/about`,
+    siteName: 'Alhamd Battery Services',
+    locale: 'en_PK',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'About Us | Alhamd Battery Services',
+    description: 'Learn about our history and retail shop in Karachi.',
+  },
 }
 
 export default function AboutPage() {

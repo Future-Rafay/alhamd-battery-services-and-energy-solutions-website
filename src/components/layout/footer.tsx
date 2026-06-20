@@ -17,6 +17,7 @@ const QUICK_LINKS = [
   { name: 'About Us', href: '/about' },
   { name: 'Services', href: '/services' },
   { name: 'Products', href: '/products' },
+  { name: 'Media Gallery', href: '/gallery' },
   { name: 'Certificates', href: '/certificates' },
   { name: 'FAQ', href: '/faq' },
   { name: 'Contact Us', href: '/contact' },
@@ -81,11 +82,11 @@ export function Footer({ settings }: FooterProps) {
         <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
           <Link href="/" className="self-start">
             <Image
-              src="/logo-transparent.png"
+              src="/alhamd-logo-horizontal.png"
               alt="Alhamd Battery Services"
               width={500}
               height={500}
-              className="w-28 h-auto"
+              className="w-44 h-auto"
             />
           </Link>
           <p className="text-sm leading-relaxed text-slate-500 max-w-xs">

@@ -15,13 +15,13 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
   const brandsList = hasCMSBrands ? brands : []
 
   return (
-    <section className="py-16 sm:py-20 px-4 bg-slate-900 border-t border-b border-slate-800" id='brands-section'>
+    <section className="py-16 sm:py-20 px-4" id='brands-section'>
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-xl mx-auto mb-10">
-          <span className="text-accent-yellow font-bold text-xs uppercase tracking-wider">
+          <span className="text-accent-orange font-bold text-xs uppercase tracking-wider">
             Trusted Partners
           </span>
-          <h2 className="font-heading font-bold text-2xl sm:text-3xl !text-white mt-1">
+          <h2 className="font-heading font-bold text-2xl sm:text-3xl  mt-1">
             Authorized Brands We Distribute
           </h2>
         </div>
@@ -32,15 +32,16 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
             {brandsList.map((brand) => (
               <div
                 key={brand._id}
-                className="bg-slate-950/60 border border-slate-800 p-4 rounded-xl flex items-center justify-center aspect-[2.2/1] transition-smooth hover:border-slate-700/80 group"
+                className=" p-4 rounded-xl flex items-center justify-center aspect-[2.2/1] transition-smooth hover:border-slate-700/80 group"
               >
                 {brand.logo ? (
                   <div className="relative w-full h-full">
                     <Image
-                      src={urlFor(brand.logo).width(200).height(90).quality(85).url()}
+                      src={urlFor(brand.logo).url()}
                       alt={brand.logo.alt || brand.name}
-                      fill
-                      className="object-contain filter grayscale group-hover:grayscale-0 transition-smooth opacity-75 group-hover:opacity-100"
+                      width={1000}
+                      height={450}
+                      className="object-contain transition-smooth "
                     />
                   </div>
                 ) : (

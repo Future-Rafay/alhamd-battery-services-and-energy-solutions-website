@@ -1,17 +1,46 @@
 
 
+import { getSiteUrl } from '@/lib/utils'
+
 export const metadata = {
   title: 'Privacy Policy | Alhamd Battery Services and Energy Solutions',
   description: 'Privacy policy and data collection terms for Alhamd Battery Services and Energy Solutions website.',
+  openGraph: {
+    title: 'Privacy Policy | Alhamd Battery Services',
+    description: 'Privacy policy and data collection terms for Alhamd Battery Services and Energy Solutions website.',
+    url: `${getSiteUrl()}/privacy-policy`,
+    siteName: 'Alhamd Battery Services',
+    locale: 'en_PK',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Privacy Policy | Alhamd Battery Services',
+    description: 'Privacy policy and data collection terms.',
+  },
 }
 
 export default function PrivacyPolicyPage() {
   return (
-    <div className="bg-slate-50 min-h-screen py-16 px-4">
-      <div className="max-w-3xl mx-auto bg-white border border-slate-200/60 p-8 sm:p-12 rounded-2xl shadow-sm text-slate-650 text-xs sm:text-sm leading-relaxed flex flex-col gap-6">
-        <h1 className="font-heading font-extrabold text-2xl sm:text-3xl text-primary border-b border-slate-100 pb-4 mb-2">
-          Privacy Policy
-        </h1>
+    <div className="bg-slate-50 min-h-screen">
+      {/* Intro Banner */}
+      <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-primary to-primary-foreground" />
+        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-4">
+          <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
+            Legal
+          </span>
+          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
+            Privacy Policy
+          </h1>
+          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
+            How we collect, use, and protect your information when you interact with us.
+          </p>
+        </div>
+      </section>
+
+      <div className="max-w-3xl mx-auto py-16 px-4">
+        <div className="bg-white border border-slate-200/60 p-8 sm:p-12 rounded-2xl shadow-sm text-slate-650 text-xs sm:text-sm leading-relaxed flex flex-col gap-6">
 
         <p className="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Last Updated: June 19, 2026</p>
 

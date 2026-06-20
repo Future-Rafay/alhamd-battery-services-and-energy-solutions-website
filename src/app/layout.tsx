@@ -11,9 +11,25 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+import { getSiteUrl } from '@/lib/utils'
+
 export const metadata: Metadata = {
+  metadataBase: new URL(getSiteUrl()),
   title: "Alhamd Battery Services and Energy Solutions",
   description: "Authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment in Karachi.",
+  openGraph: {
+    title: "Alhamd Battery Services and Energy Solutions",
+    description: "Authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment in Karachi.",
+    url: getSiteUrl(),
+    siteName: 'Alhamd Battery Services',
+    locale: 'en_PK',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Alhamd Battery Services and Energy Solutions",
+    description: "Authorized distributor of branded batteries and solar equipment.",
+  },
 };
 
 export default function RootLayout({

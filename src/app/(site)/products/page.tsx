@@ -56,6 +56,27 @@ interface ProductsPageProps {
   }>
 }
 
+// ... existing imports ...
+import { getSiteUrl } from '@/lib/utils'
+
+export const metadata = {
+  title: 'Product Catalog | Alhamd Battery Services and Energy Solutions',
+  description: 'Explore our catalog of authentic batteries, solar panels, and inverters. Top brands available with official warranties.',
+  openGraph: {
+    title: 'Product Catalog | Alhamd Battery Services',
+    description: 'Explore our catalog of authentic batteries, solar panels, and inverters. Top brands available with official warranties.',
+    url: `${getSiteUrl()}/products`,
+    siteName: 'Alhamd Battery Services',
+    locale: 'en_PK',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Product Catalog | Alhamd Battery Services',
+    description: 'Explore our catalog of authentic batteries, solar panels, and inverters.',
+  },
+}
+
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
   const resolvedParams = await searchParams
   
@@ -152,17 +173,24 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   const totalPages = Math.ceil(totalProductsCount / limit)
 
   return (
-    <div className="py-12 px-4 bg-slate-50 min-h-screen">
-      <div className="max-w-7xl mx-auto">
-        {/* Header Title */}
-        <div className="flex flex-col gap-2 mb-10">
-          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-primary">
+    <div className="bg-slate-50 min-h-screen">
+      {/* Intro Banner */}
+      <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-primary to-primary-foreground" />
+        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-4">
+          <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
+            Our Products
+          </span>
+          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
             Product Catalog
           </h1>
-          <p className="text-slate-500 text-xs sm:text-sm">
+          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
             Showing {products.length} of {totalProductsCount} premium battery and solar solutions.
           </p>
         </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto py-12 px-4">
 
         {/* Mobile Filters Header button */}
         <div className="lg:hidden mb-6 flex justify-between items-center bg-white p-3 rounded-lg border border-slate-200">

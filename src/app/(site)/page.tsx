@@ -1,7 +1,7 @@
 import { sanityFetch } from '@/sanity/lib/live'
 import {
   BANNERS_QUERY,
-  CATEGORIES_QUERY,
+  HOME_CATEGORIES_WITH_PRODUCT_QUERY,
   SERVICES_QUERY,
   BRANDS_QUERY,
   TESTIMONIALS_QUERY,
@@ -39,7 +39,7 @@ export default async function HomePage() {
     ] = await Promise.all([
       sanityFetch({ query: SITE_SETTINGS_QUERY }),
       sanityFetch({ query: BANNERS_QUERY }),
-      sanityFetch({ query: CATEGORIES_QUERY }),
+      sanityFetch({ query: HOME_CATEGORIES_WITH_PRODUCT_QUERY }),
       sanityFetch({ query: SERVICES_QUERY }),
       sanityFetch({ query: BRANDS_QUERY }),
       sanityFetch({ query: TESTIMONIALS_QUERY }),

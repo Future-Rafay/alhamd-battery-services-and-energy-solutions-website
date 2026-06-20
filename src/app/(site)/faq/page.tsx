@@ -11,9 +11,24 @@ import { getFAQPageSchema } from '@/lib/structured-data'
 import { Button, buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
+import { getSiteUrl } from '@/lib/utils'
+
 export const metadata = {
   title: 'FAQ | Alhamd Battery Services and Energy Solutions',
   description: 'Common pre-sale questions answered. Understand how our Contact for Price quotes, warranty processing, and solar maintenance services work in Karachi.',
+  openGraph: {
+    title: 'FAQ | Alhamd Battery Services',
+    description: 'Common pre-sale questions answered. Understand how our Contact for Price quotes, warranty processing, and solar maintenance services work in Karachi.',
+    url: `${getSiteUrl()}/faq`,
+    siteName: 'Alhamd Battery Services',
+    locale: 'en_PK',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'FAQ | Alhamd Battery Services',
+    description: 'Common pre-sale questions answered.',
+  },
 }
 
 export default async function FAQPage() {
@@ -39,7 +54,7 @@ export default async function FAQPage() {
   const faqSchema = getFAQPageSchema(faqsList)
 
   return (
-    <div className="bg-slate-50 min-h-screen py-16 px-4">
+    <div className="bg-slate-50 min-h-screen">
       {/* FAQ Schema injection */}
       {faqSchema && (
         <script
@@ -48,19 +63,23 @@ export default async function FAQPage() {
         />
       )}
 
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center max-w-xl mx-auto mb-16 flex flex-col items-center gap-3">
-          <span className="text-accent-orange font-bold text-xs uppercase tracking-wider border-b-2 border-accent-orange pb-1">
+      {/* Intro Banner */}
+      <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-primary to-primary-foreground" />
+        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-4">
+          <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
             FAQ Guide
           </span>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-4xl text-primary">
+          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
             Frequently Asked Questions
           </h1>
-          <p className="text-xs sm:text-sm text-slate-500 mt-2 leading-relaxed">
+          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
             Everything you need to know about pricing, purchase policies, warranties, and our Karachi service areas.
           </p>
         </div>
+      </section>
+
+      <div className="max-w-7xl mx-auto py-16 px-4">
 
         {/* Accordions */}
         <Accordion className="w-full space-y-4">

@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "name": "AGS SP-210 Deep Cycle Tubular Battery",
+      "slug": "ags-sp-210-deep-cycle-tubular-battery",
+      "brandName": "AGS",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "tubular-batteries",
+      "capacity": "150Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "High-efficiency deep-cycle tubular battery ideal for UPS backups and domestic solar solutions.",
+      "fullDescription": "The AGS SP-210 is a premium deep-cycle tubular battery engineered specifically to handle heavy discharge cycles and frequent load shedding in Pakistan. With advanced tubular positive plates and special grid alloy design, it offers a longer lifespan and better backup compared to regular lead-acid batteries.",
+      "specs": [
+        { "key": "Battery Type", "value": "Tubular Deep Cycle" },
+        { "key": "Nominal Voltage", "value": "12 Volts" },
+        { "key": "Capacity", "value": "150 Ampere Hours (Ah)" },
+        { "key": "Dimensions", "value": "505 x 220 x 290 mm" },
+        { "key": "Dry Weight", "value": "36.5 kg" },
+        { "key": "Filled Weight", "value": "54.0 kg" }
+      ],
+      "featured": true,
+      "images": ["https://solarpanelprices.pk/wp-content/uploads/AGS-SP-220-Battery.jpg"]
+    }
+  ]
+}
