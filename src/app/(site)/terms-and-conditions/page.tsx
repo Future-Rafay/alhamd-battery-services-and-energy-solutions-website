@@ -79,5 +79,6 @@ export default function TermsAndConditionsPage() {
         </p>
       </div>
     </div>
+    </div>
   )
 }

@@ -1,13 +1,13 @@
 'use client'
 
+import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
-import { Phone, MessageCircle, ArrowRight, ShieldCheck, Cpu, Battery } from 'lucide-react'
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { Banner } from '@/types'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
-import { FaWhatsapp } from 'react-icons/fa'
 
 interface HeroSectionProps {
   banners: Banner[]
@@ -16,165 +16,160 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
-  const formattedPhone = phone.replace(/[^\d+]/g, '')
-  const formattedWhatsapp = whatsapp.replace(/[^\d+]/g, '')
-  const whatsappMessage = encodeURIComponent(
-    'Hi Alhamd Battery Services! I am looking for a price quote on solar panels / batteries. Please assist.'
-  )
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const [isTransitioning, setIsTransitioning] = useState(false)
 
-  // Use first banner if available, otherwise use default marketing text
-  const hasBanner = banners && banners.length > 0
-  const activeBanner = hasBanner ? banners[0] : null
+  const validBanners = banners && banners.length > 0 ? banners : [{
+    _id: 'default',
+    headline: 'Powering Your Home & Business with Trusted Energy Solutions',
+    subtext: 'Authorized retail distributor of branded batteries and solar energy products in Karachi.',
+    ctaText: 'Explore Products',
+    ctaLink: '/products',
+    image: null,
+  } as unknown as Banner]
 
+  const goToSlide = useCallback((index: number) => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setCurrentIndex(index)
+    setTimeout(() => setIsTransitioning(false), 800)
+  }, [isTransitioning])
+
+  const goNext = useCallback(() => {
+    goToSlide((currentIndex + 1) % validBanners.length)
+  }, [currentIndex, validBanners.length, goToSlide])
+
+  const goPrev = useCallback(() => {
+    goToSlide((currentIndex - 1 + validBanners.length) % validBanners.length)
+  }, [currentIndex, validBanners.length, goToSlide])
+
+  // Auto-play
+  useEffect(() => {
+    if (validBanners.length <= 1) return
+    const interval = setInterval(goNext, 5000)
+    return () => clearInterval(interval)
+  }, [validBanners.length, goNext])
+
+  const activeBanner = validBanners[currentIndex]
   const headline = activeBanner?.headline || 'Powering Your Home & Business with Trusted Energy Solutions'
-  const subtext =
-    activeBanner?.subtext ||
-    'Authorized retail distributor of branded batteries (AGS, Daewoo, Osaka, Exide) and solar energy products in Malir, Karachi. Real warranties, expert service.'
+  const subtext = activeBanner?.subtext || 'Authorized retail distributor of branded batteries and solar energy products in Karachi.'
   const ctaText = activeBanner?.ctaText || 'Explore Products'
   const ctaLink = activeBanner?.ctaLink || '/products'
 
-  const bgheroimage = activeBanner?.image && urlFor(activeBanner.image).width(1920).height(1080).quality(85).url() || '/NOT_AVAILABLE.png'
-
   return (
-    <section className="relative min-h-[580px] lg:min-h-[640px] flex items-center  text-white overflow-hidden py-16 px-4">
-      {/* Background patterns */}
-      {/* <div className="absolute inset-0 z-0 opacity-25">
-        <div className="absolute top-[-20%] right-[-10%] w-[500px] h-[500px] rounded-full bg-primary/40 blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-10%] w-[400px] h-[400px] rounded-full bg-accent-orange/20 blur-[100px]" />
-      </div> */}
+    <section className="relative w-full h-[500px] sm:h-[550px] lg:h-[600px] overflow-hidden">
+      {/* Background Images — crossfade */}
+      {validBanners.map((banner, index) => {
+        const bgUrl = banner.image
+          ? urlFor(banner.image).width(1920).height(1080).quality(85).url()
+          : null
+        return (
+          <div
+            key={index}
+            className={cn(
+              'absolute inset-0 transition-opacity duration-700 ease-in-out',
+              index === currentIndex ? 'opacity-100 z-[1]' : 'opacity-0 z-0'
+            )}
+          >
+            {bgUrl ? (
+              <Image
+                src={bgUrl}
+                alt={banner.image?.alt || `Banner ${index + 1}`}
+                fill
+                className="object-cover object-center"
+                priority={index === 0}
+                sizes="100vw"
+              />
+            ) : (
+              <div className="absolute inset-0 bg-primary" />
+            )}
+            {/* Dark overlay for text readability */}
+            <div className="absolute inset-0 bg-primary/70" />
+          </div>
+        )
+      })}
 
-      {/* Dynamic Background Image from CMS */}
-      {bgheroimage && (
-        <div className="absolute inset-0 z-0">
-          <Image
-            src={bgheroimage}
-            alt={activeBanner?.image?.alt || 'Alhamd Energy Solutions Background'}
-            width={1920}
-            height={1080}
-            className="object-cover opacity-100 object-center"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/70 to-transparent" />
+      {/* Content */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+          <div className="max-w-2xl flex flex-col gap-5">
+            {/* Slide counter badge */}
+            <span className="text-accent-yellow text-[11px] font-bold  tracking-[0.2em] bg-primary/40 px-3 py-1 rounded-full self-start border border-white/40">
+              {/* {String(currentIndex + 1).padStart(2, '0')} / {String(validBanners.length).padStart(2, '0')} */}
+              100% Genuine Branded Products & Warranties
+            </span>
+
+            {/* Headline */}
+            <h1
+              key={`h-${currentIndex}`}
+              className="font-heading font-extrabold text-2xl sm:text-4xl lg:text-5xl !text-white leading-tight animate-[fadeSlideUp_0.6s_ease-out]"
+            >
+              {headline}
+            </h1>
+
+            {/* Subtext */}
+            <p
+              key={`p-${currentIndex}`}
+              className="text-white/80 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl animate-[fadeSlideUp_0.6s_0.1s_ease-out_both]"
+            >
+              {subtext}
+            </p>
+
+            {/* Single CTA */}
+            <div className="mt-1 animate-[fadeSlideUp_0.6s_0.2s_ease-out_both]">
+              <Link
+                href={ctaLink}
+                className={cn(
+                  buttonVariants({ variant: 'default', size: 'lg' }),
+                  'bg-accent-orange hover:bg-accent-orange/90 text-white font-bold px-6 py-5 sm:px-8 sm:py-6 text-sm sm:text-base rounded-lg shadow-lg hover:shadow-xl transition-all inline-flex items-center gap-2'
+                )}
+              >
+                {ctaText}
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+            </div>
+          </div>
         </div>
+      </div>
+
+      {/* Prev / Next Arrows */}
+      {validBanners.length > 1 && (
+        <>
+          <button
+            onClick={goPrev}
+            className="hidden md:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition-colors"
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+          <button
+            onClick={goNext}
+            className="hidden md:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white flex items-center justify-center transition-colors"
+            aria-label="Next slide"
+          >
+            <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+          </button>
+        </>
       )}
 
-      <div className="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-        {/* Text Area */}
-        <div className="lg:col-span-7 flex flex-col gap-6 animate-fadeIn">
-          {/* Trust Badge */}
-          <div className="inline-flex items-center gap-2 bg-primary/60 border border-primary/80 px-3.5 py-1.5 rounded-full text-xs font-semibold tracking-wide text-accent-yellow self-start backdrop-blur-sm">
-            <ShieldCheck className="w-4 h-4 text-accent-orange" />
-            <span>100% Genuine Branded Products & Warranties</span>
-          </div>
-
-          <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight leading-tight !text-white">
-            {headline.split(' ').map((word, i) => (
-              <span key={i} className={word === 'Solutions' || word === 'Trusted' ? 'text-accent-orange' : ''}>
-                {word}{' '}
-              </span>
-            ))}
-          </h1>
-
-          <p className="text-slate-300 text-base sm:text-lg max-w-xl leading-relaxed">
-            {subtext}
-          </p>
-
-          {/* Call to Actions */}
-          <div className="flex flex-wrap items-center gap-4 mt-2">
-            <Link
-              href={ctaLink}
+      {/* Bottom Dots */}
+      {validBanners.length > 1 && (
+        <div className="absolute bottom-5 left-0 right-0 flex justify-center gap-2 z-20">
+          {validBanners.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => goToSlide(idx)}
               className={cn(
-                buttonVariants({ variant: 'default', size: 'lg' }),
-                'bg-accent-orange hover:bg-accent-orange/95 text-white font-bold px-3 py-3 sm:px-6 sm:py-6 text-sm sm:text-lg shadow-md transition-smooth rounded-lg flex items-center justify-center'
+                'h-2 rounded-full transition-all duration-400',
+                idx === currentIndex
+                  ? 'bg-accent-orange w-8'
+                  : 'bg-white/40 hover:bg-white/70 w-2'
               )}
-            >
-              {ctaText} <ArrowRight className="w-4 h-4 ml-1.5" />
-            </Link>
-
-            <a
-              href={`https://wa.me/${formattedWhatsapp}?text=${whatsappMessage}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                buttonVariants({ variant: 'outline', size: 'lg' }),
-                'border-slate-700 bg-slate-900/60 hover:bg-white text-white hover:text-primary font-bold px-2 py-3 sm:px-6 sm:py-6 text-sm sm:text-lg border backdrop-blur-sm rounded-lg flex items-center justify-center'
-              )}
-            >
-              <FaWhatsapp className="w-5 h-5 mr-2" /> Inquire Price
-            </a>
-
-            <a
-              href={`tel:${formattedPhone}`}
-              className={cn(
-                buttonVariants({ variant: 'ghost', size: 'lg' }),
-                'text-slate-200 hover:text-white font-semibold hover:bg-white/5 px-2 py-3 sm:px-6 sm:py-6 text-sm sm:text-lg rounded-lg flex items-center justify-center'
-              )}
-            >
-              <Phone className="w-4.5 h-4.5 mr-2 text-accent-yellow" /> Call Store
-            </a>
-          </div>
-
-          {/* Quick stats inline indicators */}
-          <div className="grid grid-cols-3 gap-4 border-t border-slate-800/80 pt-8 mt-4 max-w-lg">
-            <div>
-              <div className="font-heading font-extrabold text-2xl sm:text-3xl text-accent-yellow">17+</div>
-              <div className="text-[10px] sm:text-xs text-slate-400 font-medium uppercase tracking-wider">Top Brands</div>
-            </div>
-            <div>
-              <div className="font-heading font-extrabold text-2xl sm:text-3xl text-accent-yellow">200+</div>
-              <div className="text-[10px] sm:text-xs text-slate-400 font-medium uppercase tracking-wider">Products</div>
-            </div>
-            <div>
-              <div className="font-heading font-extrabold text-2xl sm:text-3xl text-accent-yellow">100%</div>
-              <div className="text-[10px] sm:text-xs text-slate-400 font-medium uppercase tracking-wider">Authentic</div>
-            </div>
-          </div>
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
         </div>
-
-        {/* Visual Right Column (Hero Card stack / Product Showcase) */}
-        {/* <div className="lg:col-span-5 hidden lg:flex justify-center relative">
-          <div className="w-full max-w-[420px] bg-slate-900/80 border border-slate-800 p-8 rounded-xl backdrop-blur-md shadow-2xl relative">
-            <div className="absolute top-0 right-0 transform translate-x-4 -translate-y-4 bg-accent-orange text-white text-[10px] font-extrabold tracking-widest px-3 py-1 rounded-full uppercase shadow-md">
-              Store Pickup
-            </div>
-
-            <h3 className="font-heading font-bold text-lg !text-white mb-6 flex items-center gap-2 border-b border-slate-800 pb-3">
-              <Battery className="w-5 h-5 text-accent-orange" /> Available In-Store
-            </h3>
-
-            <div className="flex flex-col gap-4">
-              <div className="flex items-start gap-3 bg-slate-950/40 p-3 rounded-lg border border-slate-800/50">
-                <Cpu className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-sm font-semibold !text-white">Hybrid Solar Inverters</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Inverex, Crown, MaxPower & Simtek models.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3 bg-slate-950/40 p-3 rounded-lg border border-slate-800/50">
-                <ShieldCheck className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-sm font-semibold !text-white">Maintenance Free Batteries</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">Daewoo, AGS & Osaka sealed batteries.</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3 bg-slate-950/40 p-3 rounded-lg border border-slate-800/50">
-                <Battery className="w-5 h-5 text-accent-yellow shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="text-sm font-semibold !text-white">Tubular Deep Cycle Batteries</h4>
-                  <p className="text-xs text-slate-400 mt-0.5">For solar setups & UPS back-up systems.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-6 pt-4 border-t border-slate-800 flex justify-between items-center text-xs text-slate-400">
-              <span>Location: Malir, Karachi</span>
-              <span className="text-accent-yellow font-medium">Daily Pricing Updates</span>
-            </div>
-          </div>
-        </div> */}
-      </div>
+      )}
     </section>
   )
 }

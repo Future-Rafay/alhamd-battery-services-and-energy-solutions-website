@@ -1,26 +1,417 @@
 {
   "products": [
     {
-      "name": "AGS SP-210 Deep Cycle Tubular Battery",
-      "slug": "ags-sp-210-deep-cycle-tubular-battery",
-      "brandName": "AGS",
+      "name": "Osaka HT 55",
+      "slug": "osaka-ht-55",
+      "brandName": "Osaka",
       "categorySlug": "lead-acid-battery",
-      "subcategorySlug": "tubular-batteries",
+      "capacity": "32Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "High-performance dry-charged battery for generators and rickshaws with 7 plates and 32Ah capacity.",
+      "fullDescription": "The Osaka HT 55 is a dry-charged lead-acid battery manufactured by Pakistan Accumulators (Pvt.) Limited. Built to Japanese industrial standards, it features a short pitch design for instant cranking, special expanders for cold-start performance down to -15C, aluminum-sealed cells, and high-quality polypropylene containers for long life. Ideal for generators and rickshaws.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "32 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "7 per cell" },
+        { "key": "Dimensions (L x W x H)", "value": "195 x 127 x 200 mm" },
+        { "key": "Height with Terminal", "value": "220 mm" },
+        { "key": "Weight", "value": "5.08 kg" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka HT 60 L",
+      "slug": "osaka-ht-60-l",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "38Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "Dry-charged battery with 9 plates and 38Ah capacity, ideal for medium-sized vehicles and UPS applications.",
+      "fullDescription": "The Osaka HT 60 L is a 9-plate dry-charged battery engineered for reliable performance in Pakistan's demanding conditions. It features aluminum-sealed cells, special separators to reduce internal resistance, and minimum water loss during operation. Suitable for cars, UPS systems, and inverter use.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid Battery" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "38 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "9 per cell" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka HT 50 L",
+      "slug": "osaka-ht-50-l",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "24Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "Compact 7-plate dry-charged battery with 24Ah capacity for light vehicles and small inverters.",
+      "fullDescription": "The Osaka HT 50 L is a compact, reliable dry-charged battery ideal for small vehicles and light UPS applications. With 7 plates per cell and 24Ah capacity, it provides consistent starting power and backup performance under load-shedding conditions common in Pakistan.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "24 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "7 per cell" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka Solar 50",
+      "slug": "osaka-solar-50",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "20Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "Entry-level 5-plate solar battery with 20Ah capacity for small solar lighting and backup systems.",
+      "fullDescription": "The Osaka Solar 50 is specifically designed for solar energy storage applications. With 5 plates per cell and 20Ah capacity, it is ideal for small solar panels, street lights, and basic home solar setups. Built by Pakistan Accumulators (Pvt.) Limited, it meets Japanese industrial standards for reliability.",
+      "specs": [
+        { "key": "Battery Type", "value": "Solar Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "20 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "5 per cell" },
+        { "key": "Application", "value": "Solar, UPS" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka CR 65",
+      "slug": "osaka-cr-65",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "40Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "High-tech 11-plate dry-charged battery with 40Ah capacity for mid-range cars and UPS.",
+      "fullDescription": "The Osaka CR 65 is an 11-plate dry-charged battery offering 40Ah capacity, designed for mid-range vehicles and home UPS systems. It features high cold cranking ability, aluminum-sealed cells, and special separators to extend service life under Pakistan's hot climate and frequent load-shedding.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "40 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "11 per cell" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka HT 65 / HT 70",
+      "slug": "osaka-ht-65-ht-70",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "45Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "11-plate dry-charged battery with 45Ah, suitable for cars, vans, and home inverters.",
+      "fullDescription": "The Osaka HT 65/70 series are 11-plate dry-charged batteries offering 45Ah capacity. These batteries are a popular choice for hatchbacks, sedans, and home UPS systems. Manufactured to Japanese standards by Pakistan Accumulators (Pvt.) Limited, they deliver excellent starting performance and reliable backup power.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "45 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "11 per cell" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka MF 50 L/R (Dry Battery)",
+      "slug": "osaka-mf-50-lr-dry",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "dry-batteries",
+      "capacity": "38Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "Maintenance-free dry battery with 9 plates and 38Ah - no water refilling required.",
+      "fullDescription": "The Osaka MF 50 L/R is a maintenance-free, factory-filled battery that eliminates the need for periodic water refilling. Featuring flame arrestors, magic eye charge indicators, and electrolyte-filled ready-to-use design, it provides instant reliable power for vehicles and UPS systems without ongoing maintenance.",
+      "specs": [
+        { "key": "Battery Type", "value": "Maintenance Free (MF) Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "38 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "9 per cell" },
+        { "key": "Maintenance", "value": "Zero maintenance, no water top-up required" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka MF 60 L (Dry Battery)",
+      "slug": "osaka-mf-60-l-dry",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "dry-batteries",
+      "capacity": "40Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "9-plate maintenance-free battery with 40Ah, ready to use out of the box.",
+      "fullDescription": "The Osaka MF 60 L is a maintenance-free, factory-sealed battery offering 40Ah capacity with 9 plates per cell. It eliminates water evaporation concerns, features corrosion-free terminals, and comes pre-charged for immediate installation. Ideal for modern vehicles and home backup systems.",
+      "specs": [
+        { "key": "Battery Type", "value": "Maintenance Free (MF) Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "40 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "9 per cell" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka MF 70 L/R (Dry Battery)",
+      "slug": "osaka-mf-70-lr-dry",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "dry-batteries",
+      "capacity": "48Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "11-plate maintenance-free battery with 48Ah capacity for SUVs and large UPS systems.",
+      "fullDescription": "The Osaka MF 70 L/R is an 11-plate maintenance-free battery providing 48Ah of capacity. It is designed for SUVs, larger vehicles, and home UPS setups requiring more power. Featuring flame arrestors, zero water loss, and long-lasting polypropylene casing, it is an excellent choice for demanding applications.",
+      "specs": [
+        { "key": "Battery Type", "value": "Maintenance Free (MF) Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "48 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "11 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 88 L",
+      "slug": "osaka-ht-88-l",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "50Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "9-plate dry-charged battery with 50Ah for medium to heavy-duty vehicle and UPS use.",
+      "fullDescription": "The Osaka HT 88 L offers 50Ah capacity with 9 plates per cell, delivering reliable power for medium-duty vehicles and home inverters. Its robust polypropylene casing and aluminum-sealed construction ensure durability under Pakistan's extreme summer temperatures.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "50 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "9 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 115",
+      "slug": "osaka-ht-115",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "72Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "11-plate dry-charged battery with 72Ah for large UPS, generators, and SUVs.",
+      "fullDescription": "The Osaka HT 115 provides 72Ah capacity with 11 plates per cell, suitable for large SUVs, generators, and commercial UPS systems. It delivers high cold cranking ability and repeated discharge performance for Pakistan's daily load-shedding demands.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "72 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "11 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 130",
+      "slug": "osaka-ht-130",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "90Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "15-plate dry-charged battery with 100Ah for heavy UPS and solar systems.",
+      "fullDescription": "The Osaka HT 130 offers 90Ah capacity with 13 plates per cell, designed for heavy-duty UPS systems, solar storage, and commercial applications. ISO-certified by Pakistan Accumulators (Pvt.) Limited, it withstands deep discharge cycles and provides reliable backup during extended load-shedding.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "90 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "13 per cell" }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Osaka HT 135",
+      "slug": "osaka-ht-135",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "100Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "15-plate 100Ah heavy-duty battery for solar panels, UPS inverters, and generators.",
+      "fullDescription": "The Osaka HT 135 is a 15-plate, 100Ah lead-acid battery for home UPS systems, solar setups, and commercial generators. It offers repeated deep-discharge performance with minimum water loss, ensuring long service life under Pakistan's extreme power conditions.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "100 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "15 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 145",
+      "slug": "osaka-ht-145",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "105Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "17-plate battery with 105Ah for high-demand solar storage and heavy-duty UPS.",
+      "fullDescription": "The Osaka HT 145 packs 105Ah into a 17-plate configuration for high-demand UPS and solar applications. Its robust construction handles extended daily discharge cycles typical in Pakistani homes during load shedding, while maintaining stable voltage throughout the discharge curve.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "105 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "17 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 160",
+      "slug": "osaka-ht-160",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "115Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "19-plate 115Ah battery for large home UPS systems and commercial solar storage.",
+      "fullDescription": "The Osaka HT 160 delivers 115Ah from 19 plates per cell, making it suitable for large UPS systems that power entire floors or commercial spaces. Its advanced grid alloy design ensures longer life and stronger deep-cycle performance for daily use.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "115 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "19 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 200",
+      "slug": "osaka-ht-200",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "capacity": "130Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "21-plate 130Ah heavy-duty battery for large solar and commercial UPS applications.",
+      "fullDescription": "The Osaka HT 200 is a powerhouse battery featuring 21 plates per cell and 130Ah capacity. Perfect for commercial solar installations and industrial UPS systems, it provides extended backup runtime and handles repetitive deep discharge cycles with ease.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "130 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "21 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 230",
+      "slug": "osaka-ht-230",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
       "capacity": "150Ah",
       "voltage": "12V",
       "warranty": "6 Month",
-      "shortDescription": "High-efficiency deep-cycle tubular battery ideal for UPS backups and domestic solar solutions.",
-      "fullDescription": "The AGS SP-210 is a premium deep-cycle tubular battery engineered specifically to handle heavy discharge cycles and frequent load shedding in Pakistan. With advanced tubular positive plates and special grid alloy design, it offers a longer lifespan and better backup compared to regular lead-acid batteries.",
+      "shortDescription": "23-plate 150Ah deep-cycle battery for industrial solar and large commercial UPS.",
+      "fullDescription": "The Osaka HT 230 offers massive 150Ah capacity using 23 plates per cell, making it a top choice for industrial solar banks and large commercial UPS systems. Manufactured under strict ISO quality standards, it provides thousands of reliable discharge cycles.",
       "specs": [
-        { "key": "Battery Type", "value": "Tubular Deep Cycle" },
-        { "key": "Nominal Voltage", "value": "12 Volts" },
-        { "key": "Capacity", "value": "150 Ampere Hours (Ah)" },
-        { "key": "Dimensions", "value": "505 x 220 x 290 mm" },
-        { "key": "Dry Weight", "value": "36.5 kg" },
-        { "key": "Filled Weight", "value": "54.0 kg" }
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "150 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "23 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 270",
+      "slug": "osaka-ht-270",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "dry-charged-batteries",
+      "capacity": "180Ah",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "27-plate 180Ah flagship Osaka battery for heavy solar banks and industrial UPS.",
+      "fullDescription": "The Osaka HT 270 is a premium 27-plate battery with 180Ah capacity, designed for large-scale solar energy storage and industrial UPS applications. Its advanced design ensures maximum efficiency and long cycle life for continuous daily use.",
+      "specs": [
+        { "key": "Battery Type", "value": "Lead Acid" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "180 Ah (20HR)" },
+        { "key": "Number of Plates", "value": "27 per cell" }
+      ],
+      "featured": false,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2025/12/DC-Product.jpg"]
+    },
+    {
+      "name": "Osaka HT 1000 Tabular",
+      "slug": "osaka-ht-1000-tabular",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "tubular-batteries",
+      "capacity": "78Ah",
+      "voltage": "12V",
+      "warranty": "1 Year",
+      "shortDescription": "Deep-cycle tubular battery with 78Ah — Pakistan's first tubular plate flooded lead acid design.",
+      "fullDescription": "The Osaka HT 1000 Tabular is part of Pakistan's first tubular plate flooded lead-acid battery line from Pakistan Accumulators (Pvt.) Limited. It features a tubular positive plate with a thick negative plate for superior deep-cycle performance. Ideal for solar UPS systems requiring long-duration energy storage.",
+      "specs": [
+        { "key": "Battery Type", "value": "Tubular Plate Deep Cycle" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "78 Ah (20HR)" },
+        { "key": "Application", "value": "Solar, UPS, Deep Cycle" }
       ],
       "featured": true,
-      "images": ["https://solarpanelprices.pk/wp-content/uploads/AGS-SP-220-Battery.jpg"]
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2021/01/TA-1800.jpg"]
+    },
+    {
+      "name": "Osaka HT 1800 Tabular",
+      "slug": "osaka-ht-1800-tabular",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "tubular-batteries",
+      "capacity": "185Ah",
+      "voltage": "12V",
+      "warranty": "1 Year",
+      "shortDescription": "185Ah deep-cycle tubular battery for large solar systems and extended UPS backup.",
+      "fullDescription": "The Osaka HT 1800 Tabular is a deep-cycle tubular plate battery providing 185Ah of capacity. It is Pakistan's premier tubular battery for solar energy storage, capable of handling hundreds of complete charge-discharge cycles. Designed for daily use in home and commercial solar installations.",
+      "specs": [
+        { "key": "Battery Type", "value": "Tubular Plate Deep Cycle" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "185 Ah (20HR)" },
+        { "key": "Application", "value": "Solar, UPS, Deep Cycle" },
+        { "key": "Cycle Life", "value": "High — suitable for daily deep discharge" }
+      ],
+      "featured": true,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2021/01/TA-1800.jpg"]
+    },
+    {
+      "name": "Osaka HT 2500 Tabular",
+      "slug": "osaka-ht-2500-tabular",
+      "brandName": "Osaka",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "tubular-batteries",
+      "capacity": "250Ah",
+      "voltage": "12V",
+      "warranty": "1 Year",
+      "shortDescription": "250Ah flagship tubular battery for large commercial solar and industrial UPS banks.",
+      "fullDescription": "The Osaka HT 2500 Tabular is the highest-capacity model in the Osaka tubular range, offering 250Ah for large commercial solar systems and industrial UPS banks. Its tubular plate technology ensures superior deep-cycle performance and longer service life compared to conventional flat-plate batteries.",
+      "specs": [
+        { "key": "Battery Type", "value": "Tubular Plate Deep Cycle" },
+        { "key": "Nominal Voltage", "value": "12V" },
+        { "key": "Capacity", "value": "250 Ah (20HR)" },
+        { "key": "Application", "value": "Solar, Industrial UPS, Deep Cycle" },
+        { "key": "Cycle Life", "value": "Very High — industrial grade" }
+      ],
+      "featured": true,
+      "images": ["https://www.osaka.com.pk/wp-content/uploads/2021/01/TA-2500.jpg"]
     }
   ]
 }
