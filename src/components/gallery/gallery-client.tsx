@@ -22,59 +22,12 @@ interface GalleryClientProps {
   initialItems: GalleryItem[]
 }
 
-// Fallback dummy gallery items to make the page look premium if no CMS data exists
-const FALLBACK_ITEMS: GalleryItem[] = [
-  {
-    _id: 'fb-1',
-    title: 'Alhamd Battery Services Shopfront',
-    slug: 'alhamd-shopfront',
-    mediaType: 'image',
-    description: 'Our physical storefront located in Saudabad, Malir, Karachi. Drop by for testing and purchasing.',
-  },
-  {
-    _id: 'fb-2',
-    title: 'Customer UPS Battery Installation',
-    slug: 'ups-battery-installation',
-    mediaType: 'image',
-    description: 'Installing AGS deep-cycle tubular batteries for a residential backup system.',
-  },
-  {
-    _id: 'fb-3',
-    title: 'Authorized Distribution Hub',
-    slug: 'distribution-hub',
-    mediaType: 'image',
-    description: 'Bulk stock of dry and maintenance-free batteries fresh from the warehouse.',
-  },
-  {
-    _id: 'fb-4',
-    title: 'Hybrid Solar Inverter Overview',
-    slug: 'hybrid-inverter-overview',
-    mediaType: 'youtube',
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Placeholder
-    description: 'A detailed overview of modern solar hybrid inverters and how they switch power source.',
-  },
-  {
-    _id: 'fb-5',
-    title: 'Malir Commercial Solar Project',
-    slug: 'malir-solar-project',
-    mediaType: 'image',
-    description: 'Completed 15kW grid-tied solar panel mounting structure installation in Karachi.',
-  },
-  {
-    _id: 'fb-6',
-    title: 'Unboxing Tubular Batteries',
-    slug: 'unboxing-tubular-batteries',
-    mediaType: 'youtube',
-    youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Placeholder
-    description: 'Unboxing and inspecting long-backup tubular battery cells.',
-  }
-]
 
 export function GalleryClient({ initialItems }: GalleryClientProps) {
   const [filter, setFilter] = useState<'all' | 'image' | 'video'>('all')
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
-  const items = initialItems && initialItems.length > 0 ? initialItems : FALLBACK_ITEMS
+  const items = initialItems || []
 
   // Filter items
   const filteredItems = items.filter((item) => {
@@ -149,8 +102,19 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
       </div>
 
       {/* Media Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-        {filteredItems.map((item, index) => (
+      {filteredItems.length === 0 ? (
+        <div className="text-center py-20 flex flex-col items-center gap-4">
+          <div className="w-20 h-20 rounded-full bg-slate-100 flex items-center justify-center">
+            <ImageIcon className="w-10 h-10 text-slate-300" />
+          </div>
+          <h3 className="font-heading font-bold text-xl text-slate-600">No Media Found</h3>
+          <p className="text-sm text-slate-400 max-w-md">
+            There are no photos or videos available at the moment. Check back later for updates!
+          </p>
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          {filteredItems.map((item, index) => (
           <div
             key={item._id}
             onClick={() => setLightboxIndex(index)}
@@ -158,7 +122,31 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
           >
             {/* Media Thumbnail Container */}
             <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
-              {item.image ? (
+              {item.mediaType === 'image' && item.image ? (
+                <Image
+                  src={urlFor(item.image).width(600).height(450).quality(85).url()}
+                  alt={item.image.alt || item.title}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-smooth"
+                />
+              ) : item.mediaType === 'video' && item.videoUrl ? (
+                <video
+                  src={item.videoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                />
+              ) : item.mediaType === 'youtube' && item.youtubeUrl ? (
+                <iframe
+                  src={`https://www.youtube.com/embed/${getYoutubeId(item.youtubeUrl)}?autoplay=1&mute=1&loop=1&playlist=${getYoutubeId(item.youtubeUrl)}`}
+                  title={item.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="w-full h-full border-0"
+                />
+              ) : item.image ? (
                 <Image
                   src={urlFor(item.image).width(600).height(450).quality(85).url()}
                   alt={item.image.alt || item.title}
@@ -166,33 +154,12 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                   className="object-cover group-hover:scale-105 transition-smooth"
                 />
               ) : (
-                <div className="w-full h-full flex items-center justify-center bg-slate-200 text-primary/40 relative">
-                  {item.mediaType === 'youtube' ? (
-                    /* Render a youtube overlay if no custom image */
-                    <>
-                      <Image
-                        src={`https://img.youtube.com/vi/${getYoutubeId(item.youtubeUrl)}/hqdefault.jpg`}
-                        alt={item.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-smooth"
-                      />
-                      <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                        <div className="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg shadow-black/30 group-hover:scale-110 transition-smooth">
-                          <Play className="w-5 h-5 fill-white ml-0.5" />
-                        </div>
-                      </div>
-                    </>
-                  ) : (
-                    /* Default text image */
-                    <div className="flex flex-col items-center gap-2">
-                      <ImageIcon className="w-12 h-12" />
-                      <span className="text-xs text-slate-400 font-medium">Click to View</span>
-                    </div>
-                  )}
+                <div className="w-full h-full flex items-center justify-center bg-slate-200 text-primary/40">
+                  <ImageIcon className="w-12 h-12" />
                 </div>
               )}
 
-              {/* Badges / Video indicators */}
+              {/* Play overlay for videos when they have custom image */}
               {item.mediaType !== 'image' && item.image && (
                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
                   <div className="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg shadow-black/20 group-hover:scale-110 transition-smooth group-hover:bg-accent-orange">
@@ -201,7 +168,7 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                 </div>
               )}
 
-              <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-[10px] font-bold text-white flex items-center gap-1">
+              {/* <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-[10px] font-bold text-white flex items-center gap-1">
                 {item.mediaType === 'image' && (
                   <>
                     <ImageIcon className="w-3 h-3" /> PHOTO
@@ -217,13 +184,13 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                     <FaYoutube className="w-3 h-3 text-red-500 fill-red-500" /> YOUTUBE
                   </>
                 )}
-              </div>
+              </div> */}
             </div>
 
             {/* Info Footer */}
             <div className="p-5 flex flex-col gap-2 flex-grow justify-between border-t border-slate-100">
               <div className="flex flex-col gap-1.5">
-                <h3 className="font-heading font-bold text-lg text-primary group-hover:text-accent-orange transition-colors">
+                <h3 className="font-heading font-bold text-lg !text-primary group-hover:text-accent-orange transition-colors">
                   {item.title}
                 </h3>
                 {item.description && (
@@ -234,8 +201,9 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
               </div>
             </div>
           </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
 
       {/* Lightbox Modal */}
       {lightboxIndex !== null && activeItem && (
@@ -311,6 +279,7 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                   src={activeItem.videoUrl}
                   controls
                   autoPlay
+                  muted
                   className="w-full h-full object-contain"
                 />
               </div>
@@ -326,11 +295,11 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
 
           {/* Media Info Footer */}
           <div className="text-center max-w-2xl px-6 flex flex-col gap-2">
-            <h2 className="text-white font-heading font-bold text-lg sm:text-2xl">
+            <h2 className="!text-white font-heading font-bold text-lg sm:text-2xl">
               {activeItem.title}
             </h2>
             {activeItem.description && (
-              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-lg mx-auto">
+              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-lg mx-auto">
                 {activeItem.description}
               </p>
             )}

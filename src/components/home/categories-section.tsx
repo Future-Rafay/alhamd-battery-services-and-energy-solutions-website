@@ -2,11 +2,8 @@
 
 import Link from 'next/link'
 import { ArrowRight, Zap, Sun, BatteryCharging, Cpu } from 'lucide-react'
-import { Card, CardContent } from '@/components/ui/card'
-import { Category } from '@/types'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
-import { FaWhatsapp } from 'react-icons/fa'
 
 interface CategoriesSectionProps {
   categories: any[]
@@ -156,7 +153,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
                       {categoryIcon}
                     </div>
                     <div className="flex flex-col gap-2.5">
-                      <h3 className="font-heading font-extrabold text-2xl text-primary">
+                      <h3 className="font-heading font-extrabold text-2xl !text-primary">
                         {category.name}
                       </h3>
                       <p className="text-sm text-slate-500 leading-relaxed">
@@ -217,7 +214,7 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
                             <span className="text-[10px] font-extrabold text-accent-orange uppercase tracking-wider">
                               Representative Product
                             </span>
-                            <h4 className="font-heading font-extrabold text-xl text-primary leading-snug hover:text-accent-orange transition-colors">
+                            <h4 className="font-heading font-extrabold text-xl !text-primary leading-snug hover:text-accent-orange transition-colors">
                               <Link href={`/products/${product.slug}`}>{product.name}</Link>
                             </h4>
                           </div>
@@ -251,15 +248,6 @@ export function CategoriesSection({ categories }: CategoriesSectionProps) {
                           >
                             Product Details
                           </Link>
-
-                          <a
-                            href={`https://wa.me/+923121141703?text=Hi%20Alhamd%20Battery%20Services,%20I%20would%20like%20to%20get%20the%20current%20daily%20price%20quote%20for%20the%20${encodeURIComponent(product.name)}.%20Please%20let%20me%20know%20availability.`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-full sm:w-auto inline-flex justify-center items-center gap-1.5 px-4 py-2 bg-[#25D366] text-white hover:bg-[#22c55e] text-xs sm:text-sm font-bold rounded-lg transition-smooth shadow-sm cursor-pointer"
-                          >
-                            <FaWhatsapp className="w-4 h-4" /> Get Daily Rate
-                          </a>
                         </div>
                       </div>
                     </div>
