@@ -214,6 +214,20 @@ export const GALLERY_ITEMS_QUERY = defineQuery(
   }`
 )
 
+// Fetch a compact media preview for the homepage
+export const HOME_GALLERY_ITEMS_QUERY = defineQuery(
+  `*[_type == "galleryItem"] | order(displayOrder asc, _createdAt desc)[0...6] {
+    _id,
+    title,
+    "slug": slug.current,
+    mediaType,
+    image,
+    "videoUrl": videoFile.asset->url,
+    youtubeUrl,
+    description
+  }`
+)
+
 // Fetch homepage categories alongside a single representative product for each
 export const HOME_CATEGORIES_WITH_PRODUCT_QUERY = defineQuery(
   `*[_type == "category"] | order(displayOrder asc) {
@@ -236,4 +250,3 @@ export const HOME_CATEGORIES_WITH_PRODUCT_QUERY = defineQuery(
     }
   }`
 )
-
