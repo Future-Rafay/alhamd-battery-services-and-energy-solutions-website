@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, Geist } from "next/font/google";
+import { Plus_Jakarta_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
@@ -17,18 +17,39 @@ export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: "Alhamd Battery Services and Energy Solutions",
   description: "Authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment in Karachi.",
+  alternates: {
+    canonical: '/',
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/apple-icon.png', type: 'image/png', sizes: '180x180' },
+    ],
+  },
   openGraph: {
-    title: "Alhamd Battery Services and Energy Solutions",
+    title: "Alhamd Battery Services & Energy Solutions",
     description: "Authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment in Karachi.",
     url: getSiteUrl(),
-    siteName: 'Alhamd Battery Services',
+    siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
+    images: [
+      {
+        url: '/social-share.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Alhamd Battery Services and Energy Solutions',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Alhamd Battery Services and Energy Solutions",
+    title: "Alhamd Battery Services & Energy Solutions",
     description: "Authorized distributor of branded batteries and solar equipment.",
+    images: ['/social-share.jpg'],
   },
 };
 
