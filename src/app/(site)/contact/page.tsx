@@ -4,6 +4,7 @@ import { Phone, Mail, MapPin, Clock } from 'lucide-react'
 import { ContactForm } from '@/components/forms/contact-form'
 import { getLocalBusinessSchema } from '@/lib/structured-data'
 import { FaWhatsapp } from "react-icons/fa";
+import { PageHero } from '@/components/shared/page-hero'
 
 import { getSiteUrl } from '@/lib/utils'
 
@@ -11,17 +12,19 @@ export const metadata = {
   title: 'Contact Us | Alhamd Battery Services and Energy Solutions',
   description: 'Visit our battery retail shop in Saudabad, Karachi. Get custom quotes, check battery warranties, and ask about solar panel installations.',
   openGraph: {
-    title: 'Contact Us | Alhamd Battery Services',
+    title: 'Contact Us | Alhamd Battery Services & Energy Solutions',
     description: 'Visit our battery retail shop in Saudabad, Karachi. Get custom quotes, check battery warranties, and ask about solar panel installations.',
-    url: `${getSiteUrl()}/contact`,
-    siteName: 'Alhamd Battery Services',
+    url: `${getSiteUrl()}/contact`, 
+    siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
+    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Contact Alhamd Battery Services in Karachi' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | Alhamd Battery Services',
+    title: 'Contact Us | Alhamd Battery Services & Energy Solutions',
     description: 'Visit our battery retail shop in Saudabad, Karachi.',
+    images: ['/social-share.jpg'],
   },
 }
 
@@ -56,20 +59,12 @@ export default async function ContactPage() {
       />
 
       {/* Intro Banner */}
-      <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-primary to-primary-foreground" />
-        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-4">
-          <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
-            Get In Touch
-          </span>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
-            Contact Alhamd Services
-          </h1>
-          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
-            Have questions about prices or product availability? Reach out through our contact form, email, or WhatsApp.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Get In Touch"
+        title="Contact Us"
+        description="Have questions about prices or product availability? Reach out through our contact form, email, or WhatsApp."
+
+      />
 
       <div className="max-w-7xl mx-auto py-12 px-4">
 

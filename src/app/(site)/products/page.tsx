@@ -13,6 +13,7 @@ import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/co
 import { Filter, SlidersHorizontal } from 'lucide-react'
 import { Product } from '@/types'
 import { client } from '@/sanity/lib/client'
+import { PageHero } from '@/components/shared/page-hero'
 
 // Pre-define dynamic search queries for products
 const FILTERED_PRODUCTS_QUERY = `
@@ -63,17 +64,19 @@ export const metadata = {
   title: 'Product Catalog | Alhamd Battery Services and Energy Solutions',
   description: 'Explore our catalog of authentic batteries, solar panels, and inverters. Top brands available with official warranties.',
   openGraph: {
-    title: 'Product Catalog | Alhamd Battery Services',
+    title: 'Product Catalog | Alhamd Battery Services & Energy Solutions',
     description: 'Explore our catalog of authentic batteries, solar panels, and inverters. Top brands available with official warranties.',
     url: `${getSiteUrl()}/products`,
-    siteName: 'Alhamd Battery Services',
+    siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
+    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services product catalog' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Product Catalog | Alhamd Battery Services',
+    title: 'Product Catalog | Alhamd Battery Services & Energy Solutions',
     description: 'Explore our catalog of authentic batteries, solar panels, and inverters.',
+    images: ['/social-share.jpg'],
   },
 }
 
@@ -131,26 +134,7 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     console.error('Error fetching catalog data from Sanity, loading mock values:', error)
   }
 
-  // Create robust mock products if Sanity returns empty catalog
-  if (products.length === 0 && !category && !brand && !search) {
-    products = getMockProducts().slice(start, end)
-    totalProductsCount = getMockProducts().length
-  } else if (products.length === 0 && (category || brand || search)) {
-    // Filter mock products if user searched/filtered and Sanity was empty
-    let filteredMocks = getMockProducts()
-    if (category) {
-      filteredMocks = filteredMocks.filter(p => p.category.slug === category)
-    }
-    if (brand) {
-      filteredMocks = filteredMocks.filter(p => p.brand.slug === brand)
-    }
-    if (resolvedParams.search) {
-      const q = resolvedParams.search.toLowerCase()
-      filteredMocks = filteredMocks.filter(p => p.name.toLowerCase().includes(q) || p.brand.name.toLowerCase().includes(q))
-    }
-    products = filteredMocks.slice(start, end)
-    totalProductsCount = filteredMocks.length
-  }
+
 
   // If filter databases were empty, pre-populate them for the sidebar
   if (categories.length === 0) {
@@ -175,20 +159,12 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Intro Banner */}
-      <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-primary to-primary-foreground" />
-        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-4">
-          <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
-            Our Products
-          </span>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
-            Product Catalog
-          </h1>
-          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
-            Showing {products.length} of {totalProductsCount} premium battery and solar solutions.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Our Products"
+        title="Product Catalog"
+        description={`Showing ${products.length} of ${totalProductsCount} premium battery and solar solutions with genuine brand warranties.`}
+
+      />
 
       <div className="max-w-7xl mx-auto py-12 px-4">
 
@@ -258,88 +234,4 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       </div>
     </div>
   )
-}
-
-// Generate static list of mock products if Sanity doesn't contain documents yet
-function getMockProducts(): Product[] {
-  return [
-    {
-      _id: 'mock1',
-      name: 'LONGi LR5-72HPH 550W',
-      slug: 'longi-lr5-72hph-550w',
-      brand: { name: 'LONGi', slug: 'longi' },
-      category: { name: 'Solar Panels', slug: 'solar-panels' },
-      capacity: '550W',
-      voltage: '42V',
-      warranty: '12 Years Product',
-      shortDescription: 'Hi-MO 5 mono-PERC solar panel with high efficiency, optimized under low-light environments.',
-      images: [],
-      featured: true,
-    },
-    {
-      _id: 'mock2',
-      name: 'Inverex Nitrox 6KW Hybrid',
-      slug: 'inverex-nitrox-6kw-hybrid',
-      brand: { name: 'Inverex Solar Energy', slug: 'inverex-solar-energy' },
-      category: { name: 'Inverters', slug: 'inverters' },
-      capacity: '6000W',
-      voltage: '48VDC',
-      warranty: '5 Years',
-      shortDescription: 'Dual output smart hybrid inverter. Zero export feature with external limiter.',
-      images: [],
-      featured: true,
-    },
-    {
-      _id: 'mock3',
-      name: 'Daewoo DLS-200 Tubular',
-      slug: 'daewoo-dls-200-tubular',
-      brand: { name: 'Daewoo Battery', slug: 'daewoo-battery' },
-      category: { name: 'Batteries', slug: 'batteries' },
-      capacity: '200Ah',
-      voltage: '12V',
-      warranty: '1 Year',
-      shortDescription: 'Deep cycle tubular battery specifically engineered for solar backup and heavy load UPS systems.',
-      images: [],
-      featured: true,
-    },
-    {
-      _id: 'mock4',
-      name: 'AGS SP-180 Lead Acid',
-      slug: 'ags-sp-180-lead-acid',
-      brand: { name: 'AGS', slug: 'ags' },
-      category: { name: 'Batteries', slug: 'batteries' },
-      capacity: '120Ah',
-      voltage: '12V',
-      warranty: '6 Months',
-      shortDescription: 'Reliable water-activated lead acid battery suitable for general UPS and home backup.',
-      images: [],
-      featured: false,
-    },
-    {
-      _id: 'mock5',
-      name: 'Osaka OD-230 Tubular',
-      slug: 'osaka-od-230-tubular',
-      brand: { name: 'Osaka Batteries', slug: 'osaka-batteries' },
-      category: { name: 'Batteries', slug: 'batteries' },
-      capacity: '230Ah',
-      voltage: '12V',
-      warranty: '1 Year',
-      shortDescription: 'High-performance heavy-duty tubular battery. Slow discharge rate for longer backups.',
-      images: [],
-      featured: false,
-    },
-    {
-      _id: 'mock6',
-      name: 'Jinko Tiger Neo N-type 575W',
-      slug: 'jinko-tiger-neo-n-type-575w',
-      brand: { name: 'JinKO Solar', slug: 'jinko-solar' },
-      category: { name: 'Solar Panels', slug: 'solar-panels' },
-      capacity: '575W',
-      voltage: '44V',
-      warranty: '12 Years Product',
-      shortDescription: 'Top-tier N-type mono-crystalline panel with SMBB technology and higher generation output.',
-      images: [],
-      featured: false,
-    },
-  ]
 }
