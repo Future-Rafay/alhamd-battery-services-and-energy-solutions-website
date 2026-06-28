@@ -25,7 +25,7 @@ export function ProductCard({ product }: ProductCardProps) {
       <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden border-b border-slate-100 bg-slate-50">
         {firstImage ? (
           <Image
-            src={urlFor(firstImage).width(360).height(270).quality(80).url()}
+            src={urlFor(firstImage).url()}
             alt={firstImage.alt || product.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"

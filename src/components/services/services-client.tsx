@@ -27,7 +27,7 @@ export function ServicesClient({ services }: ServicesClientProps) {
   const getServiceImage = (service: Service) => {
     if (service.image) {
       try {
-        return urlFor(service.image).width(600).height(400).quality(85).url()
+        return urlFor(service.image).url()
       } catch (error) {
         console.error('Failed to get Sanity image URL:', error)
       }

@@ -14,13 +14,13 @@ export const metadata = {
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
-    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services maintenance and delivery services' }],
+    images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services maintenance and delivery services' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Our Services | Alhamd Battery Services & Energy Solutions',
     description: 'Professional battery and solar maintenance services in Karachi.',
-    images: ['/social-share.jpg'],
+    images: ['/opengraph.jpg'],
   },
 }
 

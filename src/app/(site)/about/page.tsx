@@ -1,6 +1,5 @@
 import { Compass, Heart, ShieldAlert, MapPin, CheckCircle } from 'lucide-react'
 import { SectionHeading } from '@/components/shared/section-heading'
-import { Button, buttonVariants } from '@/components/ui/button'
 import Link from 'next/link'
 import Image from 'next/image'
 import { PageHero } from '@/components/shared/page-hero'
@@ -17,13 +16,13 @@ export const metadata = {
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
-    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services storefront and brand' }],
+    images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services storefront and brand' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'About Us | Alhamd Battery Services & Energy Solutions',
     description: 'Learn about our history and retail shop in Malir, Karachi.',
-    images: ['/social-share.jpg'],
+    images: ['/opengraph.jpg'],
   },
 }
 
@@ -188,7 +187,7 @@ export default function AboutPage() {
           <div className="lg:col-span-5 w-full flex justify-center">
             <div className="relative w-full aspect-[4/3] sm:aspect-[16/11] rounded-2xl overflow-hidden shadow-lg border border-slate-100 bg-slate-50">
               <Image
-                src="/services/ups-inverter.png"
+                src="/about/tailored-sizing-support.jpg"
                 alt="Electrician testing and configuring backup inverter system"
                 fill
                 sizes="(max-w-768px) 100vw, 450px"

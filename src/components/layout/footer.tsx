@@ -37,16 +37,11 @@ const HOURS = [
 
 export function Footer({ settings }: FooterProps) {
   const currentYear = new Date().getFullYear()
-
   const businessName = settings?.businessName
-  const phone = settings?.phone
   const whatsapp = settings?.whatsappNumber
-  const email = settings?.email
   const mapEmbed = settings?.mapEmbed
   const googleMapsLink = settings?.googleMapsLink
 
-  const formattedPhone = phone?.replace(/[^\d+]/g, '')
-  const formattedWhatsapp = whatsapp?.replace(/[^\d+]/g, '')
 
   return (
     <footer className="bg-white text-slate-600">
@@ -83,7 +78,7 @@ export function Footer({ settings }: FooterProps) {
         <div className="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
           <Link href="/" className="self-start">
             <Image
-              src="/alhamd-logo-horizontal.png"
+              src="/logo/alhamd-logo-horizontal.png"
               alt="Alhamd Battery Services"
               width={500}
               height={500}

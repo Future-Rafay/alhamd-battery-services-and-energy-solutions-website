@@ -12,11 +12,13 @@ export const metadata = {
     siteName: 'Alhamd Battery Services',
     locale: 'en_PK',
     type: 'website',
+    images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services terms and conditions' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Terms & Conditions | Alhamd Battery Services',
     description: 'Terms and conditions governing the purchase of batteries and solar panel systems.',
+    images: ['/opengraph.jpg'],
   },
 }
 

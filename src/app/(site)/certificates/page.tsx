@@ -15,12 +15,13 @@ export const metadata = {
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
-    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Alhamd Energy Solutions authorized dealer certificates' }],
+    images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: 'Alhamd Energy Solutions authorized dealer certificates' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Authorized Certificates | Alhamd Battery Services & Energy Solutions',
     description: 'Verified proof of official authorization to sell and distribute leading battery and solar brands.',
+    images: ['/opengraph.jpg'],
   },
 }
 

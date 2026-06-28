@@ -14,17 +14,17 @@ export const metadata = {
   openGraph: {
     title: 'Contact Us | Alhamd Battery Services & Energy Solutions',
     description: 'Visit our battery retail shop in Saudabad, Karachi. Get custom quotes, check battery warranties, and ask about solar panel installations.',
-    url: `${getSiteUrl()}/contact`, 
+    url: `${getSiteUrl()}/contact`,
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
-    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Contact Alhamd Battery Services in Karachi' }],
+    images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: 'Contact Alhamd Battery Services in Karachi' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Us | Alhamd Battery Services & Energy Solutions',
     description: 'Visit our battery retail shop in Saudabad, Karachi.',
-    images: ['/social-share.jpg'],
+    images: ['/opengraph.jpg'],
   },
 }
 

@@ -53,7 +53,7 @@ export function CertificatesHomeSection({ certificates }: CertificatesHomeSectio
             return (
               <div
                 key={key}
-                className="min-w-[280px] w-[280px] sm:min-w-[320px] sm:w-[320px] md:min-w-0 md:w-full snap-start group bg-white rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-[480px]"
+                className="min-w-[320px] w-[320px] sm:min-w-[320px] sm:w-[320px] md:min-w-0 md:w-full snap-start group bg-white rounded-2xl overflow-hidden border border-slate-200/60 shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all duration-300 flex flex-col h-[480px]"
               >
                 {/* Visual Frame */}
                 <div className="relative flex-1 w-full bg-slate-50/50 flex items-center justify-center overflow-hidden">

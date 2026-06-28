@@ -70,13 +70,13 @@ export const metadata = {
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
-    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services product catalog' }],
+    images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services product catalog' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Product Catalog | Alhamd Battery Services & Energy Solutions',
     description: 'Explore our catalog of authentic batteries, solar panels, and inverters.',
-    images: ['/social-share.jpg'],
+    images: ['/opengraph.jpg'],
   },
 }
 

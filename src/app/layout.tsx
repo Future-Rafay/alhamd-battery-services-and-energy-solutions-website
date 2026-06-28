@@ -22,11 +22,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/icon.png', type: 'image/png', sizes: '512x512' },
+      { url: '/logo/favicon.ico' },
+      { url: '/logo/icon.png', type: 'image/png', sizes: '512x512' },
     ],
     apple: [
-      { url: '/apple-icon.png', type: 'image/png', sizes: '180x180' },
+      { url: '/logo/apple-icon.png', type: 'image/png', sizes: '180x180' },
     ],
   },
   openGraph: {
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/social-share.jpg',
+        url: '/opengraph.jpg',
         width: 1200,
         height: 630,
         alt: 'Alhamd Battery Services and Energy Solutions',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: "Alhamd Battery Services & Energy Solutions",
     description: "Authorized distributor of branded batteries and solar equipment.",
-    images: ['/social-share.jpg'],
+    images: ['/opengraph.jpg'],
   },
 };
 

@@ -4,7 +4,7 @@ import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 
 export const metadata = {
-  title: 'Page Not Found | Alhamd Battery Services',
+  title: 'Page Not Found | Alhamd Battery Services & Energy Solutions',
 }
 
 export default function NotFoundPage() {

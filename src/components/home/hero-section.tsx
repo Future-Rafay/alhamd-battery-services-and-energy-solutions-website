@@ -61,7 +61,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
       {/* Background Images — crossfade */}
       {validBanners.map((banner, index) => {
         const bgUrl = banner.image
-          ? urlFor(banner.image).width(1920).height(1080).quality(85).url()
+          ? urlFor(banner.image).url()
           : null
         return (
           <div
@@ -90,8 +90,8 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
       })}
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10  px-4 h-full flex items-center">
+        <div className="max-w-7xl mx-auto w-full">
           <div className="max-w-2xl flex flex-col gap-5">
             {/* Slide counter badge */}
             <span className="text-accent-yellow text-[11px] font-bold  tracking-[0.2em] bg-primary/40 px-3 py-1 rounded-full self-start border border-white/40">

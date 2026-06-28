@@ -26,8 +26,8 @@ export default async function SiteLayout({
     console.error('Error fetching layout data from Sanity, using fallback data:', error)
   }
 
-  const whatsappNum = settings?.whatsappNumber || '+92 312 1141703'
-  const businessName = settings?.businessName || 'Alhamd Battery Services'
+  const whatsappNum = settings?.whatsappNumber
+  const businessName = settings?.businessName 
 
   return (
     <>

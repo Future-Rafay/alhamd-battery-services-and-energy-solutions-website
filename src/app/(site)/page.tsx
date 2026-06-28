@@ -1,5 +1,4 @@
 import { sanityFetch } from '@/sanity/lib/live'
-import Link from 'next/link'
 import {
   BANNERS_QUERY,
   HOME_CATEGORIES_WITH_PRODUCT_QUERY,

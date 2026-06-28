@@ -123,9 +123,10 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
             <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
               {item.mediaType === 'image' && item.image ? (
                 <Image
-                  src={urlFor(item.image).width(600).height(450).quality(85).url()}
+                  src={urlFor(item.image).url()}
                   alt={item.image.alt || item.title}
-                  fill
+                  width={600}
+                  height={450}
                   className="object-cover group-hover:scale-105 transition-smooth"
                 />
               ) : item.mediaType === 'video' && item.videoUrl ? (
@@ -147,9 +148,10 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                 />
               ) : item.image ? (
                 <Image
-                  src={urlFor(item.image).width(600).height(450).quality(85).url()}
+                  src={urlFor(item.image).url()}
                   alt={item.image.alt || item.title}
-                  fill
+                  width={600}
+                  height={450}
                   className="object-cover group-hover:scale-105 transition-smooth"
                 />
               ) : (
@@ -226,9 +228,10 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
             {activeItem.mediaType === 'image' && activeItem.image && (
               <div className="relative w-full aspect-[4/3] max-h-[70vh]">
                 <Image
-                  src={urlFor(activeItem.image).quality(95).url()}
+                  src={urlFor(activeItem.image).url()}
                   alt={activeItem.title}
-                  fill
+                  width={600}
+                  height={450}
                   className="object-contain"
                   priority
                 />

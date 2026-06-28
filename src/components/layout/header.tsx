@@ -143,7 +143,7 @@ export function Header({ settings, categories }: HeaderProps) {
           {/* Logo */}
           <Link href="/" className="shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-orange rounded">
             <Image
-              src="/alhamd-logo-horizontal.png"
+              src="/logo/alhamd-logo-horizontal.png"
               alt="Alhamd Battery Services logo"
               width={400}
               height={400}

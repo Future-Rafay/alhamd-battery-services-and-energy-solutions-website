@@ -80,9 +80,10 @@ export function GalleryPreview({ items }: GalleryPreviewProps) {
                   <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden">
                     {item.mediaType === 'image' && item.image ? (
                       <Image
-                        src={urlFor(item.image).width(600).height(450).quality(85).url()}
+                        src={urlFor(item.image).url()}
                         alt={item.image.alt || item.title}
-                        fill
+                        width={600}
+                        height={450}
                         className="object-cover group-hover:scale-105 transition-smooth"
                       />
                     ) : item.mediaType === 'video' && item.videoUrl ? (
@@ -104,9 +105,10 @@ export function GalleryPreview({ items }: GalleryPreviewProps) {
                       />
                     ) : item.image ? (
                       <Image
-                        src={urlFor(item.image).width(600).height(450).quality(85).url()}
+                        src={urlFor(item.image).url()}
                         alt={item.image.alt || item.title}
-                        fill
+                        width={600}
+                        height={450}
                         className="object-cover group-hover:scale-105 transition-smooth"
                       />
                     ) : (
@@ -128,11 +130,11 @@ export function GalleryPreview({ items }: GalleryPreviewProps) {
                   {/* Info Footer */}
                   <div className="p-5 flex flex-col gap-2 flex-grow justify-between border-t border-slate-100">
                     <div className="flex flex-col gap-1.5">
-                      <h3 className="font-heading font-bold text-lg !text-primary group-hover:text-accent-orange transition-colors">
+                      <h3 className="font-heading font-bold text-lg !text-primary group-hover:text-accent-orange transition-colors line-clamp-1">
                         {item.title}
                       </h3>
                       {item.description && (
-                        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-2">
+                        <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-3">
                           {item.description}
                         </p>
                       )}
@@ -183,7 +185,7 @@ export function GalleryPreview({ items }: GalleryPreviewProps) {
                 {activeItem.mediaType === 'image' && activeItem.image && (
                   <div className="relative w-full aspect-[4/3] max-h-[70vh]">
                     <Image
-                      src={urlFor(activeItem.image).quality(95).url()}
+                      src={urlFor(activeItem.image).url()}
                       alt={activeItem.title}
                       fill
                       className="object-contain"

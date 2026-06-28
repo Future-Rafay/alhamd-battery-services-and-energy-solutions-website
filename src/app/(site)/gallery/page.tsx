@@ -15,13 +15,13 @@ export const metadata = {
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
     type: 'website',
-    images: [{ url: '/social-share.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services media gallery' }],
+    images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: 'Alhamd Battery Services media gallery' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Media Gallery | Alhamd Battery Services & Energy Solutions',
     description: 'View photos and videos of our physical shop in Malir, Karachi, customer reviews, deliveries, and clean energy projects in Karachi.',
-    images: ['/social-share.jpg'],
+    images: ['/opengraph.jpg'],
   },
 }
 
