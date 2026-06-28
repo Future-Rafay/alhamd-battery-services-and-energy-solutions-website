@@ -68,3 +68,13 @@ If you want to allow employees to manage inventory without sharing administrator
 3. Go to **Members** -> **Invite Member**.
 4. Enter their email address and select the **Editor** role. Editors can create and publish products but cannot delete core structural layouts.
 5. Click **Send Invitation**.
+
+
+
+
+
+
+
+## Import Product CMD
+
+node scripts/import-products.mjs
