@@ -9,7 +9,7 @@ import { client } from '@/sanity/lib/client'
 import { ProductGallery } from '@/components/products/product-gallery'
 import { ProductCard } from '@/components/shared/product-card'
 import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
+import { cn, getSiteUrl } from '@/lib/utils'
 import { Product } from '@/types'
 import { getProductSchema } from '@/lib/structured-data'
 import { FaWhatsapp } from 'react-icons/fa'
@@ -102,7 +102,7 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
     `Hi Alhamd Battery Services! I am interested in the following product: ${product.name}. Please share today's daily rate and delivery/pickup status.`
   )
 
-  const productSchema = getProductSchema(product, `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN}/products/${product.slug}`)
+  const productSchema = getProductSchema(product, `${getSiteUrl()}/products/${product.slug}`)
 
   return (
     <div className="py-12 px-4 bg-slate-50 min-h-screen">

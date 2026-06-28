@@ -278,7 +278,7 @@ export function Header({ settings, categories }: HeaderProps) {
                   <SheetTitle >
                     <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
                       <Image
-                        src="/alhamd-logo-horizontal.png"
+                        src="/logo/alhamd-logo-horizontal.png"
                         alt="Alhamd Battery Services"
                         width={500}
                         height={500}
@@ -353,13 +353,15 @@ export function Header({ settings, categories }: HeaderProps) {
                 </nav>
 
                 {/* Drawer footer CTAs */}
-                <div className="px-5 py-5 border-t border-slate-100 flex flex-col gap-2.5">
+                <div className="px-5 py-6 border-t border-slate-100 bg-slate-50/50 flex flex-col gap-3">
                   {/* {phone && (
                     <a
                       href={`tel:${formattedPhone}`}
-                      className="flex items-center justify-center gap-2 w-full h-10 rounded-md bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/90 transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-2.5 w-full h-11 rounded-xl bg-primary text-white text-sm font-bold shadow-sm hover:bg-primary/95 transition-all duration-200 active:scale-[0.98]"
                     >
-                      <Phone className="w-4 h-4" /> {phone}
+                      <Phone className="w-4 h-4 text-white" />
+                      <span>Call {phone}</span>
                     </a>
                   )}
                   {whatsapp && (
@@ -367,11 +369,16 @@ export function Header({ settings, categories }: HeaderProps) {
                       href={`https://wa.me/${formattedWhatsapp}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2 w-full h-10 rounded-md bg-[#25D366] text-white text-sm font-bold shadow-sm hover:bg-[#22c55e] transition-colors"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                      className="flex items-center justify-center gap-2.5 w-full h-11 rounded-xl bg-emerald-600 text-white text-sm font-bold shadow-sm hover:bg-emerald-700 transition-all duration-200 active:scale-[0.98]"
                     >
-                      <FaWhatsapp className="w-4 h-4" /> Chat on WhatsApp
+                      <FaWhatsapp className="w-4.5 h-4.5 text-white" />
+                      <span>Chat on WhatsApp</span>
                     </a>
                   )} */}
+                  <div className="text-center mt-1">
+                    <span className="text-[10px] font-bold text-slate-400/80 uppercase tracking-widest">Alhamd Battery Services & Energy Solutions</span>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>

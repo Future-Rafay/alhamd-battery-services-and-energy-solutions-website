@@ -1,8 +1,9 @@
 import { MetadataRoute } from 'next'
 import { client } from '@/sanity/lib/client'
+import { getSiteUrl } from '@/lib/utils'
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = `https://${process.env.NEXT_PUBLIC_SITE_DOMAIN}`
+  const baseUrl = getSiteUrl()
 
   const staticPages = [
     '',

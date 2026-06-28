@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getSiteUrl } from '@/lib/utils'
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -7,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/studio/', // Disallow crawlers from index or scrape the CMS Studio editor
     },
-    sitemap: `https://${process.env.NEXT_PUBLIC_SITE_URL}/sitemap.xml`,
+    sitemap: `${getSiteUrl()}/sitemap.xml`,
   }
 }
