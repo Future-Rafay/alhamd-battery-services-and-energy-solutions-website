@@ -22,16 +22,16 @@ export function FAQSection({ faqs }: FAQSectionProps) {
 
   return (
     <section className="py-20 px-4 bg-slate-50 border-t border-slate-200/50">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12 flex flex-col items-center gap-3">
-          <span className="text-accent-orange font-bold text-xs uppercase tracking-wider border-b-2 border-accent-orange pb-1">
+          <span className="text-accent-orange font-bold text-xs md:text-sm uppercase tracking-wider border-b-2 border-accent-orange pb-1">
             FAQ
           </span>
           <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-primary">
             Frequently Asked Questions
           </h2>
-          <p className="text-sm text-slate-500 max-w-lg">
+          <p className="text-sm leading-relaxed text-slate-500 sm:text-base">
             Answers to common questions about pricing, warranty terms, and installations.
           </p>
         </div>
@@ -54,14 +54,14 @@ export function FAQSection({ faqs }: FAQSectionProps) {
           ))}
         </Accordion>
 
-        {/* View all button link */}
-        <div className="text-center mt-10">
+        {/* button  */}
+        <div className='flex items-center justify-center'>
           <Link
             href="/faq"
-            className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-accent-orange transition-colors"
+            className="mt-8 px-10 inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-primary px-5 text-sm font-extrabold text-white shadow-sm transition-smooth hover:border-white hover:bg-white hover:text-primary"
           >
-            <span>Have More Questions? View All FAQs</span>
-            <ArrowRight className="w-4 h-4" />
+            View FAQ's
+            <ArrowRight className="h-4 w-4" />
           </Link>
         </div>
       </div>

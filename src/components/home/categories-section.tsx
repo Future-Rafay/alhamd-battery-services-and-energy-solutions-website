@@ -1,273 +1,231 @@
 'use client'
 
-import Link from 'next/link'
-import { ArrowRight, Zap, Sun, BatteryCharging, Cpu } from 'lucide-react'
-import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowRight, BatteryCharging, Cpu, Sun, Zap } from 'lucide-react'
+import type { SanityImageSource } from '@sanity/image-url'
+
+import { urlFor } from '@/sanity/lib/image'
 
 interface CategoriesSectionProps {
-  categories: any[]
+  categories: HomeCategory[]
 }
 
-// Full-featured fallback categories with dummy representative products & specs
-const DEFAULT_CATEGORIES_WITH_PRODUCTS = [
+type SanityImageWithAlt = SanityImageSource & { alt?: string }
+
+interface CategoryProduct {
+  name: string
+  slug: string
+  brand?: { name: string }
+  capacity?: string
+  voltage?: string
+  warranty?: string
+  shortDescription?: string
+  images?: Array<string | SanityImageWithAlt>
+}
+
+interface HomeCategory {
+  _id?: string
+  name: string
+  slug: string
+  description?: string
+  image?: SanityImageWithAlt
+  representativeProduct?: CategoryProduct | null
+}
+
+const DEFAULT_CATEGORIES_WITH_PRODUCTS: HomeCategory[] = [
   {
     _id: 'def-1',
     name: 'Lead Acid Battery',
     slug: 'lead-acid-battery',
-    description: 'Reliable and low-maintenance deep-cycle tubular batteries for maximum backups on domestic UPS and solar systems.',
+    description: 'Reliable batteries for UPS, vehicles, generators, and backup power needs.',
     representativeProduct: {
       name: 'AGS SP-210 Deep Cycle Tubular Battery',
       slug: 'ags-sp-210-deep-cycle-tubular-battery',
       brand: { name: 'AGS' },
       capacity: '180Ah',
       voltage: '12V',
-      warranty: '1 Year Warranty',
-      shortDescription: 'High-performance tubular battery designed to withstand frequent power cuts.',
-      specs: [
-        { key: 'Battery Type', value: 'Tubular Deep Cycle' },
-        { key: 'Voltage', value: '12 Volts' },
-        { key: 'Plate Count', value: '7 Deep Plates per Cell' },
-        { key: 'Electrolyte', value: 'Acid filled' },
-      ],
+      warranty: '1 Year',
+      shortDescription: 'High-performance tubular battery designed for frequent power cuts.',
+      images: [],
     },
   },
   {
     _id: 'def-2',
     name: 'Lithium Ion Battery',
     slug: 'lithium-ion-battery',
-    description: 'Maintenance-free, fast-charging LiFePO4 battery packs with 10+ years lifespan and built-in Smart BMS protection.',
-    representativeProduct: {
-      name: 'Crown LiFePO4 Smart Storage 100Ah',
-      slug: 'crown-lifepo4-smart-storage-100ah',
-      brand: { name: 'Crown' },
-      capacity: '100Ah',
-      voltage: '48V',
-      warranty: '5 Years Warranty',
-      shortDescription: 'Next-gen solar energy storage with high efficiency and fast recharge speeds.',
-      specs: [
-        { key: 'Chemistry', value: 'Lithium Iron Phosphate' },
-        { key: 'Life Cycles', value: '4000+ Cycles @ 80% DoD' },
-        { key: 'Smart Protection', value: 'Integrated Overcharge BMS' },
-        { key: 'Weight', value: 'Lightweight (approx. 42kg)' },
-      ],
-    },
+    description: 'Long-life lithium storage options for modern solar backup systems.',
+    representativeProduct: null,
   },
   {
     _id: 'def-3',
     name: 'Solar Panel',
     slug: 'solar-panel',
-    description: 'High-efficiency Tier-1 monocrystalline panels from top international brands with up to 25 years performance warranty.',
-    representativeProduct: {
-      name: 'LONGi Hi-MO 6 Explorer 575W',
-      slug: 'longi-hi-mo-6-explorer-575w',
-      brand: { name: 'LONGi' },
-      capacity: '575W',
-      voltage: '43V',
-      warranty: '25 Years Performance',
-      shortDescription: 'High-density mono-PERC cells offering superior output even in cloudy Karachi weather.',
-      specs: [
-        { key: 'Module Type', value: 'Monocrystalline N-Type' },
-        { key: 'Cell Efficiency', value: '22.3% Maximum' },
-        { key: 'Frame', value: 'Anodized Aluminum Alloy' },
-        { key: 'Wind Load', value: 'Certified to 2400 Pa' },
-      ],
-    },
+    description: 'Tier-1 solar panels for homes, shops, and commercial installations.',
+    representativeProduct: null,
   },
   {
     _id: 'def-4',
     name: 'Inverter & Charger',
     slug: 'inverter-charger',
-    description: 'Smart hybrid and off-grid solar inverters with automatic energy management and real-time WiFi mobile monitoring.',
-    representativeProduct: {
-      name: 'Inverex Veyron II 5.2kW Hybrid Inverter',
-      slug: 'inverex-veyron-ii-5-2kw-hybrid-inverter',
-      brand: { name: 'Inverex' },
-      capacity: '5.2kW',
-      voltage: '48V Input',
-      warranty: '5 Years Warranty',
-      shortDescription: 'Pure sine wave inverter with dual smart outputs and on-grid net metering feedback.',
-      specs: [
-        { key: 'Output Power', value: '5200 Watts Continuous' },
-        { key: 'Max PV Input', value: '6000 Watts (MPPT)' },
-        { key: 'Monitoring', value: 'Built-in WiFi with Mobile App' },
-        { key: 'Net Metering', value: 'Supported (Three-Phase grid feedback)' },
-      ],
-    },
+    description: 'Hybrid, off-grid, and UPS charging solutions for stable power.',
+    representativeProduct: null,
   },
 ]
 
-export function CategoriesSection({ categories }: CategoriesSectionProps) {
-  const hasCMSCategories = categories && categories.length > 0
-  const categoriesList = hasCMSCategories ? categories : DEFAULT_CATEGORIES_WITH_PRODUCTS
+function getCategoryIcon(slug = '') {
+  if (slug.includes('lead-acid')) return BatteryCharging
+  if (slug.includes('lithium')) return Cpu
+  if (slug.includes('solar')) return Sun
+  return Zap
+}
 
-  // Helper to choose index icons
-  const getCategoryIcon = (slug: string) => {
-    if (slug.includes('lead-acid')) return <BatteryCharging className="w-6 h-6 text-accent-orange" />
-    if (slug.includes('lithium')) return <Cpu className="w-6 h-6 text-accent-orange" />
-    if (slug.includes('solar')) return <Sun className="w-6 h-6 text-accent-orange" />
-    return <Zap className="w-6 h-6 text-accent-orange" />
-  }
+function getProductImage(product?: CategoryProduct | null) {
+  if (!product?.images?.length) return null
+  const firstImage = product.images[0]
+  return typeof firstImage === 'string'
+    ? firstImage
+    : urlFor(firstImage).width(480).height(360).quality(82).url()
+}
+
+export function CategoriesSection({ categories }: CategoriesSectionProps) {
+  const categoriesList = categories && categories.length > 0
+    ? categories.slice(0, 4)
+    : DEFAULT_CATEGORIES_WITH_PRODUCTS
 
   return (
-    <section className="py-24 px-4 bg-slate-50 border-t border-slate-200/50">
-      <div className="max-w-7xl mx-auto">
-        
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
-          <div className="flex flex-col gap-2 max-w-2xl">
-            <span className="text-accent-orange font-bold text-xs uppercase tracking-wider border-l-4 border-accent-orange pl-3">
-              Power Catalog
-            </span>
-            <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-primary tracking-tight">
-              Featured Categories &amp; Specs
-            </h2>
-            <p className="text-sm text-slate-500 mt-2 leading-relaxed">
-              Browse our core product categories. Below, see a representative product and actual specifications for each category.
-            </p>
-          </div>
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-slate-250 text-slate-700 hover:text-white hover:bg-primary rounded-xl font-bold text-sm transition-smooth shadow-sm self-start shrink-0"
-          >
-            <span>View Complete Catalog</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+    <section className="border-t border-slate-200/70 bg-slate-50 px-4 py-20">
+      <div className="mx-auto max-w-7xl">
+        <div className="mb-14 flex flex-col items-center text-center max-w-2xl mx-auto gap-3">
+          <span className="border-b-2 border-accent-orange pb-1 text-xs md:text-sm font-bold uppercase tracking-wider text-accent-orange">
+            Power Catalog
+          </span>
+          <h2 className="font-heading text-3xl font-extrabold text-primary sm:text-4xl">
+            Featured Categories
+          </h2>
+          <p className="text-sm leading-relaxed text-slate-500 sm:text-base">
+            Browse our core product categories and see one featured product from each range.
+          </p>
         </div>
 
-        {/* Categories Showcase Grid */}
-        <div className="flex flex-col gap-12">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {categoriesList.map((category) => {
             const product = category.representativeProduct
-            const categoryIcon = getCategoryIcon(category.slug)
+            const productImage = getProductImage(product)
+            const Icon = getCategoryIcon(category.slug)
 
             return (
-              <div
+              <article
                 key={category._id || category.slug}
-                className="bg-white rounded-2xl border border-slate-200/60 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:shadow-md hover:border-primary/10 transition-smooth"
+                className="group flex h-full flex-col overflow-hidden rounded-lg border border-slate-200/80 bg-white shadow-sm transition-smooth hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md"
               >
-                {/* Left Side: Category Info */}
-                <div className="lg:col-span-5 p-8 sm:p-10 flex flex-col justify-between bg-gradient-to-br from-slate-50 to-white border-b lg:border-b-0 lg:border-r border-slate-100">
-                  <div className="flex flex-col gap-5">
-                    <div className="w-12 h-12 rounded-xl bg-white shadow-sm flex items-center justify-center border border-slate-150">
-                      {categoryIcon}
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                  {productImage ? (
+                    <Image
+                      src={productImage}
+                      alt={product?.name || category.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-contain p-4 transition-smooth group-hover:scale-105"
+                    />
+                  ) : category.image ? (
+                    <Image
+                      src={urlFor(category.image).width(480).height(360).quality(82).url()}
+                      alt={category.image.alt || category.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                      className="object-cover transition-smooth group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <span className="flex h-16 w-16 items-center justify-center rounded-full border border-slate-200 bg-white text-accent-orange shadow-sm">
+                        <Icon className="h-8 w-8" />
+                      </span>
                     </div>
-                    <div className="flex flex-col gap-2.5">
-                      <h3 className="font-heading font-extrabold text-2xl !text-primary">
+                  )}
+
+                  <div className="absolute left-3 top-3 rounded-full bg-white/92 px-2.5 py-1 text-[10px] font-extrabold uppercase tracking-wide text-primary shadow-sm">
+                    {product ? 'Featured' : 'Category'}
+                  </div>
+                </div>
+
+                <div className="flex flex-1 flex-col p-5">
+                  <div className="mb-4 flex items-start gap-3">
+                    <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-primary/6 text-accent-orange">
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <div>
+                      <h3 className="font-heading text-lg font-extrabold leading-snug !text-primary">
                         {category.name}
                       </h3>
-                      <p className="text-sm text-slate-500 leading-relaxed">
-                        {category.description || 'Premium power solutions tailored to Karachi\'s environment.'}
+                      <p className="mt-1 text-xs leading-relaxed text-slate-500 line-clamp-2">
+                        {category.description || 'Premium power solutions with genuine warranties.'}
                       </p>
                     </div>
                   </div>
 
-                  <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col gap-3">
-                    <Link
-                      href={`/products?category=${category.slug}`}
-                      className="inline-flex items-center gap-1.5 text-sm font-bold text-primary hover:text-accent-orange transition-colors"
-                    >
-                      <span>Explore all {category.name}s</span>
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Right Side: Representative Product Showcase */}
-                <div className="lg:col-span-7 p-8 sm:p-10 flex flex-col justify-between">
                   {product ? (
-                    <div className="flex flex-col md:flex-row gap-8 items-start h-full">
-                      {/* Product Thumbnail */}
-                      <div className="w-full md:w-44 shrink-0 flex flex-col gap-2">
-                        <div className="aspect-square w-full rounded-xl bg-slate-50 border border-slate-150 relative overflow-hidden flex items-center justify-center">
-                          {product.images && product.images.length > 0 ? (
-                            <Image
-                              src={typeof product.images[0] === 'string' ? product.images[0] : urlFor(product.images[0]).width(200).height(200).url()}
-                              alt={product.name}
-                              fill
-                              className="object-contain p-2"
-                            />
-                          ) : (
-                            <BatteryCharging className="w-16 h-16 text-slate-300" />
-                          )}
-                        </div>
-
-                        {/* Badges */}
-                        <div className="flex flex-col gap-1 mt-1 text-[11px] font-bold text-slate-500 uppercase tracking-wide">
-                          {product.brand && (
-                            <span className="bg-slate-100 text-slate-700 px-2 py-0.5 rounded text-center truncate">
-                              Brand: {product.brand.name}
-                            </span>
-                          )}
-                          {product.warranty && (
-                            <span className="bg-green-50 text-green-700 border border-green-100 px-2 py-0.5 rounded text-center truncate">
-                              {product.warranty}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-
-                      {/* Product Details & Specifications */}
-                      <div className="flex flex-col justify-between flex-grow gap-6 self-stretch">
-                        <div className="flex flex-col gap-3">
-                          <div>
-                            <span className="text-[10px] font-extrabold text-accent-orange uppercase tracking-wider">
-                              Representative Product
-                            </span>
-                            <h4 className="font-heading font-extrabold text-xl !text-primary leading-snug hover:text-accent-orange transition-colors">
-                              <Link href={`/products/${product.slug}`}>{product.name}</Link>
-                            </h4>
-                          </div>
-
-                          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed line-clamp-2">
-                            {product.shortDescription}
-                          </p>
-
-                          {/* Specs Grid */}
-                          {product.specs && product.specs.length > 0 && (
-                            <div className="mt-2 bg-slate-50 border border-slate-150 rounded-xl p-4 grid grid-cols-2 gap-x-6 gap-y-3">
-                              {product.specs.slice(0, 4).map((spec: any, idx: number) => (
-                                <div key={idx} className="flex flex-col gap-0.5">
-                                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider">
-                                    {spec.key}
-                                  </span>
-                                  <span className="text-xs font-bold text-primary truncate">
-                                    {spec.value}
-                                  </span>
-                                </div>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Action buttons */}
-                        <div className="flex flex-col sm:flex-row items-center gap-3">
-                          <Link
-                            href={`/products/${product.slug}`}
-                            className="w-full sm:w-auto inline-flex justify-center items-center px-4 py-2 bg-primary text-white hover:bg-primary/95 text-xs sm:text-sm font-bold rounded-lg transition-smooth shadow-sm"
-                          >
-                            Product Details
-                          </Link>
-                        </div>
+                    <div className="mt-auto rounded-lg border border-slate-100 bg-slate-50 p-3">
+                      <p className="text-[10px] font-extrabold uppercase tracking-wide text-accent-orange">
+                        Product Preview
+                      </p>
+                      <Link
+                        href={`/products/${product.slug}`}
+                        className="mt-1 block font-heading text-sm font-extrabold leading-snug text-primary transition-colors line-clamp-2 hover:text-accent-orange"
+                      >
+                        {product.name}
+                      </Link>
+                      <div className="mt-3 grid grid-cols-2 gap-2 text-[11px]">
+                        {product.brand?.name && (
+                          <span className="rounded bg-white px-2 py-1 font-bold text-slate-600">
+                            {product.brand.name}
+                          </span>
+                        )}
+                        {product.capacity && (
+                          <span className="rounded bg-white px-2 py-1 font-bold text-slate-600">
+                            {product.capacity}
+                          </span>
+                        )}
+                        {product.voltage && (
+                          <span className="rounded bg-white px-2 py-1 font-bold text-slate-600">
+                            {product.voltage}
+                          </span>
+                        )}
+                        {product.warranty && (
+                          <span className="rounded bg-white px-2 py-1 font-bold text-slate-600">
+                            {product.warranty}
+                          </span>
+                        )}
                       </div>
                     </div>
                   ) : (
-                    /* If category exists but has no products yet */
-                    <div className="h-full flex flex-col justify-center items-center text-center p-8 border border-dashed border-slate-200 rounded-xl">
-                      <BatteryCharging className="w-12 h-12 text-slate-300 animate-pulse mb-3" />
-                      <h4 className="font-bold text-slate-700 text-sm">Products Coming Soon</h4>
-                      <p className="text-xs text-slate-400 max-w-xs mt-1">
-                        We are currently updating our database for {category.name}s. Contact us directly for daily prices!
-                      </p>
+                    <div className="mt-auto rounded-lg border border-dashed border-slate-200 bg-slate-50 p-3 text-xs leading-relaxed text-slate-500">
+                      Products are being updated. Contact us for current stock and daily prices.
                     </div>
                   )}
-                </div>
 
-              </div>
+                  <Link
+                    href={`/products?category=${category.slug}`}
+                    className="mt-4 inline-flex items-center gap-1.5 text-sm font-extrabold text-primary transition-colors hover:text-accent-orange"
+                  >
+                    Explore Category
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </article>
             )
           })}
         </div>
-
+        {/* button  */}
+        <div className='flex items-center justify-center'>
+          <Link
+            href="/products"
+            className="mt-8 px-10 inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-primary px-5 text-sm font-extrabold text-white shadow-sm transition-smooth hover:border-white hover:bg-white hover:text-primary"
+          >
+            View Catalog
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </div>
     </section>
   )

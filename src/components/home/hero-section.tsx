@@ -76,7 +76,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
                 src={bgUrl}
                 alt={banner.image?.alt || `Banner ${index + 1}`}
                 fill
-                className="object-cover object-center"
+                className=" object-cover object-left"
                 priority={index === 0}
                 sizes="100vw"
               />
@@ -84,7 +84,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
               <div className="absolute inset-0 bg-primary" />
             )}
             {/* Dark overlay for text readability */}
-            <div className="absolute inset-0 bg-primary/70" />
+            {/* <div className="absolute inset-0 bg-primary/70" /> */}
           </div>
         )
       })}
