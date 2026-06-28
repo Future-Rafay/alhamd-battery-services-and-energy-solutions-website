@@ -1,6 +1,8 @@
 import { getSiteUrl } from '@/lib/utils'
 import { ServicesClient } from '@/components/services/services-client'
 import { PageHero } from '@/components/shared/page-hero'
+import { sanityFetch } from '@/sanity/lib/live'
+import { SERVICES_QUERY } from '@/sanity/lib/queries'
 
 export const metadata = {
   title: 'Our Services | Alhamd Battery Services and Energy Solutions',
@@ -22,7 +24,15 @@ export const metadata = {
   },
 }
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  let services: any[] = []
+  try {
+    const servicesRes = await sanityFetch({ query: SERVICES_QUERY })
+    services = servicesRes.data || []
+  } catch (error) {
+    console.error('Error fetching services from Sanity:', error)
+  }
+
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Page Header */}
@@ -34,7 +44,7 @@ export default function ServicesPage() {
         imageAlt="Battery delivery and service media in Karachi"
       />
 
-      <ServicesClient />
+      <ServicesClient services={services} />
     </div>
   )
 }

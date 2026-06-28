@@ -7,9 +7,9 @@ import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { Service } from '@/types'
-import { SERVICES } from '@/lib/constants'
 import { ServiceRequestForm } from '@/components/forms/service-request-form'
 import Link from 'next/link'
+import { urlFor } from '@/sanity/lib/image'
 
 interface ServicesSectionProps {
   services: Service[]
@@ -19,37 +19,23 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   const [selectedService, setSelectedService] = useState<string | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  const hasCMSServices = services && services.length > 0
-  const servicesList = hasCMSServices ? services : SERVICES
+  const servicesList = services || []
 
   const handleRequestService = (serviceName: string) => {
     setSelectedService(serviceName)
     setIsModalOpen(true)
   }
 
-  // Get service image by slug mapping
-  const getServiceImage = (slug?: string) => {
-    switch (slug?.toLowerCase()) {
-      case 'solar-installation':
-        return '/services/solar-installation.png'
-      case 'solar-cleaning':
-      case 'solar-cleaning-maintenance':
-        return '/services/solar-cleaning.png'
-      case 'battery-replacement':
-      case 'battery-replacement-maintenance':
-        return '/services/battery-replacement.png'
-      case 'ups-inverter':
-      case 'ups-inverter-service':
-        return '/services/ups-inverter.png'
-      case 'energy-consultation':
-      case 'energy-consultation-service':
-        return '/services/energy-consultation.png'
-      case 'electrical-wiring':
-      case 'electrical-wiring-service':
-        return '/services/electrical-wiring.png'
-      default:
-        return '/services/solar-installation.png'
+  // Get service image from Sanity CMS
+  const getServiceImage = (service: Service) => {
+    if (service.image) {
+      try {
+        return urlFor(service.image).width(600).height(400).quality(85).url()
+      } catch (error) {
+        console.error('Failed to get Sanity image URL:', error)
+      }
     }
+    return ''
   }
 
   return (
@@ -71,20 +57,26 @@ export function ServicesSection({ services }: ServicesSectionProps) {
         {/* Services Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {servicesList.map((service) => {
-            const imageSrc = getServiceImage(service.slug)
+            const imageSrc = getServiceImage(service)
             return (
               <Card
                 key={service.slug}
                 className="group border border-slate-200/60 rounded-2xl overflow-hidden hover:border-primary/20 hover:shadow-lg transition-smooth flex flex-col h-full bg-slate-50/20"
               >
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
-                  <Image
-                    src={imageSrc}
-                    alt={service.name}
-                    fill
-                    sizes="(max-w-768px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+                  {imageSrc ? (
+                    <Image
+                      src={imageSrc}
+                      alt={service.name}
+                      fill
+                      sizes="(max-w-768px) 100vw, 33vw"
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400 font-semibold text-xs">
+                      No Image
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent opacity-60" />
                 </div>
                 <CardContent className="p-6 flex flex-col justify-between items-start gap-5 flex-grow">

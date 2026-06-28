@@ -6,28 +6,33 @@ import { MapPin, CheckCircle, Wrench } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from '@/components/ui/dialog'
 import { ServiceRequestForm } from '@/components/forms/service-request-form'
-import { SERVICES } from '@/lib/constants'
+import { Service } from '@/types'
+import { urlFor } from '@/sanity/lib/image'
 
-export function ServicesClient() {
+interface ServicesClientProps {
+  services?: Service[]
+}
+
+export function ServicesClient({ services }: ServicesClientProps) {
   const [selectedService, setSelectedService] = useState<string | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const servicesList = services || []
 
   const handleRequestService = (serviceName: string) => {
     setSelectedService(serviceName)
     setIsModalOpen(true)
   }
 
-  const getServiceImage = (slug: string) => {
-    switch (slug) {
-      case 'solar-installation':
-        return '/services/solar-installation.png'
-      case 'solar-cleaning':
-        return '/services/solar-cleaning.png'
-      case 'battery-replacement':
-        return '/services/battery-replacement.png'
-      default:
-        return '/services/solar-installation.png'
+  const getServiceImage = (service: Service) => {
+    if (service.image) {
+      try {
+        return urlFor(service.image).width(600).height(400).quality(85).url()
+      } catch (error) {
+        console.error('Failed to get Sanity image URL:', error)
+      }
     }
+    return ''
   }
 
   return (
@@ -35,8 +40,8 @@ export function ServicesClient() {
       {/* Services List Details */}
       <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto flex flex-col gap-12">
-          {SERVICES.map((service) => {
-            const imageSrc = getServiceImage(service.slug)
+          {servicesList.map((service) => {
+            const imageSrc = getServiceImage(service)
             return (
               <div
                 key={service.slug}
@@ -45,13 +50,19 @@ export function ServicesClient() {
                 {/* Visual Image Column */}
                 <div className="md:col-span-4 flex justify-center w-full">
                   <div className="relative w-full aspect-[16/11] rounded-xl overflow-hidden shadow-sm bg-slate-100">
-                    <Image
-                      src={imageSrc}
-                      alt={service.name}
-                      fill
-                      sizes="(max-w-768px) 100vw, 250px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
+                    {imageSrc ? (
+                      <Image
+                        src={imageSrc}
+                        alt={service.name}
+                        fill
+                        sizes="(max-w-768px) 100vw, 250px"
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center bg-slate-200 text-slate-400 font-semibold text-xs">
+                        No Image
+                      </div>
+                    )}
                   </div>
                 </div>
 

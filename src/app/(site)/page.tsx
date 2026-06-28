@@ -89,7 +89,7 @@ export default async function HomePage() {
       <GalleryPreview items={galleryItems} />
       <TrustSection settings={settings} />
       <CertificatesHomeSection certificates={certificates} />
-         <BrandsSection brands={brands} />
+      <BrandsSection brands={brands} />
       <TestimonialsSection testimonials={testimonials} />
       <CTASection />
       <FAQSection faqs={faqs} />

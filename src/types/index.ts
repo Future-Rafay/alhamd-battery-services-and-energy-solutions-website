@@ -76,7 +76,7 @@ export interface Product {
 }
 
 export interface Service {
-  _id: string
+  _id?: string
   name: string
   slug: string
   description: string
