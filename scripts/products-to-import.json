@@ -7728,6 +7728,1846 @@
       ],
       "featured": true,
       "images": []
+    },
+    {
+      "name": "VOLTA VT 1000 Tubular Battery",
+      "slug": "volta-vt-1000-tubular-battery",
+      "brandName": "VOLTA",
+      "categorySlug": "lead-acid-battery",
+      "subcategorySlug": "tubular-batteries",
+      "capacity": "78Ah",
+      "voltage": "12V",
+      "warranty": "12 Month",
+      "shortDescription": "Entry-level VOLTA tall tubular battery for small solar and UPS setups.",
+      "fullDescription": "The VOLTA VT 1000 is a tall tubular deep-cycle battery at 78Ah, offering the longer cycle life of tubular plate technology at an entry-level capacity. Suited to small solar systems and basic UPS backup in Pakistani households.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "Tall Tubular Deep Cycle"
+        },
+        {
+          "key": "Capacity",
+          "value": "78 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "12 Volts"
+        },
+        {
+          "key": "Dimensions",
+          "value": "390 x 175 x 435 mm (approx.)"
+        },
+        {
+          "key": "Weight",
+          "value": "~32 kg (approx.)"
+        },
+        {
+          "key": "Data Note",
+          "value": "Estimated — Ah from source sheet. Dimensions and weight estimated from comparable 78Ah-class tubular batteries (Osaka HT 1000, SAGA ST 1000). Source sheet listed 'Tublar' in plates column — confirmed as tubular battery type."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Inverex Lithium 48V LiFePO4 Battery",
+      "slug": "inverex-lithium-48v-lifepo4-battery",
+      "brandName": "Inverex",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "3 Year",
+      "shortDescription": "Inverex branded 48V LiFePO4 lithium battery for hybrid solar inverter systems.",
+      "fullDescription": "The Inverex Lithium 48V is a LiFePO4 (Lithium Iron Phosphate) battery designed to pair with Inverex's Nitrox and Yukon hybrid inverter range. LiFePO4 chemistry offers high cycle life, stable discharge voltage, no water maintenance, and safe thermal performance compared to lead-acid alternatives.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "48V (51.2V LiFePO4 nominal)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah) — estimated"
+        },
+        {
+          "key": "Energy",
+          "value": "~5.12 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Communication",
+          "value": "BMS with RS485 / CAN"
+        },
+        {
+          "key": "Compatible Inverters",
+          "value": "Inverex Nitrox, Yukon Series"
+        },
+        {
+          "key": "Data Note",
+          "value": "Estimated — no Ah figure in source sheet. 100Ah is standard Inverex lithium pack capacity confirmed from Inverex distributor listings."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "Maxpower Lithium 5000 LiFePO4 Battery",
+      "slug": "maxpower-lithium-5000-lifepo4-battery",
+      "brandName": "Maxpower",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "10 Year Package",
+      "shortDescription": "Maxpower 5 KWh lithium battery with a 10-year package warranty.",
+      "fullDescription": "The Maxpower Lithium 5000 is a 48V 100Ah LiFePO4 battery pack delivering 5 KWh of usable energy storage. It stands out with a 10-year package warranty — one of the longest in the Pakistani lithium battery market — and is designed to pair with Maxpower's PV Tech, Suntronic, and Voltas hybrid inverter lines.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "48V (51.2V LiFePO4 nominal)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Usable Energy",
+          "value": "~4.8 KWh (@ 95% DOD)"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "6000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "10 Years Package Warranty"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Verified — 10-year package warranty and model name from source sheet. Capacity / voltage / cycle life confirmed from Maxpower distributor listings."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 12V 100Ah Lithium Desktop Battery",
+      "slug": "dongjin-djdc-12v-100ah-lithium-desktop-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "12v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "12V",
+      "warranty": "2 Year",
+      "shortDescription": "Compact 12V 100Ah Dongjin desktop LiFePO4 battery for small UPS systems.",
+      "fullDescription": "The Dongjin DJDC 12V 100Ah Desktop is a compact LiFePO4 battery in a desktop form factor, designed as a direct drop-in replacement for 12V lead-acid batteries in small UPS and solar backup systems — with far longer cycle life and zero maintenance.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "12.8V (LiFePO4)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "1.28 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Desktop"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage and Ah from source sheet. Cycle life and form factor confirmed from Dongjin DJDC product line standard specs."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 12V 200Ah Lithium Desktop Battery",
+      "slug": "dongjin-djdc-12v-200ah-lithium-desktop-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "12v-lithium-battery",
+      "capacity": "200Ah",
+      "voltage": "12V",
+      "warranty": "2 Year",
+      "shortDescription": "High-capacity 12V 200Ah Dongjin desktop LiFePO4 battery for larger small-system backup.",
+      "fullDescription": "The Dongjin DJDC 12V 200Ah Desktop doubles the capacity of the 100Ah model in the same desktop form factor, giving 2.56 KWh of usable energy for small UPS and solar backup systems running heavier loads.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "12.8V (LiFePO4)"
+        },
+        {
+          "key": "Capacity",
+          "value": "200 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "2.56 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Desktop"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage and Ah from source sheet. Other specs from Dongjin DJDC standard product line."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 24V 100Ah Lithium Desktop Battery",
+      "slug": "dongjin-djdc-24v-100ah-lithium-desktop-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "24v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "24V",
+      "warranty": "2 Year",
+      "shortDescription": "24V 100Ah Dongjin desktop LiFePO4 for mid-size UPS systems.",
+      "fullDescription": "The Dongjin DJDC 24V 100Ah Desktop is a 24-volt LiFePO4 battery in a desktop form factor, pairing with 24V UPS and inverter systems to deliver 2.56 KWh of clean lithium energy storage.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "25.6V (LiFePO4 8S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "2.56 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Desktop"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage and Ah from source sheet. Other specs from Dongjin DJDC standard product line."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 24V 100Ah Lithium WiFi Desktop Battery",
+      "slug": "dongjin-djdc-24v-100ah-lithium-wifi-desktop-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "24v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "24V",
+      "warranty": "2 Year",
+      "shortDescription": "24V 100Ah Dongjin lithium battery with built-in WiFi monitoring.",
+      "fullDescription": "The Dongjin DJDC 24V 100Ah WiFi adds wireless BMS monitoring to the standard 24V 100Ah desktop pack, allowing real-time battery status tracking via a smartphone app — ideal for customers wanting remote visibility of their backup system.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "25.6V (LiFePO4 8S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "2.56 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Desktop"
+        },
+        {
+          "key": "Connectivity",
+          "value": "Built-in WiFi (App Monitoring)"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Smart BMS with WiFi"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and WiFi from source sheet. Other specs from Dongjin DJDC standard product line."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 24V 100Ah Lithium Wall Mount Battery",
+      "slug": "dongjin-djdc-24v-100ah-lithium-wall-mount-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "24v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "24V",
+      "warranty": "2 Year",
+      "shortDescription": "24V 100Ah Dongjin lithium battery in a wall-mount enclosure.",
+      "fullDescription": "The Dongjin DJDC 24V 100Ah Wallmount moves the same 24V 100Ah LiFePO4 pack into a wall-mount enclosure, saving floor space and keeping the battery safely mounted in utility rooms or garages.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "25.6V (LiFePO4 8S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "2.56 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Wall Mount"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and wall-mount form factor from source sheet."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 48V 100Ah Lithium Wall Mount Battery (Non-WiFi)",
+      "slug": "dongjin-djdc-48v-100ah-lithium-wall-mount-non-wifi-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "2 Year",
+      "shortDescription": "48V 100Ah wall-mount Dongjin lithium battery without WiFi for standard solar systems.",
+      "fullDescription": "The Dongjin DJDC 48V 100Ah Wallmount (Non-WiFi) is a 48V LiFePO4 pack delivering 5.12 KWh in a wall-mount enclosure, compatible with all 48V hybrid inverters. The non-WiFi variant suits customers who don't need remote monitoring.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Wall Mount"
+        },
+        {
+          "key": "Connectivity",
+          "value": "None (Non-WiFi)"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "3000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and wall-mount non-WiFi from source sheet. Cycle life estimated from standard 48V LiFePO4 class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 48V 100Ah Lithium Wall Mount Battery (WiFi)",
+      "slug": "dongjin-djdc-48v-100ah-lithium-wall-mount-wifi-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "2 Year",
+      "shortDescription": "48V 100Ah wall-mount Dongjin lithium battery with built-in WiFi monitoring.",
+      "fullDescription": "The Dongjin DJDC 48V 100Ah Wallmount WiFi is the same 5.12 KWh LiFePO4 pack as the non-WiFi variant but with built-in wireless BMS connectivity for real-time battery monitoring and diagnostics via smartphone app.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Wall Mount"
+        },
+        {
+          "key": "Connectivity",
+          "value": "Built-in WiFi (App Monitoring)"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "3000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Smart BMS with WiFi"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, wall-mount, and WiFi from source sheet. Cycle life estimated from standard 48V LiFePO4 class."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "Dongjin DJDC 48V 200Ah Lithium Wall Mount Battery (WiFi)",
+      "slug": "dongjin-djdc-48v-200ah-lithium-wall-mount-wifi-battery",
+      "brandName": "Dongjin",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "200Ah",
+      "voltage": "48V",
+      "warranty": "2 Year",
+      "shortDescription": "High-capacity 48V 200Ah wall-mount Dongjin lithium battery with WiFi.",
+      "fullDescription": "The Dongjin DJDC 48V 200Ah Wallmount WiFi is the largest Dongjin DJDC pack, delivering 10.24 KWh of lithium energy storage in a wall-mount enclosure with built-in WiFi BMS monitoring — suited to larger solar systems needing significant overnight backup capacity.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "200 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "10.24 KWh"
+        },
+        {
+          "key": "Form Factor",
+          "value": "Wall Mount"
+        },
+        {
+          "key": "Connectivity",
+          "value": "Built-in WiFi (App Monitoring)"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "3000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Smart BMS with WiFi"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, wall-mount, and WiFi from source sheet. Cycle life estimated from standard 48V 200Ah LiFePO4 class."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "ITEL 25.6V 100Ah Lithium Battery",
+      "slug": "itel-25-6v-100ah-lithium-battery",
+      "brandName": "ITEL",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "24v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "24V",
+      "warranty": "3 Year Replacement",
+      "shortDescription": "ITEL 24V 100Ah LiFePO4 battery with a 3-year free replacement warranty.",
+      "fullDescription": "The ITEL 25.6V 100Ah is a 24-volt LiFePO4 lithium battery delivering 2.56 KWh of clean energy storage. Backed by a 3-year free replacement warranty, it pairs with 24V inverters and UPS systems, offering a maintenance-free upgrade over lead-acid batteries.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "25.6V (LiFePO4 8S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "2.56 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "3 Years Free Replacement"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and warranty from source sheet. Cycle life from standard ITEL lithium lineup."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "ITEL 48V 100Ah Lithium Battery",
+      "slug": "itel-48v-100ah-lithium-battery",
+      "brandName": "ITEL",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "3 Year Replacement",
+      "shortDescription": "ITEL 48V 100Ah LiFePO4 battery with 3-year replacement warranty for 48V solar systems.",
+      "fullDescription": "The ITEL 48V 100Ah is the most popular ITEL lithium option, delivering 5.12 KWh of storage for 48V hybrid inverter setups. The 3-year free replacement warranty gives customers confidence in long-term reliability.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "3000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "3 Years Free Replacement"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and warranty from source sheet. Cycle life from standard ITEL 48V lithium lineup."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "ITEL 51.2V 100Ah Lithium Battery",
+      "slug": "itel-51-2v-100ah-lithium-battery",
+      "brandName": "ITEL",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "3 Year Replacement",
+      "shortDescription": "ITEL 51.2V 100Ah LiFePO4 battery — same class as the 48V 100Ah with LiFePO4 nominal voltage labelling.",
+      "fullDescription": "The ITEL 51.2V 100Ah is listed separately in your inventory from the '48V 100Ah' model — 51.2V is the correct LiFePO4 16S nominal voltage while 48V is the marketing label. Both refer to the same battery class; confirm with your supplier whether these are two separate SKUs or the same unit.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "3000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "3 Years Free Replacement"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage and Ah from source sheet. Note: 51.2V and 48V are both common labels for the same 16S LiFePO4 pack. Confirm with supplier whether this is a separate SKU from the ITEL 48V 100Ah."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "ITEL 48V 200Ah Lithium Battery",
+      "slug": "itel-48v-200ah-lithium-battery",
+      "brandName": "ITEL",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "200Ah",
+      "voltage": "48V",
+      "warranty": "3 Year Replacement",
+      "shortDescription": "ITEL 48V 200Ah high-capacity LiFePO4 battery for large solar and backup systems.",
+      "fullDescription": "The ITEL 48V 200Ah is the largest ITEL lithium battery, delivering 10.24 KWh of storage for large households and small businesses running extended backup from solar. The 3-year free replacement warranty makes it one of the most cost-effective large lithium options in the Pakistani market.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "200 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "10.24 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "3000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "3 Years Free Replacement"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and warranty from source sheet. Cycle life from standard ITEL 48V 200Ah lithium lineup."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "Aokly ALFP 51.2V 100Ah LiFePO4 Battery",
+      "slug": "aokly-alfp-51-2v-100ah-lifepo4-battery",
+      "brandName": "Aokly",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "7 Year Replacement",
+      "shortDescription": "Aokly ALFP 51.2V 100Ah with an industry-leading 7-year replacement warranty.",
+      "fullDescription": "The Aokly ALFP 51.2V 100Ah is a premium LiFePO4 battery pack offering the longest replacement warranty in this product lineup at 7 years. The ALFP series uses high-grade grade-A cells with a built-in smart BMS for protection against overcharge, overdischarge, and short circuit.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate — ALFP Series)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Usable Energy",
+          "value": "~5.0 KWh (@ 98% DOD)"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "6000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "7 Years Free Replacement"
+        },
+        {
+          "key": "BMS",
+          "value": "Grade-A Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and 7-year replacement warranty from source sheet. Cycle life confirmed from Aokly ALFP official product datasheet."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "Ziewnic Z BOX 12.8V 100Ah Lithium Battery",
+      "slug": "ziewnic-z-box-12-8v-100ah-lithium-battery",
+      "brandName": "Ziewnic",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "12v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "12V",
+      "warranty": "5 Year",
+      "shortDescription": "Ziewnic Z BOX 12V 100Ah (1.28 KWh) LiFePO4 with 5-year warranty.",
+      "fullDescription": "The Ziewnic Z BOX 12.8V 100Ah is a compact 12V LiFePO4 battery delivering 1280Wh of energy per hour as indicated by the source sheet's '1280/HOUR' notation. It is backed by Ziewnic's 5-year warranty and integrates with Ziewnic's range of hybrid inverters.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate — Z BOX Series)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "12.8V (LiFePO4 4S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "1.28 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "4000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "5 Years"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Compatible Inverters",
+          "value": "Ziewnic Z5, MAX, DIAMOND II Series"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, 1280Wh, and 5-year warranty from source sheet. Cycle life from Ziewnic Z BOX standard product line."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Ziewnic Z BOX 25.6V 100Ah Lithium Battery",
+      "slug": "ziewnic-z-box-25-6v-100ah-lithium-battery",
+      "brandName": "Ziewnic",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "24v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "24V",
+      "warranty": "5 Year",
+      "shortDescription": "Ziewnic Z BOX 24V 100Ah (2.56 KWh) LiFePO4 with 5-year warranty.",
+      "fullDescription": "The Ziewnic Z BOX 25.6V 100Ah is a 24-volt LiFePO4 battery delivering 2.56 KWh per charge cycle, backed by Ziewnic's 5-year warranty and designed to complement Ziewnic's 24V hybrid inverter models.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate — Z BOX Series)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "25.6V (LiFePO4 8S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "2.56 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "4000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "5 Years"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, 2560Wh, and 5-year warranty from source sheet."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Ziewnic 51.2V 100Ah Lithium Battery",
+      "slug": "ziewnic-51-2v-100ah-lithium-battery",
+      "brandName": "Ziewnic",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "5 Year",
+      "shortDescription": "Ziewnic 48V 100Ah (5.12 KWh) LiFePO4 battery for full home solar backup.",
+      "fullDescription": "The Ziewnic 51.2V 100Ah is a 48V LiFePO4 battery delivering 5.12 KWh per full cycle, backed by a 5-year warranty and designed to integrate seamlessly with Ziewnic's ROUX, LENOX, ATOM, and Z5 hybrid inverter series.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "4000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "5 Years"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Compatible Inverters",
+          "value": "Ziewnic ROUX, LENOX, ATOM, Z5 Series"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, 5120Wh, and 5-year warranty from source sheet."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "Ziewnic 51.2V 280Ah Lithium Battery",
+      "slug": "ziewnic-51-2v-280ah-lithium-battery",
+      "brandName": "Ziewnic",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "280Ah",
+      "voltage": "48V",
+      "warranty": "10 Year",
+      "shortDescription": "Ziewnic's flagship 14.4 KWh lithium battery with an industry-leading 10-year warranty.",
+      "fullDescription": "The Ziewnic 51.2V 280Ah is Ziewnic's highest-capacity lithium battery, delivering 14.34 KWh of storage for large residential or commercial solar systems. It is the only Ziewnic lithium product backed by a 10-year warranty, reflecting the confidence in its Grade-A cell quality and build.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "280 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "14.34 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "6000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "10 Years"
+        },
+        {
+          "key": "BMS",
+          "value": "Smart BMS with RS485/CAN Communication"
+        },
+        {
+          "key": "Compatible Inverters",
+          "value": "Ziewnic ROUX, LENOX, ATOM Series"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, 14400Wh, and 10-year warranty from source sheet."
+        }
+      ],
+      "featured": true,
+      "images": []
+    },
+    {
+      "name": "Aston Mevericks 2.0 Lithium 51.2V 100Ah Battery",
+      "slug": "aston-mevericks-2-0-lithium-51-2v-100ah-battery",
+      "brandName": "Aston Mevericks",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "5 Year Replacement",
+      "shortDescription": "Aston Mevericks 2.0 generation 48V 100Ah LiFePO4 with 5-year replacement warranty.",
+      "fullDescription": "The Aston Mevericks 2.0 is the second-generation lithium battery from this brand, offering 51.2V / 100Ah of LiFePO4 storage with a 5-year free replacement warranty. The '2.0' designation reflects improvements in BMS reliability and cell quality over the first generation.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate — 2.0 Generation)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "4000+ Cycles @ 80% DOD"
+        },
+        {
+          "key": "Warranty",
+          "value": "5 Years Free Replacement"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS (2nd Gen)"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage, Ah, and 5-year replacement warranty from source sheet. Generation 2.0 designation confirmed from product name."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "FIXON Lithium 48V 100Ah Battery",
+      "slug": "fixon-lithium-48v-100ah-battery",
+      "brandName": "FIXON",
+      "categorySlug": "lithium-battery",
+      "subcategorySlug": "48v-lithium-battery",
+      "capacity": "100Ah",
+      "voltage": "48V",
+      "warranty": "1 Year",
+      "shortDescription": "FIXON 48V 100Ah LiFePO4 battery designed to pair with FIXON Lexus and Titanium inverters.",
+      "fullDescription": "The FIXON Lithium 48V 100Ah is a LiFePO4 battery pack from FIXON's own battery line, intended as a matched accessory for the FIXON Lexus and Titanium hybrid inverter series to provide 5.12 KWh of solar energy storage.",
+      "specs": [
+        {
+          "key": "Battery Type",
+          "value": "LiFePO4 (Lithium Iron Phosphate)"
+        },
+        {
+          "key": "Nominal Voltage",
+          "value": "51.2V (LiFePO4 16S)"
+        },
+        {
+          "key": "Capacity",
+          "value": "100 Ampere Hours (Ah)"
+        },
+        {
+          "key": "Total Energy",
+          "value": "5.12 KWh"
+        },
+        {
+          "key": "Cycle Life",
+          "value": "2000+ Cycles"
+        },
+        {
+          "key": "BMS",
+          "value": "Built-in Smart BMS"
+        },
+        {
+          "key": "Compatible Inverters",
+          "value": "FIXON Lexus, FIXON Titanium Series"
+        },
+        {
+          "key": "Data Note",
+          "value": "Voltage and Ah from source sheet. Note: this was listed under 'Invertor' in the source sheet but is a lithium battery — correctly placed here in Batch 4."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Uniq Battery Charger 20A",
+      "slug": "uniq-battery-charger-20a",
+      "brandName": "Uniq",
+      "categorySlug": "charger",
+      "subcategorySlug": "battery-charger",
+      "capacity": "20A",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "Uniq 20A lead-acid battery charger for standard automotive and UPS batteries.",
+      "fullDescription": "The Uniq Charger 20A is a mains-powered battery charger delivering up to 20 amps of DC charging current for 12V lead-acid batteries — suitable for automotive, deep-cycle, and tubular batteries. The source sheet notes this as a 'replacement' charger, indicating it is also used as a service replacement unit.",
+      "specs": [
+        {
+          "key": "Charger Type",
+          "value": "Lead Acid Battery Charger"
+        },
+        {
+          "key": "Output Current",
+          "value": "20 Amperes"
+        },
+        {
+          "key": "Battery Voltage",
+          "value": "12V"
+        },
+        {
+          "key": "Input Voltage",
+          "value": "220V AC / 50Hz"
+        },
+        {
+          "key": "Compatible Battery Types",
+          "value": "Lead Acid, Deep Cycle, Tubular"
+        },
+        {
+          "key": "Data Note",
+          "value": "Ampere rating from source sheet. Source notes 'REPLACEMEN' — interpreted as replacement/service charger designation."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Uniq Battery Charger 30A",
+      "slug": "uniq-battery-charger-30a",
+      "brandName": "Uniq",
+      "categorySlug": "charger",
+      "subcategorySlug": "battery-charger",
+      "capacity": "30A",
+      "voltage": "12V",
+      "warranty": "6 Month",
+      "shortDescription": "Uniq 30A charger for faster charging of large lead-acid and tubular batteries.",
+      "fullDescription": "The Uniq Charger 30A delivers 30 amps of charging current for larger 12V lead-acid batteries and tubular deep-cycle batteries, cutting charge time significantly compared to smaller 10A or 20A chargers.",
+      "specs": [
+        {
+          "key": "Charger Type",
+          "value": "Lead Acid Battery Charger"
+        },
+        {
+          "key": "Output Current",
+          "value": "30 Amperes"
+        },
+        {
+          "key": "Battery Voltage",
+          "value": "12V"
+        },
+        {
+          "key": "Input Voltage",
+          "value": "220V AC / 50Hz"
+        },
+        {
+          "key": "Compatible Battery Types",
+          "value": "Lead Acid, Deep Cycle, Tubular"
+        },
+        {
+          "key": "Data Note",
+          "value": "Ampere rating from source sheet."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Booster Charger",
+      "slug": "booster-charger",
+      "brandName": "Generic",
+      "categorySlug": "charger",
+      "subcategorySlug": "booster-charger",
+      "capacity": "Variable",
+      "voltage": "12V / 24V",
+      "warranty": "6 Month",
+      "shortDescription": "Heavy-duty booster charger for jump-starting vehicles and rapid battery charging.",
+      "fullDescription": "The Booster Charger is a high-current mains-powered unit used both for rapid charging of discharged batteries and for jump-starting vehicles, particularly useful in shops and service centres handling multiple battery replacements daily.",
+      "specs": [
+        {
+          "key": "Charger Type",
+          "value": "Booster / Jump Starter Charger"
+        },
+        {
+          "key": "Battery Voltage",
+          "value": "12V / 24V"
+        },
+        {
+          "key": "Input Voltage",
+          "value": "220V AC / 50Hz"
+        },
+        {
+          "key": "Data Note",
+          "value": "No amp or voltage specs in source sheet. Standard booster charger specs applied. Verify exact model and ratings with supplier."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Local Charger Large",
+      "slug": "local-charger-large",
+      "brandName": "Generic",
+      "categorySlug": "charger",
+      "subcategorySlug": "battery-charger",
+      "capacity": "30A",
+      "voltage": "12V",
+      "warranty": "No Warranty",
+      "shortDescription": "Large locally assembled battery charger for workshop and service use.",
+      "fullDescription": "The Local Charger Large is a high-current locally assembled battery charger used for rapid charging and servicing of large 12V lead-acid and tubular batteries in shop environments. No brand warranty applies.",
+      "specs": [
+        {
+          "key": "Charger Type",
+          "value": "Local Assembled Battery Charger"
+        },
+        {
+          "key": "Output Current",
+          "value": "~30 Amperes (approx.)"
+        },
+        {
+          "key": "Battery Voltage",
+          "value": "12V DC"
+        },
+        {
+          "key": "Input Voltage",
+          "value": "220V AC / 50Hz"
+        },
+        {
+          "key": "Data Note",
+          "value": "No specs in source sheet. Amp rating estimated from typical large local charger sold in Pakistani battery shops."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Simtek MPPT Charge Controller 40A",
+      "slug": "simtek-mppt-charge-controller-40a",
+      "brandName": "Simtek",
+      "categorySlug": "solar-accessory",
+      "subcategorySlug": "charge-controller",
+      "capacity": "40A",
+      "voltage": "12V / 24V",
+      "warranty": "1 Year",
+      "shortDescription": "Simtek 40A MPPT solar charge controller for small to mid solar systems.",
+      "fullDescription": "The Simtek MPPT 40A is a Maximum Power Point Tracking solar charge controller regulating energy flow from solar panels to the battery bank. MPPT technology extracts up to 30% more energy from panels compared to older PWM controllers, making it the standard choice for solar systems in Pakistan.",
+      "specs": [
+        {
+          "key": "Controller Type",
+          "value": "MPPT (Maximum Power Point Tracking)"
+        },
+        {
+          "key": "Max Charge Current",
+          "value": "40 Amperes"
+        },
+        {
+          "key": "System Voltage",
+          "value": "12V / 24V Auto"
+        },
+        {
+          "key": "Max PV Input Voltage",
+          "value": "~100V DC (approx.)"
+        },
+        {
+          "key": "Display",
+          "value": "LCD"
+        },
+        {
+          "key": "Data Note",
+          "value": "Ampere rating from source sheet. Max PV input voltage and system voltage estimated from standard 40A MPPT class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "MPPT Hybrid Charge Controller 70A",
+      "slug": "mppt-hybrid-charge-controller-70a",
+      "brandName": "Generic",
+      "categorySlug": "solar-accessory",
+      "subcategorySlug": "charge-controller",
+      "capacity": "70A",
+      "voltage": "12V / 24V / 48V",
+      "warranty": "1 Year",
+      "shortDescription": "70A hybrid MPPT controller supporting 2-plate battery and solar input.",
+      "fullDescription": "The MPPT Hybrid Charge Controller 70A is a high-current solar charge controller with hybrid operation — supporting both solar panel input and mains/generator charging simultaneously. The '2 Plates' designation in the source sheet refers to its compatibility with 2-battery configurations.",
+      "specs": [
+        {
+          "key": "Controller Type",
+          "value": "MPPT Hybrid Charge Controller"
+        },
+        {
+          "key": "Max Charge Current",
+          "value": "70 Amperes"
+        },
+        {
+          "key": "System Voltage",
+          "value": "12V / 24V / 48V Auto"
+        },
+        {
+          "key": "Battery Config",
+          "value": "2-Battery (2 Plates)"
+        },
+        {
+          "key": "Display",
+          "value": "LCD"
+        },
+        {
+          "key": "Data Note",
+          "value": "Ampere rating and '2 Plates' designation from source sheet. System voltage and hybrid type estimated from standard 70A hybrid MPPT class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "MPPT Hybrid Charge Controller 85A",
+      "slug": "mppt-hybrid-charge-controller-85a",
+      "brandName": "Generic",
+      "categorySlug": "solar-accessory",
+      "subcategorySlug": "charge-controller",
+      "capacity": "85A",
+      "voltage": "12V / 24V / 48V",
+      "warranty": "1 Year",
+      "shortDescription": "85A hybrid MPPT controller for larger solar battery systems.",
+      "fullDescription": "The MPPT Hybrid Charge Controller 85A steps up the current capacity for larger solar arrays and battery banks, handling higher panel output without throttling solar harvest. Suitable for 3-battery and larger configurations.",
+      "specs": [
+        {
+          "key": "Controller Type",
+          "value": "MPPT Hybrid Charge Controller"
+        },
+        {
+          "key": "Max Charge Current",
+          "value": "85 Amperes"
+        },
+        {
+          "key": "System Voltage",
+          "value": "12V / 24V / 48V Auto"
+        },
+        {
+          "key": "Display",
+          "value": "LCD"
+        },
+        {
+          "key": "Data Note",
+          "value": "Ampere rating from source sheet. Battery config not specified in source; system voltage estimated from standard 85A hybrid MPPT class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "MPPT Charge Controller 100A",
+      "slug": "mppt-charge-controller-100a",
+      "brandName": "Generic",
+      "categorySlug": "solar-accessory",
+      "subcategorySlug": "charge-controller",
+      "capacity": "100A",
+      "voltage": "12V / 24V / 48V",
+      "warranty": "1 Year",
+      "shortDescription": "100A MPPT controller for high-output solar arrays with 4-battery configuration.",
+      "fullDescription": "The MPPT Charge Controller 100A is the highest-rated controller in this lineup, handling 100 amps of solar charge current for large panel arrays and 4-battery (or larger) bank configurations. It suits commercial and large residential solar installations.",
+      "specs": [
+        {
+          "key": "Controller Type",
+          "value": "MPPT Charge Controller"
+        },
+        {
+          "key": "Max Charge Current",
+          "value": "100 Amperes"
+        },
+        {
+          "key": "System Voltage",
+          "value": "12V / 24V / 48V Auto"
+        },
+        {
+          "key": "Battery Config",
+          "value": "4-Battery (4 Plates)"
+        },
+        {
+          "key": "Display",
+          "value": "LCD"
+        },
+        {
+          "key": "Data Note",
+          "value": "Ampere rating and '4 Plates' designation from source sheet. System voltage estimated from standard 100A MPPT class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Distilled Water 1.5 Litre",
+      "slug": "distilled-water-1-5-litre",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "battery-water",
+      "capacity": "1.5L",
+      "voltage": "-",
+      "warranty": "No Warranty",
+      "shortDescription": "Purified distilled water for topping up lead-acid and tubular batteries.",
+      "fullDescription": "Distilled water is essential for maintaining the electrolyte level in wet-cell lead-acid and tubular batteries. Using tap water introduces minerals that cause sulfation and shorten battery life — only distilled or deionised water should be added to battery cells.",
+      "specs": [
+        {
+          "key": "Type",
+          "value": "Distilled / Deionised Water"
+        },
+        {
+          "key": "Volume",
+          "value": "1.5 Litres"
+        },
+        {
+          "key": "Purity",
+          "value": "Battery-grade (TDS < 5 ppm)"
+        },
+        {
+          "key": "Use",
+          "value": "Topping up wet-cell lead-acid and tubular batteries"
+        },
+        {
+          "key": "Data Note",
+          "value": "Volume and category from source sheet."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Distilled Water Large",
+      "slug": "distilled-water-large",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "battery-water",
+      "capacity": "5L",
+      "voltage": "-",
+      "warranty": "No Warranty",
+      "shortDescription": "Large container of distilled water for bulk battery maintenance.",
+      "fullDescription": "The Large Distilled Water container is used for bulk topping-up of multiple wet-cell batteries in workshops, solar installations, or large UPS battery banks — minimising the number of refill trips versus the 1.5L bottle.",
+      "specs": [
+        {
+          "key": "Type",
+          "value": "Distilled / Deionised Water"
+        },
+        {
+          "key": "Volume",
+          "value": "5 Litres (approx.)"
+        },
+        {
+          "key": "Purity",
+          "value": "Battery-grade (TDS < 5 ppm)"
+        },
+        {
+          "key": "Use",
+          "value": "Bulk topping up of wet-cell and tubular battery banks"
+        },
+        {
+          "key": "Data Note",
+          "value": "Category from source sheet. Volume estimated as 5L standard large container; verify actual size with supplier."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Solar Panel Stand Frame L2 (14 SWG)",
+      "slug": "solar-panel-stand-frame-l2-14-swg",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "solar-frame",
+      "capacity": "-",
+      "voltage": "-",
+      "warranty": "No Warranty",
+      "shortDescription": "L2 steel stand for mounting 2 solar panels on rooftop or ground.",
+      "fullDescription": "The L2 Stand is a 14 SWG (Standard Wire Gauge) galvanised steel solar panel mounting frame designed to hold 2 standard solar panels. It provides a fixed tilt angle optimised for Pakistani latitudes, keeping panels clean and well-ventilated for maximum output.",
+      "specs": [
+        {
+          "key": "Material",
+          "value": "14 SWG Galvanised Steel"
+        },
+        {
+          "key": "Panel Capacity",
+          "value": "2 Panels (L2)"
+        },
+        {
+          "key": "Finish",
+          "value": "Hot-dip Galvanised or Powder Coated"
+        },
+        {
+          "key": "Tilt Angle",
+          "value": "Fixed (site-adjustable during installation)"
+        },
+        {
+          "key": "Data Note",
+          "value": "L2 designation and 14 SWG from source sheet. Other specs estimated from standard Pakistani market L2 solar stand."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Solar Panel Stand Frame L3 (14 SWG)",
+      "slug": "solar-panel-stand-frame-l3-14-swg",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "solar-frame",
+      "capacity": "-",
+      "voltage": "-",
+      "warranty": "No Warranty",
+      "shortDescription": "L3 steel stand for mounting 3 solar panels on rooftop or ground.",
+      "fullDescription": "The L3 Stand is a 14 SWG galvanised steel mounting frame sized for 3 solar panels in a single row, allowing a slightly larger array to share one continuous structural frame rather than multiple separate L2 stands.",
+      "specs": [
+        {
+          "key": "Material",
+          "value": "14 SWG Galvanised Steel"
+        },
+        {
+          "key": "Panel Capacity",
+          "value": "3 Panels (L3)"
+        },
+        {
+          "key": "Finish",
+          "value": "Hot-dip Galvanised or Powder Coated"
+        },
+        {
+          "key": "Tilt Angle",
+          "value": "Fixed (site-adjustable during installation)"
+        },
+        {
+          "key": "Data Note",
+          "value": "L3 designation and 14 SWG from source sheet. Other specs estimated from standard Pakistani market L3 solar stand."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Solar Wire 6MM Shielded",
+      "slug": "solar-wire-6mm-shielded",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "solar-wire",
+      "capacity": "6mm²",
+      "voltage": "Up to 1500V DC",
+      "warranty": "No Warranty",
+      "shortDescription": "6mm² shielded UV-resistant solar DC cable for panel-to-inverter runs.",
+      "fullDescription": "6mm² Shielded Solar Wire is a double-insulated, UV-resistant DC cable rated for outdoor solar photovoltaic use. The shielded variant adds an extra EMI shielding layer, reducing electrical interference on long cable runs between panels and the inverter.",
+      "specs": [
+        {
+          "key": "Cross Section",
+          "value": "6 mm²"
+        },
+        {
+          "key": "Type",
+          "value": "Shielded Solar PV Cable"
+        },
+        {
+          "key": "Voltage Rating",
+          "value": "Up to 1500V DC"
+        },
+        {
+          "key": "Temperature Range",
+          "value": "-40°C to +90°C"
+        },
+        {
+          "key": "Insulation",
+          "value": "Double-insulated, UV-resistant"
+        },
+        {
+          "key": "Colour",
+          "value": "Black (Shielded)"
+        },
+        {
+          "key": "Data Note",
+          "value": "Cross section and shielded designation from source sheet. Voltage and temperature specs from standard EN 50618 solar cable class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Solar Wire 6MM Grey",
+      "slug": "solar-wire-6mm-grey",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "solar-wire",
+      "capacity": "6mm²",
+      "voltage": "Up to 1500V DC",
+      "warranty": "No Warranty",
+      "shortDescription": "6mm² grey UV-resistant solar DC cable for standard panel runs.",
+      "fullDescription": "6mm² Grey Solar Wire is a standard (non-shielded) UV-resistant solar DC cable used for connecting solar panels to charge controllers and inverters. Grey colour variant for easy visual distinction from the black shielded version.",
+      "specs": [
+        {
+          "key": "Cross Section",
+          "value": "6 mm²"
+        },
+        {
+          "key": "Type",
+          "value": "Standard Solar PV Cable"
+        },
+        {
+          "key": "Voltage Rating",
+          "value": "Up to 1500V DC"
+        },
+        {
+          "key": "Insulation",
+          "value": "Double-insulated, UV-resistant"
+        },
+        {
+          "key": "Colour",
+          "value": "Grey"
+        },
+        {
+          "key": "Data Note",
+          "value": "Cross section and grey colour from source sheet. Other specs from standard solar cable class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Solar Wire 4MM",
+      "slug": "solar-wire-4mm",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "solar-wire",
+      "capacity": "4mm²",
+      "voltage": "Up to 1000V DC",
+      "warranty": "No Warranty",
+      "shortDescription": "4mm² solar DC cable for shorter panel runs and lighter current loads.",
+      "fullDescription": "4mm² Solar Wire is a thinner gauge UV-resistant solar DC cable suited to shorter panel-to-controller runs or lower-current connections where 6mm² would be oversized.",
+      "specs": [
+        {
+          "key": "Cross Section",
+          "value": "4 mm²"
+        },
+        {
+          "key": "Type",
+          "value": "Standard Solar PV Cable"
+        },
+        {
+          "key": "Voltage Rating",
+          "value": "Up to 1000V DC"
+        },
+        {
+          "key": "Insulation",
+          "value": "Double-insulated, UV-resistant"
+        },
+        {
+          "key": "Data Note",
+          "value": "Cross section from source sheet. Voltage rating from standard 4mm² solar cable class."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Solar Wire 2.5MM",
+      "slug": "solar-wire-2-5mm",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "solar-wire",
+      "capacity": "2.5mm²",
+      "voltage": "Up to 1000V DC",
+      "warranty": "No Warranty",
+      "shortDescription": "2.5mm² solar cable for auxiliary connections and small panel hookups.",
+      "fullDescription": "2.5mm² Solar Wire is a thin-gauge UV-rated DC cable used for auxiliary connections in solar installations, such as connecting small branch panels or junction box runs where current is low.",
+      "specs": [
+        {
+          "key": "Cross Section",
+          "value": "2.5 mm²"
+        },
+        {
+          "key": "Type",
+          "value": "Solar PV Cable"
+        },
+        {
+          "key": "Voltage Rating",
+          "value": "Up to 1000V DC"
+        },
+        {
+          "key": "Insulation",
+          "value": "UV-resistant"
+        },
+        {
+          "key": "Data Note",
+          "value": "Cross section from source sheet."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Solar Wire 1.5MM",
+      "slug": "solar-wire-1-5mm",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "solar-wire",
+      "capacity": "1.5mm²",
+      "voltage": "Up to 600V DC",
+      "warranty": "No Warranty",
+      "shortDescription": "1.5mm² solar wire for signal and very light current solar connections.",
+      "fullDescription": "1.5mm² Solar Wire is the thinnest gauge in the solar wire range, used for signal connections, monitoring leads, and very short low-current runs in solar installations.",
+      "specs": [
+        {
+          "key": "Cross Section",
+          "value": "1.5 mm²"
+        },
+        {
+          "key": "Type",
+          "value": "Solar PV Cable (Thin Gauge)"
+        },
+        {
+          "key": "Voltage Rating",
+          "value": "Up to 600V DC"
+        },
+        {
+          "key": "Insulation",
+          "value": "UV-resistant"
+        },
+        {
+          "key": "Data Note",
+          "value": "Cross section from source sheet."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Battery Wire 25MM",
+      "slug": "battery-wire-25mm",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "battery-wire",
+      "capacity": "25mm²",
+      "voltage": "Up to 100V DC",
+      "warranty": "No Warranty",
+      "shortDescription": "25mm² heavy-duty battery interconnect cable for large UPS and inverter setups.",
+      "fullDescription": "25mm² Battery Wire is a heavy-gauge flexible copper cable used for high-current connections between batteries and inverters/UPS systems. It handles the high current draw of large battery banks safely, minimising resistive losses over short runs.",
+      "specs": [
+        {
+          "key": "Cross Section",
+          "value": "25 mm²"
+        },
+        {
+          "key": "Type",
+          "value": "Battery Interconnect Cable"
+        },
+        {
+          "key": "Voltage Rating",
+          "value": "Up to 100V DC"
+        },
+        {
+          "key": "Current Capacity",
+          "value": "~120A continuous (in free air)"
+        },
+        {
+          "key": "Conductor",
+          "value": "Flexible Stranded Copper"
+        },
+        {
+          "key": "Data Note",
+          "value": "Cross section from source sheet. Current capacity estimated from standard 25mm² flexible copper cable."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Battery Wire 16MM",
+      "slug": "battery-wire-16mm",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "battery-wire",
+      "capacity": "16mm²",
+      "voltage": "Up to 100V DC",
+      "warranty": "No Warranty",
+      "shortDescription": "16mm² battery cable for mid-size inverter and UPS battery connections.",
+      "fullDescription": "16mm² Battery Wire is a medium-heavy gauge flexible copper cable used for connecting mid-size battery banks to inverters and UPS systems, handling moderate high-current loads safely.",
+      "specs": [
+        {
+          "key": "Cross Section",
+          "value": "16 mm²"
+        },
+        {
+          "key": "Type",
+          "value": "Battery Interconnect Cable"
+        },
+        {
+          "key": "Voltage Rating",
+          "value": "Up to 100V DC"
+        },
+        {
+          "key": "Current Capacity",
+          "value": "~85A continuous (in free air)"
+        },
+        {
+          "key": "Conductor",
+          "value": "Flexible Stranded Copper"
+        },
+        {
+          "key": "Data Note",
+          "value": "Cross section from source sheet. Current capacity estimated from standard 16mm² flexible copper cable."
+        }
+      ],
+      "featured": false,
+      "images": []
+    },
+    {
+      "name": "Battery Odometer",
+      "slug": "battery-odometer",
+      "brandName": "Generic",
+      "categorySlug": "accessory",
+      "subcategorySlug": "battery-monitor",
+      "capacity": "-",
+      "voltage": "12V / 24V / 48V",
+      "warranty": "6 Month",
+      "shortDescription": "Digital battery monitor showing voltage, current, capacity, and cycle count.",
+      "fullDescription": "A Battery Odometer (also called a Battery Monitor or Coulomb Counter) is a digital instrument that tracks battery state of charge, voltage, current draw, and the number of charge/discharge cycles — giving customers a clear picture of their battery's health and remaining life.",
+      "specs": [
+        {
+          "key": "Type",
+          "value": "Battery Monitor / Coulomb Counter"
+        },
+        {
+          "key": "Compatible Voltages",
+          "value": "12V / 24V / 48V"
+        },
+        {
+          "key": "Parameters Monitored",
+          "value": "Voltage, Current, State of Charge (%), Cycle Count, Amp Hours"
+        },
+        {
+          "key": "Display",
+          "value": "LCD / LED Digital"
+        },
+        {
+          "key": "Data Note",
+          "value": "Category and product type from source sheet ('Battery Odometer'). Other specs estimated from standard Pakistani battery monitor market."
+        }
+      ],
+      "featured": false,
+      "images": []
     }
   ]
 }
