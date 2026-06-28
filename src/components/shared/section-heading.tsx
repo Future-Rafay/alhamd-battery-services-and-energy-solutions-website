@@ -13,9 +13,9 @@ export function SectionHeading({
   centered = false,
 }: SectionHeadingProps) {
   return (
-    <div className={`flex flex-col gap-2.5 mb-10 ${centered ? 'items-center text-center max-w-2xl mx-auto' : 'items-start text-left'}`}>
+    <div className={`flex flex-col gap-2.5 ${centered ? 'items-center text-center max-w-2xl mx-auto' : 'items-start text-left'}`}>
       {badge && (
-        <span className="text-accent-orange font-bold text-xs uppercase tracking-wider border-l-4 border-accent-orange pl-3">
+        <span className="text-accent-orange font-bold text-xs md:text-sm uppercase tracking-wider border-l-4 border-accent-orange pl-3">
           {badge}
         </span>
       )}

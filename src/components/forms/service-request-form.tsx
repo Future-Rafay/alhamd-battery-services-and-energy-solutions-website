@@ -102,12 +102,15 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
           onValueChange={(val) => setValue('service', val || '')}
           disabled={status === 'loading'}
         >
-          <SelectTrigger className="w-full bg-white border-slate-200 focus:ring-primary text-xs sm:text-sm">
+          <SelectTrigger className="min-h-10 w-full min-w-0 bg-white border-slate-200 text-left text-xs leading-snug whitespace-normal focus:ring-primary sm:text-sm">
             <SelectValue placeholder="Choose a service" />
           </SelectTrigger>
-          <SelectContent className="bg-white border border-slate-200 text-xs sm:text-sm">
+          <SelectContent
+            sideOffset={6}
+            className="z-[70] max-h-[45dvh] min-w-[min(18rem,calc(100vw-2rem))] bg-white border border-slate-200 text-xs sm:text-sm"
+          >
             {SERVICES.map((s) => (
-              <SelectItem key={s.slug} value={s.name} className="hover:bg-slate-100 cursor-pointer">
+              <SelectItem key={s.slug} value={s.name} className="cursor-pointer py-2 leading-snug whitespace-normal hover:bg-slate-100">
                 {s.name}
               </SelectItem>
             ))}

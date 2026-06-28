@@ -5,7 +5,6 @@ import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
 import { X, Play, ChevronLeft, ChevronRight, Image as ImageIcon, Video as VideoIcon } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { FaYoutube } from 'react-icons/fa'
 
 interface GalleryItem {
   _id: string
@@ -167,24 +166,6 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                   </div>
                 </div>
               )}
-
-              {/* <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-md text-[10px] font-bold text-white flex items-center gap-1">
-                {item.mediaType === 'image' && (
-                  <>
-                    <ImageIcon className="w-3 h-3" /> PHOTO
-                  </>
-                )}
-                {item.mediaType === 'video' && (
-                  <>
-                    <VideoIcon className="w-3 h-3" /> VIDEO
-                  </>
-                )}
-                {item.mediaType === 'youtube' && (
-                  <>
-                    <FaYoutube className="w-3 h-3 text-red-500 fill-red-500" /> YOUTUBE
-                  </>
-                )}
-              </div> */}
             </div>
 
             {/* Info Footer */}

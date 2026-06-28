@@ -20,16 +20,16 @@ export function ProductCard({ product }: ProductCardProps) {
   const firstImage = hasImage ? product.images[0] : null
 
   return (
-    <Card className="group overflow-hidden rounded-xl border border-slate-200/60 hover:border-primary/20 hover:shadow-md transition-smooth flex flex-col h-full bg-white">
+    <Card className="group flex h-full flex-col overflow-hidden rounded-lg border border-slate-200/70 bg-white shadow-sm transition-smooth hover:-translate-y-0.5 hover:border-primary/25 hover:shadow-md">
       {/* Product Image Area */}
-      <div className="aspect-[4/3] w-full bg-slate-100 relative overflow-hidden shrink-0 border-b border-slate-100">
+      <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden border-b border-slate-100 bg-slate-50">
         {firstImage ? (
           <Image
             src={urlFor(firstImage).width(360).height(270).quality(80).url()}
             alt={firstImage.alt || product.name}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
-            className="object-cover group-hover:scale-105 transition-smooth"
+            className="object-contain p-4 transition-smooth group-hover:scale-105"
           />
         ) : (
           <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 gap-2 bg-slate-100">
@@ -52,21 +52,21 @@ export function ProductCard({ product }: ProductCardProps) {
         
         {/* Brand Badge */}
         {product.brand && (
-          <Badge className="absolute top-3 left-3 bg-white text-primary hover:bg-white/90 border border-slate-200 text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 shadow-sm">
+          <Badge className="absolute left-3 top-3 border border-slate-200 bg-white text-[10px] font-bold uppercase tracking-wider text-primary shadow-sm hover:bg-white/90">
             {product.brand.name}
           </Badge>
         )}
 
         {/* Featured Tag */}
         {product.featured && (
-          <Badge className="absolute top-3 right-3 bg-accent-yellow text-black hover:bg-accent-yellow/90 text-[10px] font-extrabold uppercase tracking-widest px-2.5 py-0.5 shadow-sm">
-            Best Seller
+          <Badge className="absolute right-3 top-3 bg-accent-yellow text-[10px] font-extrabold uppercase tracking-widest text-black shadow-sm hover:bg-accent-yellow/90">
+            Featured
           </Badge>
         )}
       </div>
 
       {/* Card Content */}
-      <CardContent className="p-5 pt-2 flex-grow flex flex-col justify-between gap-3">
+      <CardContent className="flex flex-grow flex-col justify-between gap-3 p-5">
         <div className="flex flex-col gap-2">
           {/* Category */}
           {product.category && (
@@ -76,7 +76,7 @@ export function ProductCard({ product }: ProductCardProps) {
           )}
           
           {/* Title */}
-          <h3 className="font-heading font-bold text-base sm:text-lg text-primary line-clamp-1 group-hover:text-accent-orange transition-colors">
+          <h3 className="font-heading text-base font-extrabold text-primary line-clamp-2 transition-colors group-hover:text-accent-orange sm:text-lg">
             <Link href={`/products/${product.slug}`}>{product.name}</Link>
           </h3>
 
@@ -89,17 +89,17 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
 
         {/* Technical Specs Summary */}
-        <div className="grid grid-cols-2 gap-2 bg-slate-50 border border-slate-100 p-2.5 rounded-lg text-xs">
+        <div className="grid grid-cols-2 gap-2 rounded-lg border border-slate-100 bg-slate-50 p-2.5 text-xs">
           {product.capacity && (
             <div className="flex flex-col">
               <span className="text-[9px] uppercase font-bold text-slate-400">Capacity</span>
-              <span className="font-semibold text-primary">{product.capacity}</span>
+              <span className="font-bold text-primary">{product.capacity}</span>
             </div>
           )}
           {product.voltage && (
             <div className="flex flex-col">
               <span className="text-[9px] uppercase font-bold text-slate-400">Voltage</span>
-              <span className="font-semibold text-primary">{product.voltage}</span>
+              <span className="font-bold text-primary">{product.voltage}</span>
             </div>
           )}
           {product.warranty && (
@@ -112,7 +112,7 @@ export function ProductCard({ product }: ProductCardProps) {
       </CardContent>
 
       {/* Card Footer */}
-      <CardFooter className="px-5 pb-5 pt-0 mt-auto flex justify-between items-end border-t border-slate-50 pt-4">
+      <CardFooter className="mt-auto flex items-end justify-between border-t border-slate-100 px-5 pb-5 pt-4">
         <div className="flex flex-col">
           <span className="text-[10px] uppercase font-bold text-slate-400 tracking-wider">Price Quote</span>
           <span className="text-sm font-extrabold text-primary">Contact for Price</span>
