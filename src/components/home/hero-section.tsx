@@ -22,7 +22,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
   const validBanners = banners && banners.length > 0 ? banners : [{
     _id: 'default',
     headline: 'Powering Your Home & Business with Trusted Energy Solutions',
-    subtext: 'Authorized retail distributor of branded batteries and solar energy products in Karachi.',
+    subtext: 'Karachi-based authorized distributor of branded batteries and solar energy products across Pakistan.',
     ctaText: 'Explore Products',
     ctaLink: '/products',
     image: null,
@@ -52,7 +52,7 @@ export function HeroSection({ banners, phone, whatsapp }: HeroSectionProps) {
 
   const activeBanner = validBanners[currentIndex]
   const headline = activeBanner?.headline || 'Powering Your Home & Business with Trusted Energy Solutions'
-  const subtext = activeBanner?.subtext || 'Authorized retail distributor of branded batteries and solar energy products in Karachi.'
+  const subtext = activeBanner?.subtext || 'Karachi-based authorized distributor of branded batteries and solar energy products across Pakistan.'
   const ctaText = activeBanner?.ctaText || 'Explore Products'
   const ctaLink = activeBanner?.ctaLink || '/products'
 

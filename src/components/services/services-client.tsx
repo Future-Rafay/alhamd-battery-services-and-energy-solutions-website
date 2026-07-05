@@ -55,7 +55,7 @@ export function ServicesClient({ services }: ServicesClientProps) {
                         src={imageSrc}
                         alt={service.name}
                         fill
-                        sizes="(max-w-768px) 100vw, 250px"
+                        sizes="(max-width: 768px) 100vw, 250px"
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />
                     ) : (
@@ -76,7 +76,7 @@ export function ServicesClient({ services }: ServicesClientProps) {
                   </p>
                   <div className="flex items-center gap-2 mt-1 text-slate-500 text-xs font-semibold">
                     <MapPin className="w-4 h-4 text-accent-orange shrink-0" />
-                    <span>Available Location: Karachi Only</span>
+                    <span>Based in Karachi, Pakistan-wide support through sub-distributors</span>
                   </div>
                 </div>
 
@@ -138,8 +138,8 @@ export function ServicesClient({ services }: ServicesClientProps) {
                 <CheckCircle className="w-5 h-5 text-accent-yellow" />
               </div>
               <div>
-                <h4 className="font-bold text-sm sm:text-base !text-white group-hover:text-accent-yellow transition-colors">Karachi Focus</h4>
-                <p className="text-xs sm:text-sm text-white/60 mt-1 leading-relaxed">Dedicated service team for all town subdistricts.</p>
+                <h4 className="font-bold text-sm sm:text-base !text-white group-hover:text-accent-yellow transition-colors">Pakistan Coverage</h4>
+                <p className="text-xs sm:text-sm text-white/60 mt-1 leading-relaxed">Based in Karachi with sub-distributor support across Pakistan.</p>
               </div>
             </div>
           </div>

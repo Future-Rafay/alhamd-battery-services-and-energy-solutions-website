@@ -1,5 +1,3 @@
-'use client'
-
 import { ShieldCheck } from 'lucide-react'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
@@ -43,7 +41,7 @@ export function CertificatesClient({ certificates }: { certificates: Certificate
                     alt={cert.title}
                     fill
                     className="object-contain p-2 group-hover:scale-102 transition-transform duration-500"
-                    sizes="(max-w-768px) 100vw, (max-w-1200px) 50vw, 33vw"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 )}
               </div>

@@ -47,7 +47,7 @@ Your contact info is pulled dynamically from a single document. If you change it
    - **WhatsApp Number**: Used for all "Get Quote" triggers.
    - **Shop Address**: Enter your physical store address.
    - **Business Hours**: Click each day to change timings or toggle "Closed" for Fridays.
-   - **SEO Title & Description**: Keep keywords like "Saudabad Karachi Solar Batteries" for high Google search ranks.
+   - **SEO Title & Description**: Keep keywords like "Karachi battery solar distributor" for high Google search ranks.
 3. Click **Publish**.
 
 ---

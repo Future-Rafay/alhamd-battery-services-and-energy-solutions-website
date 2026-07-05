@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans, Geist } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-heading",
@@ -16,7 +16,7 @@ import { getSiteUrl } from '@/lib/utils'
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
   title: "Alhamd Battery Services and Energy Solutions",
-  description: "Authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment in Karachi.",
+  description: "Karachi-based authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment across Pakistan.",
   alternates: {
     canonical: '/',
   },
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Alhamd Battery Services & Energy Solutions",
-    description: "Authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment in Karachi.",
+    description: "Karachi-based authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar equipment across Pakistan.",
     url: getSiteUrl(),
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',

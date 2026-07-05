@@ -10,6 +10,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     '/about',
     '/services',
     '/products',
+    '/gallery',
     '/certificates',
     '/faq',
     '/contact',
@@ -26,7 +27,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   let productPages: any[] = []
   try {
     const products = await client.fetch(
-      `*[_type == "product" && defined(slug.current)] { "slug": slug.current, _updatedAt }`
+      `*[_type == "product" && defined(slug.current)] { "slug": slug.current, _updatedAt }`,
+      {},
+      { next: { revalidate: 3600, tags: ['product'] } }
     )
     productPages = products.map((prod: any) => ({
       url: `${baseUrl}/products/${prod.slug}`,

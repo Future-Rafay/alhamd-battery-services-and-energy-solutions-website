@@ -1,11 +1,8 @@
-'use client'
-
 import Link from 'next/link'
-import { Phone, Mail, MapPin, ArrowUpRight, ExternalLink } from 'lucide-react'
+import { MapPin, ArrowUpRight, ExternalLink } from 'lucide-react'
 import { SiteSettings } from '@/types'
 import { BRAND_NAMES } from '@/lib/constants'
-import { FaWhatsapp, FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
-import { FaCopyright } from 'react-icons/fa6'
+import { FaFacebook, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import Image from 'next/image'
 
 interface FooterProps {
@@ -53,7 +50,7 @@ export function Footer({ settings }: FooterProps) {
             <h4 className="text-[14px] sm:text-base font-bold tracking-widest uppercase text-accent-yellow">
               Authorized Retailer &amp; Distributor
             </h4>
-            <p className="text-xs sm:text-sm text-slate-200 mt-0.5">Serving Karachi since 2025</p>
+            <p className="text-xs sm:text-sm text-slate-200 mt-0.5">Based in Karachi since 2025</p>
           </div>
           <span className="hidden sm:block h-8 w-px bg-slate-300 shrink-0" />
           <div className="mt-6 sm:mt-0 flex flex-wrap items-center gap-x-3 gap-y-1.5">
@@ -63,9 +60,9 @@ export function Footer({ settings }: FooterProps) {
                 {idx < 5 && <span className="text-slate-300">•</span>}
               </span>
             ))}
-            <a href="/#brands-section" className="flex items-center gap-0.5 text-xs sm:text-sm font-semibold text-accent-orange hover:text-accent-yellow transition-colors">
+            <Link href="/#brands-section" className="flex items-center gap-0.5 text-xs sm:text-sm font-semibold text-accent-orange hover:text-accent-yellow transition-colors">
               & more <ArrowUpRight className="w-3 h-3" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -86,7 +83,7 @@ export function Footer({ settings }: FooterProps) {
             />
           </Link>
           <p className="text-sm leading-relaxed text-slate-500 max-w-xs">
-            Malir's trusted source for premium batteries and solar systems. 100% genuine products, official warranties. Wholesale &amp; retail.
+            Karachi-based source for premium batteries and solar systems across Pakistan. 100% genuine products, official warranties. Wholesale &amp; retail.
           </p>
 
           {/* Contact list */}

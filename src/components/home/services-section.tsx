@@ -30,7 +30,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
   const getServiceImage = (service: Service) => {
     if (service.image) {
       try {
-        return urlFor(service.image).url()
+        return urlFor(service.image).quality(100).url()
       } catch (error) {
         console.error('Failed to get Sanity image URL:', error)
       }
@@ -69,7 +69,7 @@ export function ServicesSection({ services }: ServicesSectionProps) {
                       src={imageSrc}
                       alt={service.name}
                       fill
-                      sizes="(max-w-768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (

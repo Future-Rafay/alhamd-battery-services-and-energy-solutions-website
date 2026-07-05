@@ -1,9 +1,8 @@
-'use client'
-
 import { Brand } from '@/types'
 import { BRAND_NAMES } from '@/lib/constants'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
+import Link from 'next/link'
 
 interface BrandsSectionProps {
   brands: Brand[]
@@ -42,11 +41,9 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
           /* Grid of logos from CMS */
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 items-center">
             {brandsList.map((brand) => (
-              <a
+              <Link
                 key={brand._id}
                 href={`/products?brand=${brand.slug}`}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="p-4 rounded-xl flex items-center justify-center aspect-[2.2/1] transition-smooth border border-slate-200/50 hover:border-primary/20 hover:shadow-md bg-white hover:-translate-y-0.5 group cursor-pointer"
               >
                 {brand.logo ? (
@@ -55,7 +52,7 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
                       src={urlFor(brand.logo).url()}
                       alt={brand.logo.alt || brand.name}
                       fill
-                      sizes="(max-w-768px) 50vw, 150px"
+                      sizes="(max-width: 768px) 50vw, 150px"
                       className="object-contain transition-smooth"
                     />
                   </div>
@@ -64,7 +61,7 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
                     {brand.name}
                   </span>
                 )}
-              </a>
+              </Link>
             ))}
           </div>
         ) : (
@@ -73,15 +70,13 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
             {BRAND_NAMES.map((name) => {
               const slug = getBrandSlug(name)
               return (
-                <a
+                <Link
                   key={name}
                   href={`/products?brand=${slug}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="bg-white border border-slate-200/60 px-4 py-2.5 rounded-lg text-slate-600 font-bold hover:text-white hover:border-primary hover:bg-primary transition-smooth select-none text-xs sm:text-sm tracking-wide shadow-xs cursor-pointer hover:-translate-y-0.5"
                 >
                   {name}
-                </a>
+                </Link>
               )
             })}
           </div>

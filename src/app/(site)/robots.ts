@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/studio/', // Disallow crawlers from index or scrape the CMS Studio editor
+      disallow: ['/studio', '/studio/', '/api/'], // Keep CMS Studio and API routes out of crawlers.
     },
     sitemap: `${getSiteUrl()}/sitemap.xml`,
   }

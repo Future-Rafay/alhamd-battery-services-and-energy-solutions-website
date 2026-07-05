@@ -1,5 +1,3 @@
-'use client'
-
 import { ShieldCheck, BadgeCheck, Calendar, Award } from 'lucide-react'
 import { SiteSettings } from '@/types'
 
@@ -22,7 +20,7 @@ export function TrustSection({ settings }: TrustSectionProps) {
       icon: Calendar,
       title: `${monthsInBusiness} Months`,
       subtitle: 'In Business',
-      desc: `Opened on March 1, 2025. Serving walk-in & online clients in Saudabad.`,
+      desc: `Opened on March 1, 2025. Serving walk-in and online clients from Karachi.`,
     },
     {
       icon: Award,
@@ -60,7 +58,7 @@ export function TrustSection({ settings }: TrustSectionProps) {
             Built on Trust & Dedicated Service
           </h2>
        <p className="text-sm leading-relaxed text-white/70 sm:text-base">
-            Unlike online storefronts or generic traders, Alhamd Battery Services has a physical storefront in Saudabad, Karachi. Customers can walk in for cell load testing, official manufacturer warranty claims, and genuine energy sizing advice.
+            Unlike online storefronts or generic traders, Alhamd Battery Services has a physical storefront in Karachi. Customers can walk in for cell load testing, official manufacturer warranty claims, and genuine energy sizing advice, while our sub-distributor network supports customers across Pakistan.
           </p>
         </div>
 
@@ -79,7 +77,7 @@ export function TrustSection({ settings }: TrustSectionProps) {
                 <div className="flex flex-col gap-1.5">
                   <div className="font-heading font-extrabold text-2xl !text-white group-hover:text-accent-yellow transition-colors">{stat.title}</div>
                   <div className="text-xs font-bold text-accent-yellow uppercase tracking-wide">{stat.subtitle}</div>
-                  <p className="text-xs sm:text-sm text-white/60 mt-2 leading-relaxed">{stat.desc}</p>
+                  {/* <p className="text-xs sm:text-sm text-white/60 mt-2 leading-relaxed">{stat.desc}</p> */}
                 </div>
               </div>
             )

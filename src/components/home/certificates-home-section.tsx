@@ -1,9 +1,5 @@
-'use client'
-
-import { ShieldCheck, Award, ArrowRight } from 'lucide-react'
 import { urlFor } from '@/sanity/lib/image'
 import Image from 'next/image'
-import Link from 'next/link'
 import { Certificate } from '../certificates/certificates-client'
 
 interface CertificatesHomeSectionProps {
@@ -32,7 +28,7 @@ export function CertificatesHomeSection({ certificates }: CertificatesHomeSectio
       
       <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 flex flex-col items-center gap-3">
+        {/* <div className="text-center max-w-2xl mx-auto mb-14 flex flex-col items-center gap-3">
           <span className="text-accent-orange font-bold text-xs md:text-sm uppercase tracking-wider border-b-2 border-accent-orange pb-1">
             Our Credentials
           </span>
@@ -42,7 +38,7 @@ export function CertificatesHomeSection({ certificates }: CertificatesHomeSectio
          <p className="text-sm leading-relaxed text-slate-500 sm:text-base">
             We are officially certified and authorized retailers for Pakistan's leading solar panels, batteries, and backup power inverter manufacturers.
           </p>
-        </div>
+        </div> */}
 
         {/* Certificates Carousel on Mobile, Grid on Desktop */}
         <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-6 scrollbar-thin scrollbar-thumb-primary/20 md:grid md:grid-cols-2 lg:grid-cols-4 md:gap-6 md:pb-0">
@@ -64,7 +60,7 @@ export function CertificatesHomeSection({ certificates }: CertificatesHomeSectio
                         alt={cert.title}
                         fill
                         className="object-contain p-2 group-hover:scale-102 transition-transform duration-500"
-                        sizes="(max-w-768px) 100vw, 250px"
+                        sizes="(max-width: 768px) 100vw, 250px"
                       />
                     )}
                   </div>
@@ -94,7 +90,7 @@ export function CertificatesHomeSection({ certificates }: CertificatesHomeSectio
           })}
         </div>
           {/* button  */}
-        <div className='flex items-center justify-center'>
+        {/* <div className='flex items-center justify-center'>
           <Link
             href="/certificates"
             className="mt-8 px-10 inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-slate-200 bg-primary px-5 text-sm font-extrabold text-white shadow-sm transition-smooth hover:border-primary hover:bg-white hover:text-primary"
@@ -102,7 +98,7 @@ export function CertificatesHomeSection({ certificates }: CertificatesHomeSectio
             View Certificates
             <ArrowRight className="h-4 w-4" />
           </Link>
-        </div>
+        </div> */}
       </div>
     </section>
   )

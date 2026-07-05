@@ -7,7 +7,7 @@ A production-ready business website built using Next.js 15+ (App Router), TypeSc
 - **Embedded Sanity Studio**: Deployed directly under the `/studio` endpoint, allowing the client to manage inventory, categories, homepage banners, testimonials, certificates, and site-wide metadata easily.
 - **On-Demand ISR (Incremental Static Regeneration)**: Configured using Sanity Webhooks to invalidate Next.js caches on tag and path levels, making updates live in seconds.
 - **Advanced Local SEO**: Auto-generated dynamic `sitemap.xml`, proper heading structure, and built-in JSON-LD structured data (`LocalBusiness`, `Product`, and `FAQPage`).
-- **Pakistani Form Validation**: React Hook Form + Zod resolvers checking mobile phone formats and strictly restricting service requests to Karachi limits.
+- **Pakistani Form Validation**: React Hook Form + Zod resolvers checking mobile phone formats and accepting Pakistan-wide service requests through the Karachi-based support flow.
 - **Custom Visual Brand Aesthetics**: Dominant primary blue branding with accent orange highlights matching authentic tangible retail shops.
 - **Floating WhatsApp Integration**: Floating, persistent chat button with pre-filled product inquiry context.
 

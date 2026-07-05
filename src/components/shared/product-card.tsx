@@ -1,5 +1,3 @@
-'use client'
-
 import Link from 'next/link'
 import { ArrowRight, Shield } from 'lucide-react'
 import { Card, CardContent, CardFooter } from '@/components/ui/card'

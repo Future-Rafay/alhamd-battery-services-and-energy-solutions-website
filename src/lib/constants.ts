@@ -22,7 +22,7 @@ export const SERVICES = [
   {
     name: 'Solar Installation',
     slug: 'solar-installation',
-    description: 'Professional solar panel system sizing, mounting, and wiring for residential and commercial spaces in Karachi.',
+    description: 'Professional solar panel system sizing, mounting, and wiring for residential and commercial spaces across Pakistan.',
     fullDescription: 'We provide end-to-end solar solutions, including site assessment, custom system design, high-quality mounting structures, professional panel wiring, inverter setup, and net metering integration. Our engineers ensure maximum efficiency and safety compliance.',
     icon: 'sun'
   },
@@ -49,7 +49,7 @@ export const FAQS = [
   },
   {
     question: 'Do you deliver and install batteries and solar equipment outside Karachi?',
-    answer: 'We currently specialize in retail sales, deliveries, and solar installations within Karachi (especially Saudabad, Landhi, Korangi, Malir, and nearby areas). For bulk wholesale distribution, we can arrange shipping to other parts of Sindh and Pakistan. Please contact us for details.'
+    answer: 'Yes. We are based in Karachi and can coordinate battery, solar, and inverter support across Pakistan through our sub-distributor network. Please contact us with your city and product requirements for availability.'
   },
   {
     question: 'What warranties do you provide on your products?',

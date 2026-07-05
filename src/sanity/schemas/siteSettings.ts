@@ -41,7 +41,7 @@ export const siteSettings = defineType({
       title: 'Shop Address',
       type: 'text',
       rows: 3,
-      initialValue: 'Shop No. C-22/3, Begum Khursheed Road, Saudabad, Baraf Khana, S1 Saudabad, Karachi, Pakistan',
+      initialValue: 'Shop No. C-22/3, Begum Khursheed Road, Karachi, Pakistan',
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -97,7 +97,7 @@ export const siteSettings = defineType({
       title: 'Years in Business / Establishment Text',
       type: 'string',
       initialValue: 'Established March 2025',
-      description: 'e.g. "Established March 2025" or "Serving Karachi since 2025"',
+      description: 'e.g. "Established March 2025" or "Based in Karachi since 2025"',
     }),
     defineField({
       name: 'socialLinks',
@@ -117,14 +117,14 @@ export const siteSettings = defineType({
       name: 'seoTitle',
       title: 'Default SEO Title',
       type: 'string',
-      initialValue: 'Alhamd Battery Services and Energy Solutions - Batteries & Solar in Karachi',
+      initialValue: 'Alhamd Battery Services and Energy Solutions - Batteries & Solar Across Pakistan',
     }),
     defineField({
       name: 'seoDescription',
       title: 'Default SEO Description',
       type: 'text',
       rows: 2,
-      initialValue: 'Authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar panels (LONGi, JinkoSolar) in Saudabad, Karachi. Contact us for wholesale and retail quotes.',
+      initialValue: 'Karachi-based authorized distributor of branded batteries (AGS, Osaka, Daewoo, Exide) and solar panels (LONGi, JinkoSolar) across Pakistan. Contact us for wholesale and retail quotes.',
     }),
   ],
   preview: {

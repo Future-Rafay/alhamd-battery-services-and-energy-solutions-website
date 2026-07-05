@@ -16,7 +16,7 @@ export const testimonial = defineType({
       name: 'designation',
       title: 'Designation / Location',
       type: 'string',
-      description: 'e.g. "Local Resident, Saudabad" or "Solar Customer, Karachi"',
+      description: 'e.g. "Local Customer" or "Solar Customer, Karachi"',
       initialValue: 'Karachi Customer',
     }),
     defineField({

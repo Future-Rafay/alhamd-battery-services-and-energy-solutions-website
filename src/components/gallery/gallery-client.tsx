@@ -125,8 +125,8 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                 <Image
                   src={urlFor(item.image).url()}
                   alt={item.image.alt || item.title}
-                  width={600}
-                  height={450}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-smooth"
                 />
               ) : item.mediaType === 'video' && item.videoUrl ? (
@@ -142,6 +142,7 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                 <iframe
                   src={`https://www.youtube.com/embed/${getYoutubeId(item.youtubeUrl)}?autoplay=1&mute=1&loop=1&playlist=${getYoutubeId(item.youtubeUrl)}`}
                   title={item.title}
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="w-full h-full border-0"
@@ -150,8 +151,8 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                 <Image
                   src={urlFor(item.image).url()}
                   alt={item.image.alt || item.title}
-                  width={600}
-                  height={450}
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-smooth"
                 />
               ) : (
@@ -197,6 +198,7 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
           {/* Close button */}
           <button
             onClick={() => setLightboxIndex(null)}
+            aria-label="Close gallery"
             className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 text-white hover:bg-white/20 transition-smooth flex items-center justify-center cursor-pointer z-50 border border-white/10"
           >
             <X className="w-5 h-5" />
@@ -205,6 +207,7 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
           {/* Navigation Controls */}
           <button
             onClick={handlePrev}
+            aria-label="Previous gallery item"
             className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-smooth flex items-center justify-center cursor-pointer z-45 border border-white/10"
           >
             <ChevronLeft className="w-6 h-6" />
@@ -212,6 +215,7 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
 
           <button
             onClick={handleNext}
+            aria-label="Next gallery item"
             className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full bg-white/10 text-white hover:bg-white/20 transition-smooth flex items-center justify-center cursor-pointer z-45 border border-white/10"
           >
             <ChevronRight className="w-6 h-6" />
@@ -230,10 +234,9 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                 <Image
                   src={urlFor(activeItem.image).url()}
                   alt={activeItem.title}
-                  width={600}
-                  height={450}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 896px"
                   className="object-contain"
-                  priority
                 />
               </div>
             )}
@@ -250,6 +253,7 @@ export function GalleryClient({ initialItems }: GalleryClientProps) {
                 <iframe
                   src={`https://www.youtube.com/embed/${getYoutubeId(activeItem.youtubeUrl)}?autoplay=1`}
                   title={activeItem.title}
+                  loading="lazy"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                   className="w-full h-full border-0"

@@ -5,7 +5,6 @@ import { notFound } from 'next/navigation'
 import { Phone, Shield, ArrowLeft } from 'lucide-react'
 import { sanityFetch } from '@/sanity/lib/live'
 import { PRODUCT_BY_SLUG_QUERY, SITE_SETTINGS_QUERY, RELATED_PRODUCTS_QUERY } from '@/sanity/lib/queries'
-import { client } from '@/sanity/lib/client'
 import { ProductGallery } from '@/components/products/product-gallery'
 import { ProductCard } from '@/components/shared/product-card'
 import { buttonVariants } from '@/components/ui/button'
@@ -24,7 +23,12 @@ export async function generateMetadata({ params }: SingleProductPageProps): Prom
   let product: Product | null = null
 
   try {
-    product = await client.fetch(PRODUCT_BY_SLUG_QUERY, { slug: resolvedParams.slug })
+    const productRes = await sanityFetch({
+      query: PRODUCT_BY_SLUG_QUERY,
+      params: { slug: resolvedParams.slug },
+      tags: ['product'],
+    })
+    product = productRes.data || null
   } catch (error) {
     console.error('Error fetching metadata for product:', error)
   }
@@ -40,8 +44,26 @@ export async function generateMetadata({ params }: SingleProductPageProps): Prom
   }
 
   return {
-    title: `${product.name} - Authorized Rates Karachi`,
-    description: product.shortDescription || `Contact Alhamd Battery Services for dynamic wholesale and retail pricing for ${product.name} in Saudabad, Karachi.`,
+    title: `${product.name} - Authorized Rates Pakistan`,
+    description: product.shortDescription || `Contact Alhamd Battery Services for dynamic wholesale and retail pricing for ${product.name} from our Karachi-based team.`,
+    alternates: {
+      canonical: `/products/${product.slug}`,
+    },
+    openGraph: {
+      title: `${product.name} | Alhamd Battery Services & Energy Solutions`,
+      description: product.shortDescription || `Contact Alhamd Battery Services for ${product.name} pricing and availability across Pakistan.`,
+      url: `${getSiteUrl()}/products/${product.slug}`,
+      siteName: 'Alhamd Battery Services & Energy Solutions',
+      locale: 'en_PK',
+      type: 'website',
+      images: [{ url: '/opengraph.jpg', width: 1200, height: 630, alt: product.name }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${product.name} | Alhamd Battery Services`,
+      description: product.shortDescription || `Ask for today's ${product.name} rate from our Karachi-based team.`,
+      images: ['/opengraph.jpg'],
+    },
   }
 }
 
@@ -53,10 +75,15 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
   let relatedProducts: Product[] = []
 
   try {
-    const productRes = await client.fetch(PRODUCT_BY_SLUG_QUERY, { slug: resolvedParams.slug })
-    product = productRes || null
-    
-    const settingsRes = await sanityFetch({ query: SITE_SETTINGS_QUERY })
+    const [productRes, settingsRes] = await Promise.all([
+      sanityFetch({
+        query: PRODUCT_BY_SLUG_QUERY,
+        params: { slug: resolvedParams.slug },
+        tags: ['product'],
+      }),
+      sanityFetch({ query: SITE_SETTINGS_QUERY }),
+    ])
+    product = productRes.data || null
     settings = settingsRes.data || null
   } catch (error) {
     console.error('Error loading product details from Sanity, trying mock fallbacks:', error)
@@ -78,11 +105,15 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
   try {
     if (product.category?._id && product._id) {
       // Find category reference or query
-      const relatedRes = await client.fetch(RELATED_PRODUCTS_QUERY, {
-        categoryId: product.category._id,
-        productId: product._id
+      const relatedRes = await sanityFetch({
+        query: RELATED_PRODUCTS_QUERY,
+        params: {
+          categoryId: product.category._id,
+          productId: product._id,
+        },
+        tags: ['product'],
       })
-      relatedProducts = relatedRes || []
+      relatedProducts = relatedRes.data || []
     }
   } catch (error) {
     console.error('Error loading related products:', error)
@@ -93,10 +124,10 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
     relatedProducts = getMockProducts().filter(p => p.slug !== resolvedParams.slug).slice(0, 4)
   }
 
-  const phone = settings?.phone
-  const whatsapp = settings?.whatsappNumber
-  const formattedPhone = phone.replace(/[^\d+]/g, '')
-  const formattedWhatsapp = whatsapp.replace(/[^\d+]/g, '')
+  const phone = settings?.phone || '+92 322 2592589'
+  const whatsapp = settings?.whatsappNumber || '+92 312 1141703'
+  const formattedPhone = phone?.replace(/[^\d+]/g, '')
+  const formattedWhatsapp = whatsapp?.replace(/[^\d+]/g, '')
   
   const whatsappMessage = encodeURIComponent(
     `Hi Alhamd Battery Services! I am interested in the following product: ${product.name}. Please share today's daily rate and delivery/pickup status.`
@@ -195,27 +226,31 @@ export default async function SingleProductPage({ params }: SingleProductPagePro
 
             {/* Action buttons */}
             <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
-              <a
-                href={`https://wa.me/${formattedWhatsapp}?text=${whatsappMessage}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  buttonVariants({ variant: 'default', size: 'lg' }),
-                  'w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 shadow-md'
-                )}
-              >
-                <FaWhatsapp className="w-5 h-5 mr-2 " /> WhatsApp Inquiry
-              </a>
+              {formattedWhatsapp && (
+                <a
+                  href={`https://wa.me/${formattedWhatsapp}?text=${whatsappMessage}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={cn(
+                    buttonVariants({ variant: 'default', size: 'lg' }),
+                    'w-full sm:w-auto bg-[#25D366] hover:bg-[#20ba5a] text-white font-bold px-8 shadow-md'
+                  )}
+                >
+                  <FaWhatsapp className="w-5 h-5 mr-2 " /> WhatsApp Inquiry
+                </a>
+              )}
 
-              <a
-                href={`tel:${formattedPhone}`}
-                className={cn(
-                  buttonVariants({ variant: 'outline', size: 'lg' }),
-                  'w-full sm:w-auto border-primary text-primary hover:bg-primary hover:text-white font-bold px-6'
-                )}
-              >
-                <Phone className="w-4.5 h-4.5 mr-2 text-accent-orange" /> Call Store Support
-              </a>
+              {formattedPhone && (
+                <a
+                  href={`tel:${formattedPhone}`}
+                  className={cn(
+                    buttonVariants({ variant: 'outline', size: 'lg' }),
+                    'w-full sm:w-auto border-primary text-primary hover:bg-primary hover:text-white font-bold px-6'
+                  )}
+                >
+                  <Phone className="w-4.5 h-4.5 mr-2 text-accent-orange" /> Call Store Support
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -294,7 +329,7 @@ function getMockProducts(): Product[] {
       voltage: '42V',
       warranty: '12 Years Product',
       shortDescription: 'Hi-MO 5 mono-PERC solar panel with high efficiency, optimized under low-light environments.',
-      fullDescription: 'LONGi LR5-72HPH 550W is a premier Hi-MO 5 series solar module utilizing mono-crystalline silicon cells. Designed for grid-tied and hybrid power systems, it features smart PERC technology for maximum power outputs. The module boasts excellent temperature performance and minimal degradation rate over a 25-year service period. Fits perfectly on rooftop installations in Karachi.',
+      fullDescription: 'LONGi LR5-72HPH 550W is a premier Hi-MO 5 series solar module utilizing mono-crystalline silicon cells. Designed for grid-tied and hybrid power systems, it features smart PERC technology for maximum power outputs. The module boasts excellent temperature performance and minimal degradation rate over a 25-year service period. Fits perfectly on rooftop installations across Pakistan.',
       specs: [
         { key: 'Model Name', value: 'LR5-72HPH-550M' },
         { key: 'Max Power', value: '550W' },
@@ -337,7 +372,7 @@ function getMockProducts(): Product[] {
       voltage: '12V',
       warranty: '1 Year',
       shortDescription: 'Deep cycle tubular battery specifically engineered for solar backup and heavy load UPS systems.',
-      fullDescription: 'Daewoo DLS-200 is a premium deep-cycle tubular battery. Manufactured using top lead alloy formulations and dense positive plates. It holds charge for longer intervals and supports slow, steady current discharge, making it the perfect backup match for heavy-duty household UPS and off-grid solar storage configurations in Karachi.',
+      fullDescription: 'Daewoo DLS-200 is a premium deep-cycle tubular battery. Manufactured using top lead alloy formulations and dense positive plates. It holds charge for longer intervals and supports slow, steady current discharge, making it the perfect backup match for heavy-duty household UPS and off-grid solar storage configurations across Pakistan.',
       specs: [
         { key: 'Battery Type', value: 'Tubular Deep Cycle' },
         { key: 'Capacity', value: '200Ah' },
