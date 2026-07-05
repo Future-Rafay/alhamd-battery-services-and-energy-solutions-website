@@ -156,11 +156,11 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
       {/* Address */}
       <div className="flex flex-col gap-1.5">
         <Label htmlFor="address" className="text-slate-700 font-bold text-xs">
-          Address (Karachi Limits Only) <span className="text-accent-orange">*</span>
+          Address <span className="text-accent-orange">*</span>
         </Label>
         <Input
           id="address"
-          placeholder="e.g. Shop No. 12, Karachi"
+          placeholder="e.g. House No. 12, Karachi"
           {...register('address')}
           className={`bg-white border-slate-200 text-xs sm:text-sm focus-visible:ring-primary ${
             errors.address ? 'border-red-500 focus-visible:ring-red-500' : ''
@@ -168,7 +168,7 @@ export function ServiceRequestForm({ defaultService = '', onSuccess }: ServiceRe
           disabled={status === 'loading'}
         />
         {errors.address && <span className="text-xs text-red-650 font-semibold">{errors.address.message}</span>}
-        <span className="text-[9px] text-slate-400 font-medium">Must contain "Karachi" to validate booking request limits.</span>
+        <span className="text-[9px] text-slate-400 font-medium">We are based in Karachi and can coordinate Pakistan-wide support through sub-distributors.</span>
       </div>
 
       {/* Message */}

@@ -12,13 +12,7 @@ export const serviceRequestSchema = z.object({
     .regex(/^((\+92)|(0092)|(0))?3[0-9]{9}$/, 'Please enter a valid Pakistani mobile number (e.g. 03222592589 or +923222592589)'),
   address: z
     .string()
-    .min(10, 'Address must be at least 10 characters')
-    .refine(
-      (val) => val.toLowerCase().includes('karachi'),
-      {
-        message: 'We currently only service Karachi. Please enter a valid Karachi address.',
-      }
-    ),
+    .min(10, 'Address must be at least 10 characters'),
   message: z.string().max(500, 'Message must be less than 500 characters').optional(),
 })
 

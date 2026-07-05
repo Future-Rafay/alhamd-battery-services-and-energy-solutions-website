@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { serviceRequestSchema } from '@/lib/validations/service-request'
+import { submitServiceRequest } from '@/app/actions/service-request'
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     
-    // Validate request body against Zod schema (includes Karachi check)
+    // Validate request body against Zod schema.
     const result = serviceRequestSchema.safeParse(body)
     
     if (!result.success) {
@@ -19,16 +20,12 @@ export async function POST(req: NextRequest) {
       )
     }
 
-    const { service, name, phone, address, message } = result.data
-
-    // Log the request to console (visible in Vercel)
-    console.log(
-      `[Service Request Booking] Service: ${service}, Customer: ${name}, Phone: ${phone}, Address: ${address}, Msg: ${message || 'None'}`
-    )
+    const submitResult = await submitServiceRequest(result.data)
 
     return NextResponse.json({ 
       success: true, 
-      message: 'Booking request registered. We will call you within 2 hours.' 
+      message: 'Booking request registered. We will call you within 2 hours.',
+      status: submitResult.status,
     })
   } catch (error: any) {
     console.error('API Service Request route error:', error)

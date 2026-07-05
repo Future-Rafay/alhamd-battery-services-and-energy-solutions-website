@@ -16,6 +16,8 @@ export async function submitServiceRequest(data: ServiceRequestInput) {
   try {
     // Server-side Zod validation (belt-and-suspenders fallback)
     const parsed = serviceRequestSchema.parse(data)
+    const submittedAt = new Date().toISOString()
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_DOMAIN || 'https://alhamdbattery.com'
 
     // --- EmailJS ---
     const emailPromise = fetch('https://api.emailjs.com/api/v1.0/email/send', {
@@ -33,7 +35,9 @@ export async function submitServiceRequest(data: ServiceRequestInput) {
           from_phone: parsed.phone,
           address: parsed.address,
           message: parsed.message || 'No additional instructions provided.',
-          submitted_at: new Date().toISOString(),
+          submitted_at: submittedAt,
+          site_url: siteUrl,
+          logo_url: `${siteUrl}/logo/alhamd-logo-horizontal.png`,
         },
       }),
     }).then(async (res) => {
@@ -55,7 +59,7 @@ export async function submitServiceRequest(data: ServiceRequestInput) {
         phone: parsed.phone,
         address: parsed.address,
         message: parsed.message ?? '',
-        submittedAt: new Date().toISOString(),
+        submittedAt,
         emailNotificationSent: emailSent,
       })
     })()

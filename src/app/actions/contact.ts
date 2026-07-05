@@ -16,6 +16,8 @@ export async function submitContactForm(data: ContactInput) {
   try {
     // 1. Validate Input (throws if invalid, but since client already validates, this is a fallback)
     const parsed = contactSchema.parse(data)
+    const submittedAt = new Date().toISOString()
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_DOMAIN || 'https://alhamdbattery.com'
 
     // 2. Perform Side Effects
     
@@ -34,7 +36,9 @@ export async function submitContactForm(data: ContactInput) {
           from_name: parsed.name,
           from_phone: parsed.phone,
           message: parsed.message,
-          submitted_at: new Date().toISOString(),
+          submitted_at: submittedAt,
+          site_url: siteUrl,
+          logo_url: `${siteUrl}/logo/alhamd-logo-horizontal.png`,
         },
       }),
     }).then(async (res) => {
@@ -55,7 +59,7 @@ export async function submitContactForm(data: ContactInput) {
         name: parsed.name,
         phone: parsed.phone,
         message: parsed.message,
-        submittedAt: new Date().toISOString(),
+        submittedAt,
         emailNotificationSent: emailSent,
       })
     })()
