@@ -7,10 +7,13 @@ import { getSiteUrl } from '@/lib/utils'
 
 export const metadata = {
   title: 'Media Gallery | Alhamd Battery Services & Energy Solutions',
-  description: 'View photos and videos of our physical shop in Malir, Karachi, customer reviews, deliveries, and clean energy projects in Karachi.',
+  description: 'View photos and videos of our Karachi-based shop, customer reviews, deliveries, and clean energy projects across Pakistan.',
+  alternates: {
+    canonical: '/gallery',
+  },
   openGraph: {
     title: 'Media Gallery | Alhamd Battery Services & Energy Solutions',
-    description: 'View photos and videos of our physical shop in Malir, Karachi, customer reviews, deliveries, and clean energy projects in Karachi.',
+    description: 'View photos and videos of our Karachi-based shop, customer reviews, deliveries, and clean energy projects across Pakistan.',
     url: `${getSiteUrl()}/gallery`,
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
@@ -20,7 +23,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Media Gallery | Alhamd Battery Services & Energy Solutions',
-    description: 'View photos and videos of our physical shop in Malir, Karachi, customer reviews, deliveries, and clean energy projects in Karachi.',
+    description: 'View photos and videos of our Karachi-based shop, customer reviews, deliveries, and clean energy projects across Pakistan.',
     images: ['/opengraph.jpg'],
   },
 }
@@ -43,8 +46,9 @@ export default async function GalleryPage() {
       <PageHero
         badge="Media Gallery"
         title="Our Business in Action"
-        description="Explore our store, deliveries, customer media, and recent solar energy work across Karachi."
-
+        description="Explore our store, deliveries, customer media, and recent solar energy work across Pakistan."
+        imageSrc="/page-banners/gallery-banner.jpg"
+        imageAlt="Alhamd Battery Services battery deliveries and solar work gallery"
       />
 
       <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6">

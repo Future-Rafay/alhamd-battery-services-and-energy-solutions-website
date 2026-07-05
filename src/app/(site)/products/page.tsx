@@ -12,7 +12,6 @@ import { Button } from '@/components/ui/button'
 import { Sheet, SheetContent, SheetTrigger, SheetHeader, SheetTitle } from '@/components/ui/sheet'
 import { Filter, SlidersHorizontal } from 'lucide-react'
 import { Product } from '@/types'
-import { client } from '@/sanity/lib/client'
 import { PageHero } from '@/components/shared/page-hero'
 
 // Pre-define dynamic search queries for products
@@ -63,6 +62,9 @@ import { getSiteUrl } from '@/lib/utils'
 export const metadata = {
   title: 'Product Catalog | Alhamd Battery Services and Energy Solutions',
   description: 'Explore our catalog of authentic batteries, solar panels, and inverters. Top brands available with official warranties.',
+  alternates: {
+    canonical: '/products',
+  },
   openGraph: {
     title: 'Product Catalog | Alhamd Battery Services & Energy Solutions',
     description: 'Explore our catalog of authentic batteries, solar panels, and inverters. Top brands available with official warranties.',
@@ -111,25 +113,21 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
     brands = brandsRes.data || []
     subcategories = subcategoriesRes.data || []
 
-    // Fetch filtered products
-    const productsRes = await client.fetch(FILTERED_PRODUCTS_QUERY, {
-      category,
-      subcategory,
-      brand,
-      search,
-      start,
-      end,
-    })
+    const [productsRes, countRes] = await Promise.all([
+      sanityFetch({
+        query: FILTERED_PRODUCTS_QUERY,
+        params: { category, subcategory, brand, search, start, end },
+        tags: ['product'],
+      }),
+      sanityFetch({
+        query: FILTERED_PRODUCTS_COUNT_QUERY,
+        params: { category, subcategory, brand, search },
+        tags: ['product'],
+      }),
+    ])
 
-    const countRes = await client.fetch(FILTERED_PRODUCTS_COUNT_QUERY, {
-      category,
-      subcategory,
-      brand,
-      search,
-    })
-
-    products = productsRes || []
-    totalProductsCount = countRes || 0
+    products = productsRes.data || []
+    totalProductsCount = countRes.data || 0
   } catch (error) {
     console.error('Error fetching catalog data from Sanity, loading mock values:', error)
   }

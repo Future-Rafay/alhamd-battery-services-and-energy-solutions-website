@@ -1,5 +1,6 @@
 import { sanityFetch } from '@/sanity/lib/live'
 import { FAQS_QUERY, SITE_SETTINGS_QUERY } from '@/sanity/lib/queries'
+import Link from 'next/link'
 import {
   Accordion,
   AccordionContent,
@@ -8,7 +9,7 @@ import {
 } from '@/components/ui/accordion'
 import { FAQS } from '@/lib/constants'
 import { getFAQPageSchema } from '@/lib/structured-data'
-import { Button, buttonVariants } from '@/components/ui/button'
+import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { PageHero } from '@/components/shared/page-hero'
 
@@ -17,10 +18,13 @@ import { FAQ, SiteSettings } from '@/types'
 
 export const metadata = {
   title: 'FAQ | Alhamd Battery Services and Energy Solutions',
-  description: 'Common pre-sale questions answered. Understand how our Contact for Price quotes, warranty processing, and solar maintenance services work in Karachi.',
+  description: 'Common pre-sale questions answered. Understand how our Contact for Price quotes, warranty processing, and solar maintenance support work across Pakistan from our Karachi base.',
+  alternates: {
+    canonical: '/faq',
+  },
   openGraph: {
     title: 'FAQ | Alhamd Battery Services & Energy Solutions',
-    description: 'Common pre-sale questions answered. Understand how our Contact for Price quotes, warranty processing, and solar maintenance services work in Karachi.',
+    description: 'Common pre-sale questions answered. Understand how our Contact for Price quotes, warranty processing, and solar maintenance support work across Pakistan from our Karachi base.',
     url: `${getSiteUrl()}/faq`,
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
@@ -53,7 +57,11 @@ export default async function FAQPage() {
   // Fallbacks
   const faqsList = faqs.length > 0 ? faqs : FAQS
   const whatsapp = settings?.whatsappNumber
-  const formattedWhatsapp = whatsapp.replace(/[^\d+]/g, '')
+  const formattedWhatsapp = whatsapp?.replace(/[^\d+]/g, '')
+  const ctaClassName = cn(
+    buttonVariants({ variant: 'default', size: 'lg' }),
+    'hover:bg-white/70 hover:text-primary border-2 border-white text-white font-extrabold px-8 mt-2 shadow-md'
+  )
 
   const faqSchema = getFAQPageSchema(faqsList)
 
@@ -71,7 +79,9 @@ export default async function FAQPage() {
       <PageHero
         badge="FAQ Guide"
         title="Frequently Asked Questions"
-        description="Everything you need to know about pricing, purchase policies, warranties, and our Karachi service areas."
+        description="Everything you need to know about pricing, purchase policies, warranties, and Pakistan-wide support from our Karachi base."
+        imageSrc="/page-banners/faq-banner.jpg"
+        imageAlt="Alhamd Battery Services support desk answering battery and solar questions"
       />
 
       <div className="max-w-7xl mx-auto py-16 px-4">
@@ -100,20 +110,20 @@ export default async function FAQPage() {
           <p className="text-xs sm:text-sm text-white/80 max-w-md leading-relaxed">
             Our support agents are active on WhatsApp between 10:00 AM and 10:00 PM to answer direct queries instantly.
           </p>
-          <Button
-            className={cn(
-              buttonVariants({ variant: 'default', size: 'lg' }),
-              'hover:bg-white/70 hover:text-primary border-2 border-white text-white font-extrabold px-8 mt-2 shadow-md'
-            )}
-          >
+          {formattedWhatsapp ? (
             <a
               href={`https://wa.me/${formattedWhatsapp}?text=Hi! I have a question not listed in your FAQ.`}
               target="_blank"
               rel="noopener noreferrer"
+              className={ctaClassName}
             >
               Chat on WhatsApp
             </a>
-          </Button>
+          ) : (
+            <Link href="/contact" className={ctaClassName}>
+              Contact Us
+            </Link>
+          )}
         </div>
       </div>
     </div>

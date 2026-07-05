@@ -8,10 +8,13 @@ import { getSiteUrl } from '@/lib/utils'
 
 export const metadata = {
   title: 'About Us | Alhamd Battery Services and Energy Solutions',
-  description: 'Learn about our history, our commitment to genuine battery and solar brands, and our retail shop located in Malir, Karachi.',
+  description: 'Learn about our history, our commitment to genuine battery and solar brands, and our Karachi-based Pakistan-wide support network.',
+  alternates: {
+    canonical: '/about',
+  },
   openGraph: {
     title: 'About Us | Alhamd Battery Services & Energy Solutions',
-    description: 'Learn about our history, our commitment to genuine battery and solar brands, and our retail shop located in Malir, Karachi.',
+    description: 'Learn about our history, our commitment to genuine battery and solar brands, and our Karachi-based Pakistan-wide support network.',
     url: `${getSiteUrl()}/about`,
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
@@ -21,7 +24,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'About Us | Alhamd Battery Services & Energy Solutions',
-    description: 'Learn about our history and retail shop in Malir, Karachi.',
+    description: 'Learn about our Karachi-based battery and solar support network.',
     images: ['/opengraph.jpg'],
   },
 }
@@ -38,7 +41,7 @@ export default function AboutPage() {
     {
       icon: Compass,
       title: 'Our Mission',
-      desc: 'To provide local retail walk-in and online customers in Malir, Karachi with authentic backup batteries and high-efficiency solar equipment, backed by manufacturer warranties and honest support.',
+      desc: 'To provide walk-in and online customers across Pakistan with authentic backup batteries and high-efficiency solar equipment, backed by manufacturer warranties and honest support from our Karachi base.',
     },
     {
       icon: ShieldAlert,
@@ -58,7 +61,9 @@ export default function AboutPage() {
       <PageHero
         badge="Our Story"
         title="About Us"
-        description="Established in Saudabad, Karachi on March 1, 2025, we help customers solve local electricity challenges through reliable products and honest support."
+        description="Established in Karachi on March 1, 2025, we help customers across Pakistan solve electricity challenges through reliable products and honest support."
+        imageSrc="/page-banners/about-banner.jpg"
+        imageAlt="Alhamd Battery Services shop with batteries and inverter products"
       />
 
       {/* Section 1: Our Story (Text Left, Media Right) */}
@@ -68,10 +73,10 @@ export default function AboutPage() {
           <div className="lg:col-span-7 flex flex-col gap-4">
             <SectionHeading
               badge="Established 2025"
-              title="A Trusted Physical Presence in Malir, Karachi"
+              title="A Trusted Physical Presence in Karachi"
             />
             <p className="text-slate-500 text-xs sm:text-sm md:text-base leading-relaxed">
-              At Alhamd Battery Services and Energy Solutions, we understand that energy backup is a critical necessity in Pakistan. That's why we opened our physical retail outlet at Begum Khursheed Road, Saudabad. We wanted to offer local walk-in clients a reliable place to inspect batteries, consult on solar sizes, and easily claim manufacturer warranties.
+              At Alhamd Battery Services and Energy Solutions, we understand that energy backup is a critical necessity in Pakistan. That's why we opened our physical retail outlet at Begum Khursheed Road, Karachi. We offer walk-in clients a reliable place to inspect batteries, consult on solar sizes, and easily claim manufacturer warranties, while coordinating broader Pakistan support through sub-distributors.
             </p>
             <p className="text-slate-500 text-xs sm:text-sm md:text-base leading-relaxed">
               We specialize in top-quality energy equipment, acting as a retail and wholesale distributor for 17 leading brands. Whether you need a tubular battery for a UPS, a replacement car battery, or a full solar power setup, our team has the knowledge to configure the system correctly.
@@ -79,7 +84,7 @@ export default function AboutPage() {
             {/* location in map like  */}
             <div className="flex items-center gap-2 text-slate-500 text-xs font-semibold mt-2 bg-slate-50 p-3 rounded-lg border border-slate-100 self-start">
               <MapPin className="w-4 h-4 text-accent-orange shrink-0" />
-              <span>Location: Shop No. C-22/3, Begum Khursheed Road, Saudabad, Baraf Khana, S1 Saudabad, Karachi, Pakistan</span>
+              <span>Location: Shop No. C-22/3, Begum Khursheed Road, Karachi, Pakistan</span>
             </div>
 
           </div>
@@ -91,7 +96,7 @@ export default function AboutPage() {
                 src="/about/physical-presence.jpg"
                 alt="Energy Consultant with Homeowner"
                 fill
-                sizes="(max-w-768px) 100vw, 450px"
+                sizes="(max-width: 768px) 100vw, 450px"
                 className="object-cover hover:scale-103 transition-transform duration-500"
               />
             </div>
@@ -123,7 +128,7 @@ export default function AboutPage() {
                 src="/about/brands-connections.jpg"
                 alt="Professional Solar Panel Electrical Distribution Setup"
                 fill
-                sizes="(max-w-768px) 100vw, 450px"
+                sizes="(max-width: 768px) 100vw, 450px"
                 className="object-cover object-top hover:scale-103 transition-transform duration-500"
               />
             </div>
@@ -179,7 +184,7 @@ export default function AboutPage() {
               Energy systems are not one-size-fits-all. A configuration that works for one home may fail on another due to power surge factors, wiring quality, and specific backup requirements. Our experienced engineers analyze every customer's setup to recommend perfect combinations of hybrid inverters, battery banks, and solar panels.
             </p>
             <p className="text-slate-500 text-xs sm:text-sm md:text-base leading-relaxed">
-              From calculating battery gravity and load testing individual cells to routing DC wiring using proper fire-resistant conduits, we implement professional standards in every deployment we handle in Karachi.
+              From calculating battery gravity and load testing individual cells to routing DC wiring using proper fire-resistant conduits, we implement professional standards from our Karachi base and through our Pakistan-wide support network.
             </p>
           </div>
 
@@ -190,7 +195,7 @@ export default function AboutPage() {
                 src="/about/tailored-sizing-support.jpg"
                 alt="Electrician testing and configuring backup inverter system"
                 fill
-                sizes="(max-w-768px) 100vw, 450px"
+                sizes="(max-width: 768px) 100vw, 450px"
                 className="object-cover hover:scale-103 transition-transform duration-500"
               />
             </div>

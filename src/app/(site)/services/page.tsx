@@ -6,10 +6,13 @@ import { SERVICES_QUERY } from '@/sanity/lib/queries'
 
 export const metadata = {
   title: 'Our Services | Alhamd Battery Services and Energy Solutions',
-  description: 'Professional battery load testing, solar system configurations, and routine maintenance panels. We service all of Karachi.',
+  description: 'Professional battery load testing, solar system configurations, and routine maintenance support from our Karachi base across Pakistan through sub-distributors.',
+  alternates: {
+    canonical: '/services',
+  },
   openGraph: {
     title: 'Our Services | Alhamd Battery Services & Energy Solutions',
-    description: 'Professional battery load testing, solar system configurations, and routine maintenance panels. We service all of Karachi.',
+    description: 'Professional battery load testing, solar system configurations, and routine maintenance support from our Karachi base across Pakistan through sub-distributors.',
     url: `${getSiteUrl()}/services`,
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
@@ -19,7 +22,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Our Services | Alhamd Battery Services & Energy Solutions',
-    description: 'Professional battery and solar maintenance services in Karachi.',
+    description: 'Professional battery and solar maintenance services from our Karachi base.',
     images: ['/opengraph.jpg'],
   },
 }
@@ -39,8 +42,8 @@ export default async function ServicesPage() {
       <PageHero
         badge="Expert Support"
         title="Our Services"
-        description="Professional battery load testing, solar system configurations, and routine maintenance support across Karachi."
-        imageSrc="/page-banners/services.png"
+        description="Professional battery load testing, solar system configurations, and routine maintenance support from our Karachi base across Pakistan through sub-distributors."
+        imageSrc="/page-banners/services-banner.png"
         imageAlt="Battery delivery and service media in Karachi"
       />
 

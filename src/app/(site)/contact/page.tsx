@@ -10,10 +10,13 @@ import { getSiteUrl } from '@/lib/utils'
 
 export const metadata = {
   title: 'Contact Us | Alhamd Battery Services and Energy Solutions',
-  description: 'Visit our battery retail shop in Saudabad, Karachi. Get custom quotes, check battery warranties, and ask about solar panel installations.',
+  description: 'Contact our Karachi-based battery and solar team for custom quotes, warranty support, and Pakistan-wide support through sub-distributors.',
+  alternates: {
+    canonical: '/contact',
+  },
   openGraph: {
     title: 'Contact Us | Alhamd Battery Services & Energy Solutions',
-    description: 'Visit our battery retail shop in Saudabad, Karachi. Get custom quotes, check battery warranties, and ask about solar panel installations.',
+    description: 'Contact our Karachi-based battery and solar team for custom quotes, warranty support, and Pakistan-wide support through sub-distributors.',
     url: `${getSiteUrl()}/contact`,
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
@@ -23,7 +26,7 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Contact Us | Alhamd Battery Services & Energy Solutions',
-    description: 'Visit our battery retail shop in Saudabad, Karachi.',
+    description: 'Contact our Karachi-based battery and solar team.',
     images: ['/opengraph.jpg'],
   },
 }
@@ -39,10 +42,10 @@ export default async function ContactPage() {
   }
 
   // Fallbacks
-  const phone = settings?.phone
-  const whatsapp = settings?.whatsappNumber
-  const email = settings?.email
-  const address = settings?.address
+  const phone = settings?.phone || '+92 322 2592589'
+  const whatsapp = settings?.whatsappNumber || '+92 312 1141703'
+  const email = settings?.email || 'alhamdes@hotmail.com'
+  const address = settings?.address || 'Shop No. C-22/3, Begum Khursheed Road, Karachi, Pakistan'
   const mapEmbed = settings?.mapEmbed
 
   const formattedPhone = phone.replace(/[^\d+]/g, '')
@@ -63,7 +66,8 @@ export default async function ContactPage() {
         badge="Get In Touch"
         title="Contact Us"
         description="Have questions about prices or product availability? Reach out through our contact form, email, or WhatsApp."
-
+        imageSrc="/page-banners/contact-banner.jpg"
+        imageAlt="Alhamd Battery Services contact desk for battery and solar quotes"
       />
 
       <div className="max-w-7xl mx-auto py-12 px-4">
@@ -155,12 +159,18 @@ export default async function ContactPage() {
         {/* Map Embed Container */}
         <div className="bg-white border border-slate-200/60 rounded-xl overflow-hidden shadow-sm p-4">
           <h3 className="font-heading font-bold text-base !text-primary mb-4 flex items-center gap-2">
-            <MapPin className="w-5 h-5 text-accent-orange" /> Find Our Shop in Malir Karachi 
+            <MapPin className="w-5 h-5 text-accent-orange" /> Find Our Shop in Karachi
           </h3>
-          <div 
-            className="w-full rounded-lg overflow-hidden border border-slate-200 [&_iframe]:w-full"
-            dangerouslySetInnerHTML={{ __html: mapEmbed }}
-          />
+          {mapEmbed ? (
+            <div
+              className="w-full rounded-lg overflow-hidden border border-slate-200 [&_iframe]:w-full"
+              dangerouslySetInnerHTML={{ __html: mapEmbed }}
+            />
+          ) : (
+            <div className="flex min-h-64 items-center justify-center rounded-lg border border-slate-200 bg-slate-50 text-sm font-semibold text-slate-400">
+              Map embed is temporarily unavailable.
+            </div>
+          )}
         </div>
       </div>
     </div>

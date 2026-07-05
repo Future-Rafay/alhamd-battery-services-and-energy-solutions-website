@@ -1,10 +1,14 @@
 
 
 import { getSiteUrl } from '@/lib/utils'
+import { PageHero } from '@/components/shared/page-hero'
 
 export const metadata = {
   title: 'Terms & Conditions | Alhamd Battery Services and Energy Solutions',
   description: 'Terms and conditions governing the purchase of batteries and solar panel systems at Alhamd Battery Services.',
+  alternates: {
+    canonical: '/terms-and-conditions',
+  },
   openGraph: {
     title: 'Terms & Conditions | Alhamd Battery Services',
     description: 'Terms and conditions governing the purchase of batteries and solar panel systems at Alhamd Battery Services.',
@@ -26,22 +30,15 @@ export default function TermsAndConditionsPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Intro Banner */}
-      <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-primary to-primary-foreground" />
-        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-4">
-          <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
-            Legal
-          </span>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
-            Terms & Conditions
-          </h1>
-          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
-            Rules and regulations for the use of our website and purchase policies.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Legal"
+        title="Terms & Conditions"
+        description="Rules and regulations for the use of our website and purchase policies."
+        imageSrc="/page-banners/terms-and-conditions-banner.jpg"
+        imageAlt="Alhamd Battery Services purchase terms warranty cards and solar equipment"
+      />
 
-      <div className="max-w-3xl mx-auto py-16 px-4">
+      <div className="max-w-7xl mx-auto py-16 px-4">
         <div className="bg-white border border-slate-200/60 p-8 sm:p-12 rounded-2xl shadow-sm text-slate-650 text-xs sm:text-sm leading-relaxed flex flex-col gap-6">
         
         <p className="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Last Updated: June 19, 2026</p>
@@ -65,9 +62,9 @@ export default function TermsAndConditionsPage() {
           <li>We act as your local retail facilitator to assist in submitting warranty claims, but final approval is determined by the manufacturer.</li>
         </ul>
 
-        <h2 className="font-heading font-bold text-lg text-primary mt-4">3. Local Service Boundaries</h2>
+        <h2 className="font-heading font-bold text-lg text-primary mt-4">3. Service Coverage</h2>
         <p>
-          Our solar panel cleaning and battery load testing/diagnostics maintenance services are strictly limited to the municipal limits of <strong>Karachi, Pakistan</strong>. Bookings made outside of Karachi will be rejected or subject to additional logistics fees.
+          We are based in <strong>Karachi, Pakistan</strong> and can coordinate battery, solar, inverter, and maintenance support across Pakistan through our sub-distributor network. Availability, timelines, and logistics may vary by city and service type.
         </p>
 
         <h2 className="font-heading font-bold text-lg text-primary mt-4">4. Limitation of Liability</h2>

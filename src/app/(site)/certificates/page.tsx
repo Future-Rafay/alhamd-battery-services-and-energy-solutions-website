@@ -7,10 +7,13 @@ import { CERTIFICATES_QUERY } from '@/sanity/lib/queries'
 
 export const metadata = {
   title: 'Authorized Certificates | Alhamd Battery Services and Energy Solutions',
-  description: 'Verified proof of official authorization to sell and distribute leading battery and solar brands in Karachi.',
+  description: 'Verified proof of official authorization to sell and distribute leading battery and solar brands from our Karachi base across Pakistan.',
+  alternates: {
+    canonical: '/certificates',
+  },
   openGraph: {
     title: 'Authorized Certificates | Alhamd Battery Services & Energy Solutions',
-    description: 'Verified proof of official authorization to sell and distribute leading battery and solar brands in Karachi.',
+    description: 'Verified proof of official authorization to sell and distribute leading battery and solar brands from our Karachi base across Pakistan.',
     url: `${getSiteUrl()}/certificates`,
     siteName: 'Alhamd Battery Services & Energy Solutions',
     locale: 'en_PK',
@@ -43,10 +46,11 @@ export default async function CertificatesPage() {
         badge="Credentials"
         title="Authorized Dealer Certificates"
         description="Verified proof of official authorization to sell and distribute leading battery and solar brands."
-
+        imageSrc="/page-banners/certificates-banner.jpg"
+        imageAlt="Alhamd Battery Services authorized dealer certificates and warranty documents"
       />
 
-      <div className="max-w-5xl mx-auto py-16 px-4">
+      <div className="max-w-7xl mx-auto py-16 px-4">
         <CertificatesClient certificates={certificates} />
       </div>
     </div>

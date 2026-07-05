@@ -44,6 +44,16 @@ export function PageHero({
         <div className="absolute inset-0 bg-black/60" />
         {/* <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/72 to-primary/28" /> */}
       </div>
+      {imageSrc && (
+        <Image
+          src="/logo/alhamd-logo-horizontal.png"
+          alt=""
+          width={220}
+          height={74}
+          aria-hidden="true"
+          className="pointer-events-none absolute bottom-5 right-5 z-10 w-32 opacity-70 sm:w-44 lg:w-56"
+        />
+      )}
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div

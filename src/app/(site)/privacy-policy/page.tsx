@@ -1,10 +1,14 @@
 
 
 import { getSiteUrl } from '@/lib/utils'
+import { PageHero } from '@/components/shared/page-hero'
 
 export const metadata = {
   title: 'Privacy Policy | Alhamd Battery Services and Energy Solutions',
   description: 'Privacy policy and data collection terms for Alhamd Battery Services and Energy Solutions website.',
+  alternates: {
+    canonical: '/privacy-policy',
+  },
   openGraph: {
     title: 'Privacy Policy | Alhamd Battery Services',
     description: 'Privacy policy and data collection terms for Alhamd Battery Services and Energy Solutions website.',
@@ -26,22 +30,15 @@ export default function PrivacyPolicyPage() {
   return (
     <div className="bg-slate-50 min-h-screen">
       {/* Intro Banner */}
-      <section className="bg-primary text-white py-16 px-4 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white via-primary to-primary-foreground" />
-        <div className="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-4">
-          <span className="text-accent-yellow text-xs font-bold uppercase tracking-widest bg-white/10 px-3.5 py-1 rounded-full">
-            Legal
-          </span>
-          <h1 className="font-heading font-extrabold text-3xl sm:text-5xl !text-white">
-            Privacy Policy
-          </h1>
-          <p className="text-xs sm:text-sm md:text-base text-white/80 max-w-xl leading-relaxed">
-            How we collect, use, and protect your information when you interact with us.
-          </p>
-        </div>
-      </section>
+      <PageHero
+        badge="Legal"
+        title="Privacy Policy"
+        description="How we collect, use, and protect your information when you interact with us."
+        imageSrc="/page-banners/privacy-policy-banner.jpg"
+        imageAlt="Alhamd Battery Services privacy and customer data protection"
+      />
 
-      <div className="max-w-3xl mx-auto py-16 px-4">
+      <div className="max-w-7xl mx-auto py-16 px-4">
         <div className="bg-white border border-slate-200/60 p-8 sm:p-12 rounded-2xl shadow-sm text-slate-650 text-xs sm:text-sm leading-relaxed flex flex-col gap-6">
 
         <p className="text-slate-400 text-[10px] uppercase font-bold tracking-wider">Last Updated: June 19, 2026</p>
@@ -57,7 +54,7 @@ export default function PrivacyPolicyPage() {
         <ul className="list-disc pl-6 space-y-1.5">
           <li><strong>Name:</strong> To identify you during communications.</li>
           <li><strong>Phone Number:</strong> To call you for confirmations or send price quotes via WhatsApp.</li>
-          <li><strong>Address:</strong> To verify if you reside within our Karachi service boundaries.</li>
+          <li><strong>Address:</strong> To confirm your location and coordinate support through our Karachi team or sub-distributor network.</li>
           <li><strong>Message Content:</strong> Any additional details you provide regarding your UPS/solar needs.</li>
         </ul>
 
