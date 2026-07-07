@@ -2,8 +2,8 @@ import Link from "next/link";
 
 export default function CTASection() {
     return (
-        <section className="py-16 px-4">
-            <div className="max-w-7xl mx-auto brand-blue-gradient rounded-2xl p-10 sm:p-14 text-center flex flex-col items-center gap-6 relative overflow-hidden ">
+        <section className="py-16 px-4 brand-blue-gradient">
+            <div className="max-w-7xl mx-auto rounded-2xl border border-white/10 bg-white/[0.07] p-10 sm:p-14 text-center flex flex-col items-center gap-6 relative overflow-hidden ">
 
 
                 <div className="relative z-10 flex flex-col items-center gap-6 max-w-2xl">

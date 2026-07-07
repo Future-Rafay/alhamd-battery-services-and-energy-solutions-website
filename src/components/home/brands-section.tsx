@@ -23,16 +23,16 @@ export function BrandsSection({ brands }: BrandsSectionProps) {
   }
 
   return (
-    <section className="py-16 sm:py-20 px-4 brand-blue-gradient " id='brands-section'>
+    <section className="py-16 sm:py-20 px-4 bg-slate-50 border-t border-slate-200/50" id='brands-section'>
       <div className="max-w-7xl mx-auto">
         <div className="text-center max-w-2xl mx-auto mb-10 flex flex-col items-center gap-3">
            <span className="text-accent-orange font-bold text-xs md:text-sm uppercase tracking-wider border-b-2 border-accent-orange pb-1">
             Trusted Partners
           </span>
-          <h2 className="font-heading !text-white font-bold text-2xl sm:text-3xl">
+          <h2 className="font-heading text-primary font-bold text-2xl sm:text-3xl">
             Authorized Brands We Distribute
           </h2>
-           <p className="text-sm leading-relaxed text-white/70 sm:text-base">
+           <p className="text-sm leading-relaxed text-slate-500 sm:text-base">
             We are officially certified and authorized retailers for Pakistan's leading solar panels, batteries, and backup power inverter manufacturers.
           </p>
         </div>

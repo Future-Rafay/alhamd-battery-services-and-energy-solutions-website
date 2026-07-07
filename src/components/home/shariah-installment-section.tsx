@@ -10,7 +10,7 @@ const points = [
 
 export function ShariahInstallmentSection() {
   return (
-    <section className="py-20 px-4 bg-white border-t border-slate-200/50">
+    <section className="py-20 px-4 bg-slate-50 border-t border-slate-200/50">
       <div className="max-w-7xl mx-auto grid items-center gap-10 lg:grid-cols-2">
         <div className="flex flex-col gap-6">
           <div className="flex flex-col gap-3">
