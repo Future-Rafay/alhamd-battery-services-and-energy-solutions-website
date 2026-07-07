@@ -18,7 +18,7 @@ export function ShariahInstallmentSection() {
               Easy Energy Ownership
             </span>
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl text-primary leading-tight">
-              Islamic Shariah-Compliant Installment Plan
+              Islamic Modal Shariah-Compliant Installment Plan
             </h2>
             <p className="text-sm leading-relaxed text-slate-500 sm:text-base">
               Alhamd helps homeowners, shops, offices, and commercial buyers move to reliable backup power with a transparent installment option. Get genuine batteries, solar systems, and inverter solutions with warranty-backed support and a plan explained clearly before you commit.

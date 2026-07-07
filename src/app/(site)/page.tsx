@@ -14,6 +14,7 @@ import { BrandsSection } from '@/components/home/brands-section'
 import { TrustSection } from '@/components/home/trust-section'
 import { ShariahInstallmentSection } from '@/components/home/shariah-installment-section'
 import { AoklyMountrexShowcase } from '@/components/home/aokly-mountrex-showcase'
+import { CategoryShowcaseSections } from '@/components/home/category-showcase-sections'
 import { TestimonialsSection } from '@/components/home/testimonials-section'
 import { GoogleReviewsWidget } from '@/components/GoogleReviewsWidget'
 import { FAQSection } from '@/components/home/faq-section'
@@ -78,7 +79,8 @@ export default async function HomePage() {
       <HeroSection banners={banners} phone={phone} whatsapp={whatsapp} />
       <ServicesSection services={services} />
       <ShariahInstallmentSection />
-      <AoklyMountrexShowcase />
+      {/* <AoklyMountrexShowcase /> */}
+      <CategoryShowcaseSections />
       <GalleryPreview items={galleryItems} />
       <TrustSection settings={settings} />
       <BrandsSection brands={brands} />

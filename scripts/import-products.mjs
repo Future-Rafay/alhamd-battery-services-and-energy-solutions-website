@@ -80,9 +80,14 @@ async function uploadImage(imagePathOrUrl) {
     }
 
     // 2. If it's a local file path
-    const absolutePath = path.isAbsolute(imagePathOrUrl)
-      ? imagePathOrUrl
-      : path.resolve(process.cwd(), imagePathOrUrl)
+    let cleanPath = imagePathOrUrl
+    if (cleanPath.startsWith('/') || cleanPath.startsWith('\\')) {
+      cleanPath = cleanPath.slice(1)
+    }
+
+    const absolutePath = path.isAbsolute(cleanPath)
+      ? cleanPath
+      : path.resolve(process.cwd(), cleanPath)
 
     if (fs.existsSync(absolutePath)) {
       console.log(`📁 Uploading local image: ${absolutePath}`)
