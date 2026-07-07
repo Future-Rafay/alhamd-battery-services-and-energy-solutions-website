@@ -44,7 +44,7 @@
 - Product detail pages build WhatsApp messages for daily-rate inquiries.
 - Contact and service request forms validate on client/server, write Sanity entries, send EmailJS notifications, and intentionally return customer-friendly success instead of exposing backend delivery failures. Service requests should accept Pakistan-wide addresses while explaining that Alhamd is based in Karachi and coordinates through sub-distributors. Check server logs for Sanity or EmailJS failures.
 - Sanity webhooks hit `src/app/api/revalidate/route.ts` and revalidate tags plus relevant paths.
-- Google reviews are fetched server-side through `src/app/api/google-reviews/route.ts` / `src/lib/google-reviews.ts` with hourly revalidation. Never expose the Places API key to client components.
+- Google reviews are fetched server-side through `src/app/api/google-reviews/route.ts` / `src/lib/google-reviews.ts`, cached in `data/google-reviews.json`, and refreshed only when the cache is older than 1 hour. On API/key/network failure, keep serving the existing JSON file silently. Never expose the Places API key to client components.
 
 ## Commands
 

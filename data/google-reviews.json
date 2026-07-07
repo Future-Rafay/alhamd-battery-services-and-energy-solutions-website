@@ -1,0 +1,64 @@
+{
+  "reviews": [
+    {
+      "author_name": "Qazi Jalil",
+      "author_url": "https://www.google.com/maps/contrib/113765182777575416256/reviews",
+      "language": "en",
+      "original_language": "en",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjVmMoktZK6cW2sfzheuojuCNATP81rkgaFIoHFZRajlSvVVejsh=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relative_time_description": "8 months ago",
+      "text": "Best prices in karachi on solar panals, batteries, invertors. The staff guides the customer at there best and professional way of handling, highly recommended",
+      "time": 1760815786,
+      "translated": false
+    },
+    {
+      "author_name": "Atta Ullah",
+      "author_url": "https://www.google.com/maps/contrib/105379404511946191418/reviews",
+      "language": "en",
+      "original_language": "en",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a/ACg8ocLVX0_Qg0S0YTEzbMWsY9OQMzGuXB9WQzunKkN74K9PwsHTOw=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relative_time_description": "8 months ago",
+      "text": "Best price and all types of batteries available must recommend",
+      "time": 1761561106,
+      "translated": false
+    },
+    {
+      "author_name": "Shahbaz Hussain",
+      "author_url": "https://www.google.com/maps/contrib/116824290987354214362/reviews",
+      "language": "en",
+      "original_language": "en",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjUOi7YUhUsq-5vi6ChVq2Gk0sgANVEKbrz9d5s0eduaHX9-ksFy=s128-c0x00000000-cc-rp-mo-ba4",
+      "rating": 5,
+      "relative_time_description": "a year ago",
+      "text": "All battery types are available here at reasonable prices.",
+      "time": 1751174254,
+      "translated": false
+    },
+    {
+      "author_name": "Abdullah",
+      "author_url": "https://www.google.com/maps/contrib/109433962222496477316/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjW3cjEX8rj5q1tjFJ2-qOl2afzqRaHFo4ckYvHtSaVFzHhifo6q=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relative_time_description": "in the last week",
+      "text": "",
+      "time": 1783273603,
+      "translated": false
+    },
+    {
+      "author_name": "Rafay Nadeem",
+      "author_url": "https://www.google.com/maps/contrib/108488691083543222599/reviews",
+      "profile_photo_url": "https://lh3.googleusercontent.com/a-/ALV-UjXp2f5JhZPptBuacXjPb_48ZHinz-7Cij9dvVNaaSXif5nKaeR5=s128-c0x00000000-cc-rp-mo",
+      "rating": 5,
+      "relative_time_description": "6 months ago",
+      "text": "",
+      "time": 1767290292,
+      "translated": false
+    }
+  ],
+  "rating": 5,
+  "user_ratings_total": 6,
+  "googleMapsUrl": "https://www.google.com/maps/place/?q=place_id:ChIJkcXKFwA3sz4RbA3mRhJzOb0",
+  "fetchedAt": "2026-07-07T02:57:42.394Z"
+}

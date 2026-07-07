@@ -4,7 +4,7 @@
 
 - `src/app/layout.tsx`: root metadata, fonts, global shell.
 - `src/app/(site)/layout.tsx`: public site layout with header/footer and shared Sanity settings.
-- `src/app/(site)/page.tsx`: homepage; fetches banners, categories, services, brands, testimonials, FAQs, gallery, certificates, and settings.
+- `src/app/(site)/page.tsx`: homepage; fetches banners, categories, services, brands, testimonials, FAQs, gallery, and settings. The certificates route still exists, but certificates are soft-disabled from homepage/nav/sitemap.
 - `src/app/(site)/products/page.tsx`: product catalog with filters and pagination.
 - `src/app/(site)/products/[slug]/page.tsx`: product detail page, related products, structured data, WhatsApp and phone CTAs.
 - `src/app/(studio)/studio/[[...index]]/page.tsx`: embedded Sanity Studio.
@@ -12,6 +12,7 @@
 - `src/app/actions/service-request.ts`: service booking server action; sends EmailJS and writes `serviceRequest`.
 - `src/app/api/revalidate/route.ts`: Sanity webhook revalidation.
 - `src/app/api/service-request/route.ts`: service request API route; reuses the service booking server action.
+- `src/app/api/google-reviews/route.ts` and `src/lib/google-reviews.ts`: serve Google reviews from `data/google-reviews.json`; refresh from Places API only after the cache is older than 1 hour and silently keep the existing file on failures.
 
 ## CMS
 

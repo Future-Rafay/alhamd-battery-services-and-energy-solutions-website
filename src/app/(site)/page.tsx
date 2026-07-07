@@ -8,12 +8,12 @@ import {
   HOME_FAQS_QUERY,
   SITE_SETTINGS_QUERY,
   HOME_GALLERY_ITEMS_QUERY,
-  CERTIFICATES_QUERY,
 } from '@/sanity/lib/queries'
 import { HeroSection } from '@/components/home/hero-section'
 import { BrandsSection } from '@/components/home/brands-section'
 import { TrustSection } from '@/components/home/trust-section'
-import { CertificatesHomeSection } from '@/components/home/certificates-home-section'
+import { ShariahInstallmentSection } from '@/components/home/shariah-installment-section'
+import { AoklyMountrexShowcase } from '@/components/home/aokly-mountrex-showcase'
 import { TestimonialsSection } from '@/components/home/testimonials-section'
 import { GoogleReviewsWidget } from '@/components/GoogleReviewsWidget'
 import { FAQSection } from '@/components/home/faq-section'
@@ -32,7 +32,6 @@ export default async function HomePage() {
   let testimonials: any[] = []
   let faqs: any[] = []
   let galleryItems: any[] = []
-  let certificates: any[] = []
 
   try {
     const [
@@ -43,7 +42,6 @@ export default async function HomePage() {
       testimonialsRes,
       faqsRes,
       galleryRes,
-      certificatesRes,
     ] = await Promise.all([
       sanityFetch({ query: SITE_SETTINGS_QUERY }),
       sanityFetch({ query: BANNERS_QUERY }),
@@ -52,7 +50,6 @@ export default async function HomePage() {
       sanityFetch({ query: TESTIMONIALS_QUERY }),
       sanityFetch({ query: HOME_FAQS_QUERY }),
       sanityFetch({ query: HOME_GALLERY_ITEMS_QUERY }),
-      sanityFetch({ query: CERTIFICATES_QUERY }),
     ])
 
     settings = settingsRes.data || null
@@ -62,7 +59,6 @@ export default async function HomePage() {
     testimonials = testimonialsRes.data || []
     faqs = faqsRes.data || []
     galleryItems = galleryRes.data || []
-    certificates = certificatesRes.data || []
   } catch (error) {
     console.error('Error loading homepage data from Sanity, using fallbacks:', error)
   }
@@ -81,9 +77,10 @@ export default async function HomePage() {
       
       <HeroSection banners={banners} phone={phone} whatsapp={whatsapp} />
       <ServicesSection services={services} />
+      <ShariahInstallmentSection />
+      <AoklyMountrexShowcase />
       <GalleryPreview items={galleryItems} />
       <TrustSection settings={settings} />
-      <CertificatesHomeSection certificates={certificates} />
       <BrandsSection brands={brands} />
       <TestimonialsSection testimonials={testimonials} />
       <GoogleReviewsWidget />

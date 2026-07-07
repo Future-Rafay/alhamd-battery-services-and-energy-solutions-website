@@ -15,7 +15,7 @@ const QUICK_LINKS = [
   { name: 'Services', href: '/services' },
   { name: 'Products', href: '/products' },
   { name: 'Media Gallery', href: '/gallery' },
-  { name: 'Certificates', href: '/certificates' },
+  // { name: 'Certificates', href: '/certificates' },
   { name: 'FAQ', href: '/faq' },
   { name: 'Contact Us', href: '/contact' },
 ]
