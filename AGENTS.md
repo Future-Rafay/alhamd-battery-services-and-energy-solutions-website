@@ -67,6 +67,7 @@ Use `.env.local.example` as the source for required variables. Important keys:
 - `NEXT_PUBLIC_SITE_DOMAIN`
 - `GOOGLE_PLACES_API_KEY`
 - `GOOGLE_PLACE_ID`
+- `NEXT_PUBLIC_META_PIXEL_ID`
 - EmailJS keys used by server actions.
 
 ## Before Finishing

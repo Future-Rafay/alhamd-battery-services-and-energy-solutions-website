@@ -1,7 +1,9 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Geist } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
+import { cn, getSiteUrl } from "@/lib/utils";
+import { MetaPixel } from "@/components/analytics/meta-pixel";
 
 const geist = Geist({ subsets: ['latin'], variable: '--font-sans', display: 'swap' });
 
@@ -10,8 +12,6 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
 });
-
-import { getSiteUrl } from '@/lib/utils'
 
 export const metadata: Metadata = {
   metadataBase: new URL(getSiteUrl()),
@@ -65,6 +65,9 @@ export default function RootLayout({
       <body suppressHydrationWarning className="min-h-screen bg-background text-foreground antialiased font-sans flex flex-col">
         {children}
         {modal}
+        <Suspense fallback={null}>
+          <MetaPixel />
+        </Suspense>
       </body>
     </html>
   );
